@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bhja0wcs3n7e0"]
+
+[ext_resource type="PackedScene" uid="uid://b43lqx3d3y2d7" path="res://player.tscn" id="1_2dftf"]
+[ext_resource type="PackedScene" uid="uid://c1bd4lx3c46s" path="res://ItemPickup.tscn" id="2_bcbcq"]
+[ext_resource type="PackedScene" uid="uid://bwuq3p3gkk7vq" path="res://NPC.tscn" id="3_bcbcq"]
+
+[node name="World" type="Node2D" unique_id=210241119]
+
+[node name="Player" parent="." unique_id=1118292053 instance=ExtResource("1_2dftf")]
+position = Vector2(250, 322)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1218700876]
+
+[node name="ItemPickup" parent="." unique_id=1334067721 instance=ExtResource("2_bcbcq")]
+position = Vector2(391, 321)
+
+[node name="NPC" parent="." unique_id=965372024 instance=ExtResource("3_bcbcq")]
+position = Vector2(290, 250)

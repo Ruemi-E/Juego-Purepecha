@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://kcja3i4t6yxf"]
+
+[ext_resource type="Script" uid="uid://ddn536lgqay7l" path="res://dialogue_manager.gd" id="1_k4804"]
+
+[node name="DialogueManager" type="CanvasLayer" unique_id=694994753]
+process_mode = 3
+script = ExtResource("1_k4804")
+
+[node name="Box" type="PanelContainer" parent="." unique_id=291764686]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -55.0
+offset_right = -10.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialogueText" type="RichTextLabel" parent="Box" unique_id=207624100]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 9
+bbcode_enabled = true
+scroll_active = false

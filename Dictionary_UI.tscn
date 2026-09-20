@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bdrse4ko5lmy2"]
+
+[ext_resource type="Script" uid="uid://blsn708071182" path="res://dictionary_ui.gd" id="1_8k4eg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x84a5"]
+bg_color = Color(0.8862745, 0.84313726, 0.70980394, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="DictionaryUI" type="CanvasLayer" unique_id=765405353]
+process_mode = 3
+script = ExtResource("1_8k4eg")
+
+[node name="Panel" type="Panel" parent="." unique_id=2109021470]
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 290.0
+offset_bottom = 160.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x84a5")
+
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=1456176053]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 260.0
+offset_bottom = 31.0
+theme_override_colors/font_color = Color(0.16470589, 0.12156863, 0.11372549, 1)
+text = "DICCIONARIO PURÉPECHA"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel" unique_id=2090211933]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 244.0
+offset_bottom = 127.0
+theme_override_colors/default_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+bbcode_enabled = true

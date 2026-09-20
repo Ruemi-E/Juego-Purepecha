@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bd5r10vsbe24o"]
+
+[ext_resource type="Script" uid="uid://blsn708071182" path="res://dictionary_ui.gd" id="1_y727t"]
+
+[node name="DictionaryUI" type="CanvasLayer" unique_id=1285325829]
+process_mode = 3
+script = ExtResource("1_y727t")
+
+[node name="Panel" type="Panel" parent="." unique_id=890817935]
+offset_left = 32.0
+offset_top = 21.0
+offset_right = 292.0
+offset_bottom = 161.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=1967109921]
+layout_mode = 0
+offset_left = 31.0
+offset_top = 3.0
+offset_right = 233.0
+offset_bottom = 26.0
+text = "DICCIONARIO PURÉPECHA"
+
+[node name="ItemList" type="ItemList" parent="Panel" unique_id=1255264542]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 31.0
+offset_right = 230.0
+offset_bottom = 131.0
+scroll_hint_mode = 1
