@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bq0d2n27p1jjc"]
+
+[ext_resource type="Script" uid="uid://b505l6bge73ib" path="res://inventory_ui.gd" id="1_dsn3v"]
+
+[node name="InventoryUI" type="CanvasLayer" unique_id=1606691236]
+process_mode = 3
+script = ExtResource("1_dsn3v")
+
+[node name="Panel" type="Panel" parent="." unique_id=281134836]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.5
+offset_top = -117.0
+offset_right = 205.5
+offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dinero" type="HBoxContainer" parent="Panel" unique_id=969485440]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Plata" type="Label" parent="Panel/Dinero" unique_id=312900024]
+layout_mode = 2
+
+[node name="Bronce" type="Label" parent="Panel/Dinero" unique_id=31026893]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Panel" unique_id=929491291]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.5
+offset_right = 48.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 16
+text = "INVENTARIO"
+
+[node name="ItemList" type="ItemList" parent="Panel" unique_id=294016710]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -98.5
+offset_right = 172.5
+offset_bottom = 98.5
+grow_vertical = 2
+
+[node name="ItemDetails" type="RichTextLabel" parent="Panel" unique_id=907215948]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -93.5
+offset_bottom = 93.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true

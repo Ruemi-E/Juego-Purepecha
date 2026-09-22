@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://djqxocxwqx2at"]
+
+[ext_resource type="Script" uid="uid://b0t83j1cjwlek" path="res://item_notification.gd" id="1_em63q"]
+
+[node name="ItemNotification" type="CanvasLayer" unique_id=1247702922]
+script = ExtResource("1_em63q")
+
+[node name="Toast" type="PanelContainer" parent="." unique_id=499523355]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -15.0
+offset_right = 130.0
+offset_bottom = 15.0
+grow_vertical = 2
+
+[node name="ToastText" type="RichTextLabel" parent="Toast" unique_id=1163562946]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 8
+bbcode_enabled = true
+scroll_active = false

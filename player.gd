@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var speed: float = 100.0
+@export var speed: float = 80.0
 @onready var interaction_ray: RayCast2D = $InteractionRay
 
 var last_dir: Vector2 = Vector2.DOWN
@@ -10,6 +10,7 @@ func _physics_process(_delta: float) -> void:
 	var dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = dir * speed
 	move_and_slide()
+	position = position.round()
 
 	# Si nos movemos, reorientamos la flecha de interacción
 	if dir != Vector2.ZERO:

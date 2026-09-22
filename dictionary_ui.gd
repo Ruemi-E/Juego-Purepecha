@@ -1,12 +1,14 @@
 extends CanvasLayer
 
 @onready var panel: Control = $Panel
-@onready var text_display: RichTextLabel = $Panel/RichTextLabel
+@onready var text_display: RichTextLabel =$Panel/RichTextLabel
 
 var is_open: bool = false
 
 func _ready() -> void:
 	panel.hide()
+
+
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_dictionary"):
