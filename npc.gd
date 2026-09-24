@@ -22,10 +22,11 @@ func interact(_player: CharacterBody2D) -> void:
 		)
 
 
+
 func _on_area_interaccion_body_entered(body: Node2D) -> void:
-	if body.name == "player":
-		$GloboTexto.show()
+	if body.is_in_group("player"):
+		$GloboDeTexto.show()
 
 func _on_area_interaccion_body_exited(body: Node2D) -> void:
-	if body.name == "player":
-		$GloboTexto.hide()
+	if body.is_in_group("player"):
+		$GloboDeTexto.hide()
