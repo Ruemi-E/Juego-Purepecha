@@ -1,0 +1,5624 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Little Dreamyland - Free Pack/Little Dreamyland - Free Pack/Tileset/Nature_Tileset.png" id="nature"]
+
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Water.png" id="water"]
+
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="plants"]
+
+[node name="PuebloEntorno" type="Node2D"]
+
+[node name="Rio" type="Node2D" parent="."]
+
+[node name="Puente" type="Node2D" parent="."]
+
+[node name="Arboles" type="Node2D" parent="."]
+
+[node name="Arbustos" type="Node2D" parent="."]
+
+[node name="Rocas" type="Node2D" parent="."]
+
+[node name="Hierbas" type="Node2D" parent="."]
+
+[node name="Jardines" type="Node2D" parent="."]
+
+[node name="Orilla-64" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-64, 40, -48, 40, -48, 120, -64, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena-64" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-64, 45, -48, 45, -48, 115, -64, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua-64_48" type="Sprite2D" parent="Rio"]
+position = Vector2(-64, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua-64_64" type="Sprite2D" parent="Rio"]
+position = Vector2(-64, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua-64_80" type="Sprite2D" parent="Rio"]
+position = Vector2(-64, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua-64_96" type="Sprite2D" parent="Rio"]
+position = Vector2(-64, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida-64" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida-64"]
+polygon = PackedVector2Array(-64, 48, -48, 48, -48, 112, -64, 112)
+
+[node name="Orilla-48" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-48, 40, -32, 40, -32, 120, -48, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena-48" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-48, 45, -32, 45, -32, 115, -48, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua-48_48" type="Sprite2D" parent="Rio"]
+position = Vector2(-48, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua-48_64" type="Sprite2D" parent="Rio"]
+position = Vector2(-48, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua-48_80" type="Sprite2D" parent="Rio"]
+position = Vector2(-48, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua-48_96" type="Sprite2D" parent="Rio"]
+position = Vector2(-48, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida-48" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida-48"]
+polygon = PackedVector2Array(-48, 48, -32, 48, -32, 112, -48, 112)
+
+[node name="Orilla-32" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-32, 40, -16, 40, -16, 120, -32, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena-32" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-32, 45, -16, 45, -16, 115, -32, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua-32_48" type="Sprite2D" parent="Rio"]
+position = Vector2(-32, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua-32_64" type="Sprite2D" parent="Rio"]
+position = Vector2(-32, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua-32_80" type="Sprite2D" parent="Rio"]
+position = Vector2(-32, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua-32_96" type="Sprite2D" parent="Rio"]
+position = Vector2(-32, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida-32" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida-32"]
+polygon = PackedVector2Array(-32, 48, -16, 48, -16, 112, -32, 112)
+
+[node name="Orilla-16" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-16, 40, 0, 40, 0, 120, -16, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena-16" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(-16, 45, 0, 45, 0, 115, -16, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua-16_48" type="Sprite2D" parent="Rio"]
+position = Vector2(-16, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua-16_64" type="Sprite2D" parent="Rio"]
+position = Vector2(-16, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua-16_80" type="Sprite2D" parent="Rio"]
+position = Vector2(-16, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua-16_96" type="Sprite2D" parent="Rio"]
+position = Vector2(-16, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida-16" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida-16"]
+polygon = PackedVector2Array(-16, 48, 0, 48, 0, 112, -16, 112)
+
+[node name="Orilla0" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(0, 40, 16, 40, 16, 120, 0, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena0" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(0, 45, 16, 45, 16, 115, 0, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua0_48" type="Sprite2D" parent="Rio"]
+position = Vector2(0, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua0_64" type="Sprite2D" parent="Rio"]
+position = Vector2(0, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua0_80" type="Sprite2D" parent="Rio"]
+position = Vector2(0, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua0_96" type="Sprite2D" parent="Rio"]
+position = Vector2(0, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida0" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida0"]
+polygon = PackedVector2Array(0, 48, 16, 48, 16, 112, 0, 112)
+
+[node name="Orilla16" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(16, 40, 32, 40, 32, 120, 16, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena16" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(16, 45, 32, 45, 32, 115, 16, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua16_48" type="Sprite2D" parent="Rio"]
+position = Vector2(16, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua16_64" type="Sprite2D" parent="Rio"]
+position = Vector2(16, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua16_80" type="Sprite2D" parent="Rio"]
+position = Vector2(16, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua16_96" type="Sprite2D" parent="Rio"]
+position = Vector2(16, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida16" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida16"]
+polygon = PackedVector2Array(16, 48, 32, 48, 32, 112, 16, 112)
+
+[node name="Orilla32" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(32, 40, 48, 40, 48, 120, 32, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena32" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(32, 45, 48, 45, 48, 115, 32, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua32_48" type="Sprite2D" parent="Rio"]
+position = Vector2(32, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua32_64" type="Sprite2D" parent="Rio"]
+position = Vector2(32, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua32_80" type="Sprite2D" parent="Rio"]
+position = Vector2(32, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua32_96" type="Sprite2D" parent="Rio"]
+position = Vector2(32, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida32" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida32"]
+polygon = PackedVector2Array(32, 48, 48, 48, 48, 112, 32, 112)
+
+[node name="Orilla48" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(48, 40, 64, 40, 64, 120, 48, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena48" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(48, 45, 64, 45, 64, 115, 48, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua48_48" type="Sprite2D" parent="Rio"]
+position = Vector2(48, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua48_64" type="Sprite2D" parent="Rio"]
+position = Vector2(48, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua48_80" type="Sprite2D" parent="Rio"]
+position = Vector2(48, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua48_96" type="Sprite2D" parent="Rio"]
+position = Vector2(48, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida48" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida48"]
+polygon = PackedVector2Array(48, 48, 64, 48, 64, 112, 48, 112)
+
+[node name="Orilla64" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(64, 40, 80, 40, 80, 120, 64, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena64" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(64, 45, 80, 45, 80, 115, 64, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua64_48" type="Sprite2D" parent="Rio"]
+position = Vector2(64, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua64_64" type="Sprite2D" parent="Rio"]
+position = Vector2(64, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua64_80" type="Sprite2D" parent="Rio"]
+position = Vector2(64, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua64_96" type="Sprite2D" parent="Rio"]
+position = Vector2(64, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida64" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida64"]
+polygon = PackedVector2Array(64, 48, 80, 48, 80, 112, 64, 112)
+
+[node name="Orilla80" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(80, 40, 96, 40, 96, 120, 80, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena80" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(80, 45, 96, 45, 96, 115, 80, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua80_48" type="Sprite2D" parent="Rio"]
+position = Vector2(80, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua80_64" type="Sprite2D" parent="Rio"]
+position = Vector2(80, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua80_80" type="Sprite2D" parent="Rio"]
+position = Vector2(80, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua80_96" type="Sprite2D" parent="Rio"]
+position = Vector2(80, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida80" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida80"]
+polygon = PackedVector2Array(80, 48, 96, 48, 96, 112, 80, 112)
+
+[node name="Orilla96" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(96, 40, 112, 40, 112, 120, 96, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena96" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(96, 45, 112, 45, 112, 115, 96, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua96_48" type="Sprite2D" parent="Rio"]
+position = Vector2(96, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua96_64" type="Sprite2D" parent="Rio"]
+position = Vector2(96, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua96_80" type="Sprite2D" parent="Rio"]
+position = Vector2(96, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua96_96" type="Sprite2D" parent="Rio"]
+position = Vector2(96, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida96" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida96"]
+polygon = PackedVector2Array(96, 48, 112, 48, 112, 112, 96, 112)
+
+[node name="Orilla112" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(112, 40, 128, 40, 128, 120, 112, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena112" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(112, 45, 128, 45, 128, 115, 112, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua112_48" type="Sprite2D" parent="Rio"]
+position = Vector2(112, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua112_64" type="Sprite2D" parent="Rio"]
+position = Vector2(112, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua112_80" type="Sprite2D" parent="Rio"]
+position = Vector2(112, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua112_96" type="Sprite2D" parent="Rio"]
+position = Vector2(112, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida112" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida112"]
+polygon = PackedVector2Array(112, 48, 128, 48, 128, 112, 112, 112)
+
+[node name="Orilla128" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(128, 40, 144, 40, 144, 120, 128, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena128" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(128, 45, 144, 45, 144, 115, 128, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua128_48" type="Sprite2D" parent="Rio"]
+position = Vector2(128, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua128_64" type="Sprite2D" parent="Rio"]
+position = Vector2(128, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua128_80" type="Sprite2D" parent="Rio"]
+position = Vector2(128, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua128_96" type="Sprite2D" parent="Rio"]
+position = Vector2(128, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida128" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida128"]
+polygon = PackedVector2Array(128, 48, 144, 48, 144, 112, 128, 112)
+
+[node name="Orilla144" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(144, 40, 160, 40, 160, 120, 144, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena144" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(144, 45, 160, 45, 160, 115, 144, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua144_48" type="Sprite2D" parent="Rio"]
+position = Vector2(144, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua144_64" type="Sprite2D" parent="Rio"]
+position = Vector2(144, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua144_80" type="Sprite2D" parent="Rio"]
+position = Vector2(144, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua144_96" type="Sprite2D" parent="Rio"]
+position = Vector2(144, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida144" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida144"]
+polygon = PackedVector2Array(144, 48, 160, 48, 160, 112, 144, 112)
+
+[node name="Orilla160" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(160, 40, 176, 40, 176, 120, 160, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena160" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(160, 45, 176, 45, 176, 115, 160, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua160_48" type="Sprite2D" parent="Rio"]
+position = Vector2(160, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua160_64" type="Sprite2D" parent="Rio"]
+position = Vector2(160, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua160_80" type="Sprite2D" parent="Rio"]
+position = Vector2(160, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua160_96" type="Sprite2D" parent="Rio"]
+position = Vector2(160, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida160" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida160"]
+polygon = PackedVector2Array(160, 48, 176, 48, 176, 112, 160, 112)
+
+[node name="Orilla176" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(176, 40, 192, 40, 192, 120, 176, 120)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena176" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(176, 45, 192, 45, 192, 115, 176, 115)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua176_48" type="Sprite2D" parent="Rio"]
+position = Vector2(176, 48)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua176_64" type="Sprite2D" parent="Rio"]
+position = Vector2(176, 64)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua176_80" type="Sprite2D" parent="Rio"]
+position = Vector2(176, 80)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua176_96" type="Sprite2D" parent="Rio"]
+position = Vector2(176, 96)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida176" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida176"]
+polygon = PackedVector2Array(176, 48, 192, 48, 192, 112, 176, 112)
+
+[node name="Orilla192" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(192, 48, 208, 48, 208, 128, 192, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena192" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(192, 53, 208, 53, 208, 123, 192, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua192_56" type="Sprite2D" parent="Rio"]
+position = Vector2(192, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua192_72" type="Sprite2D" parent="Rio"]
+position = Vector2(192, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua192_88" type="Sprite2D" parent="Rio"]
+position = Vector2(192, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua192_104" type="Sprite2D" parent="Rio"]
+position = Vector2(192, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida192" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida192"]
+polygon = PackedVector2Array(192, 56, 208, 56, 208, 120, 192, 120)
+
+[node name="Orilla208" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(208, 48, 224, 48, 224, 128, 208, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena208" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(208, 53, 224, 53, 224, 123, 208, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua208_56" type="Sprite2D" parent="Rio"]
+position = Vector2(208, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua208_72" type="Sprite2D" parent="Rio"]
+position = Vector2(208, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua208_88" type="Sprite2D" parent="Rio"]
+position = Vector2(208, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua208_104" type="Sprite2D" parent="Rio"]
+position = Vector2(208, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida208" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida208"]
+polygon = PackedVector2Array(208, 56, 224, 56, 224, 120, 208, 120)
+
+[node name="Orilla224" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(224, 48, 240, 48, 240, 128, 224, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena224" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(224, 53, 240, 53, 240, 123, 224, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua224_56" type="Sprite2D" parent="Rio"]
+position = Vector2(224, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua224_72" type="Sprite2D" parent="Rio"]
+position = Vector2(224, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua224_88" type="Sprite2D" parent="Rio"]
+position = Vector2(224, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua224_104" type="Sprite2D" parent="Rio"]
+position = Vector2(224, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida224" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida224"]
+polygon = PackedVector2Array(224, 56, 240, 56, 240, 120, 224, 120)
+
+[node name="Orilla240" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(240, 48, 256, 48, 256, 128, 240, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena240" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(240, 53, 256, 53, 256, 123, 240, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua240_56" type="Sprite2D" parent="Rio"]
+position = Vector2(240, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua240_72" type="Sprite2D" parent="Rio"]
+position = Vector2(240, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua240_88" type="Sprite2D" parent="Rio"]
+position = Vector2(240, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua240_104" type="Sprite2D" parent="Rio"]
+position = Vector2(240, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida240" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida240"]
+polygon = PackedVector2Array(240, 56, 256, 56, 256, 120, 240, 120)
+
+[node name="Orilla256" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(256, 48, 272, 48, 272, 128, 256, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena256" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(256, 53, 272, 53, 272, 123, 256, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua256_56" type="Sprite2D" parent="Rio"]
+position = Vector2(256, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua256_72" type="Sprite2D" parent="Rio"]
+position = Vector2(256, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua256_88" type="Sprite2D" parent="Rio"]
+position = Vector2(256, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua256_104" type="Sprite2D" parent="Rio"]
+position = Vector2(256, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida256" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida256"]
+polygon = PackedVector2Array(256, 56, 268, 56, 268, 120, 256, 120)
+
+[node name="Orilla272" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(272, 48, 288, 48, 288, 128, 272, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena272" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(272, 53, 288, 53, 288, 123, 272, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua272_56" type="Sprite2D" parent="Rio"]
+position = Vector2(272, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua272_72" type="Sprite2D" parent="Rio"]
+position = Vector2(272, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua272_88" type="Sprite2D" parent="Rio"]
+position = Vector2(272, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua272_104" type="Sprite2D" parent="Rio"]
+position = Vector2(272, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Orilla288" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(288, 48, 304, 48, 304, 128, 288, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena288" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(288, 53, 304, 53, 304, 123, 288, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua288_56" type="Sprite2D" parent="Rio"]
+position = Vector2(288, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua288_72" type="Sprite2D" parent="Rio"]
+position = Vector2(288, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua288_88" type="Sprite2D" parent="Rio"]
+position = Vector2(288, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua288_104" type="Sprite2D" parent="Rio"]
+position = Vector2(288, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Orilla304" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(304, 48, 320, 48, 320, 128, 304, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena304" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(304, 53, 320, 53, 320, 123, 304, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua304_56" type="Sprite2D" parent="Rio"]
+position = Vector2(304, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua304_72" type="Sprite2D" parent="Rio"]
+position = Vector2(304, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua304_88" type="Sprite2D" parent="Rio"]
+position = Vector2(304, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua304_104" type="Sprite2D" parent="Rio"]
+position = Vector2(304, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Orilla320" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(320, 48, 336, 48, 336, 128, 320, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena320" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(320, 53, 336, 53, 336, 123, 320, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua320_56" type="Sprite2D" parent="Rio"]
+position = Vector2(320, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua320_72" type="Sprite2D" parent="Rio"]
+position = Vector2(320, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua320_88" type="Sprite2D" parent="Rio"]
+position = Vector2(320, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua320_104" type="Sprite2D" parent="Rio"]
+position = Vector2(320, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida320" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida320"]
+polygon = PackedVector2Array(332, 56, 336, 56, 336, 120, 332, 120)
+
+[node name="Orilla336" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(336, 48, 352, 48, 352, 128, 336, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena336" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(336, 53, 352, 53, 352, 123, 336, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua336_56" type="Sprite2D" parent="Rio"]
+position = Vector2(336, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua336_72" type="Sprite2D" parent="Rio"]
+position = Vector2(336, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua336_88" type="Sprite2D" parent="Rio"]
+position = Vector2(336, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua336_104" type="Sprite2D" parent="Rio"]
+position = Vector2(336, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida336" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida336"]
+polygon = PackedVector2Array(336, 56, 352, 56, 352, 120, 336, 120)
+
+[node name="Orilla352" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(352, 48, 368, 48, 368, 128, 352, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena352" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(352, 53, 368, 53, 368, 123, 352, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua352_56" type="Sprite2D" parent="Rio"]
+position = Vector2(352, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua352_72" type="Sprite2D" parent="Rio"]
+position = Vector2(352, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua352_88" type="Sprite2D" parent="Rio"]
+position = Vector2(352, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua352_104" type="Sprite2D" parent="Rio"]
+position = Vector2(352, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida352" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida352"]
+polygon = PackedVector2Array(352, 56, 368, 56, 368, 120, 352, 120)
+
+[node name="Orilla368" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(368, 48, 384, 48, 384, 128, 368, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena368" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(368, 53, 384, 53, 384, 123, 368, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua368_56" type="Sprite2D" parent="Rio"]
+position = Vector2(368, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua368_72" type="Sprite2D" parent="Rio"]
+position = Vector2(368, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua368_88" type="Sprite2D" parent="Rio"]
+position = Vector2(368, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua368_104" type="Sprite2D" parent="Rio"]
+position = Vector2(368, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida368" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida368"]
+polygon = PackedVector2Array(368, 56, 384, 56, 384, 120, 368, 120)
+
+[node name="Orilla384" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(384, 48, 400, 48, 400, 128, 384, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena384" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(384, 53, 400, 53, 400, 123, 384, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua384_56" type="Sprite2D" parent="Rio"]
+position = Vector2(384, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua384_72" type="Sprite2D" parent="Rio"]
+position = Vector2(384, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua384_88" type="Sprite2D" parent="Rio"]
+position = Vector2(384, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua384_104" type="Sprite2D" parent="Rio"]
+position = Vector2(384, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida384" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida384"]
+polygon = PackedVector2Array(384, 56, 400, 56, 400, 120, 384, 120)
+
+[node name="Orilla400" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(400, 48, 416, 48, 416, 128, 400, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena400" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(400, 53, 416, 53, 416, 123, 400, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua400_56" type="Sprite2D" parent="Rio"]
+position = Vector2(400, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua400_72" type="Sprite2D" parent="Rio"]
+position = Vector2(400, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua400_88" type="Sprite2D" parent="Rio"]
+position = Vector2(400, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua400_104" type="Sprite2D" parent="Rio"]
+position = Vector2(400, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida400" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida400"]
+polygon = PackedVector2Array(400, 56, 416, 56, 416, 120, 400, 120)
+
+[node name="Orilla416" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(416, 48, 432, 48, 432, 128, 416, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena416" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(416, 53, 432, 53, 432, 123, 416, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua416_56" type="Sprite2D" parent="Rio"]
+position = Vector2(416, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua416_72" type="Sprite2D" parent="Rio"]
+position = Vector2(416, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua416_88" type="Sprite2D" parent="Rio"]
+position = Vector2(416, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua416_104" type="Sprite2D" parent="Rio"]
+position = Vector2(416, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida416" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida416"]
+polygon = PackedVector2Array(416, 56, 432, 56, 432, 120, 416, 120)
+
+[node name="Orilla432" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(432, 48, 448, 48, 448, 128, 432, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena432" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(432, 53, 448, 53, 448, 123, 432, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua432_56" type="Sprite2D" parent="Rio"]
+position = Vector2(432, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua432_72" type="Sprite2D" parent="Rio"]
+position = Vector2(432, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua432_88" type="Sprite2D" parent="Rio"]
+position = Vector2(432, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua432_104" type="Sprite2D" parent="Rio"]
+position = Vector2(432, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida432" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida432"]
+polygon = PackedVector2Array(432, 56, 448, 56, 448, 120, 432, 120)
+
+[node name="Orilla448" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(448, 32, 464, 32, 464, 112, 448, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena448" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(448, 37, 464, 37, 464, 107, 448, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua448_40" type="Sprite2D" parent="Rio"]
+position = Vector2(448, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua448_56" type="Sprite2D" parent="Rio"]
+position = Vector2(448, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua448_72" type="Sprite2D" parent="Rio"]
+position = Vector2(448, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua448_88" type="Sprite2D" parent="Rio"]
+position = Vector2(448, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida448" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida448"]
+polygon = PackedVector2Array(448, 40, 464, 40, 464, 104, 448, 104)
+
+[node name="Orilla464" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(464, 32, 480, 32, 480, 112, 464, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena464" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(464, 37, 480, 37, 480, 107, 464, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua464_40" type="Sprite2D" parent="Rio"]
+position = Vector2(464, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua464_56" type="Sprite2D" parent="Rio"]
+position = Vector2(464, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua464_72" type="Sprite2D" parent="Rio"]
+position = Vector2(464, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua464_88" type="Sprite2D" parent="Rio"]
+position = Vector2(464, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida464" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida464"]
+polygon = PackedVector2Array(464, 40, 480, 40, 480, 104, 464, 104)
+
+[node name="Orilla480" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(480, 32, 496, 32, 496, 112, 480, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena480" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(480, 37, 496, 37, 496, 107, 480, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua480_40" type="Sprite2D" parent="Rio"]
+position = Vector2(480, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua480_56" type="Sprite2D" parent="Rio"]
+position = Vector2(480, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua480_72" type="Sprite2D" parent="Rio"]
+position = Vector2(480, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua480_88" type="Sprite2D" parent="Rio"]
+position = Vector2(480, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida480" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida480"]
+polygon = PackedVector2Array(480, 40, 496, 40, 496, 104, 480, 104)
+
+[node name="Orilla496" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(496, 32, 512, 32, 512, 112, 496, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena496" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(496, 37, 512, 37, 512, 107, 496, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua496_40" type="Sprite2D" parent="Rio"]
+position = Vector2(496, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua496_56" type="Sprite2D" parent="Rio"]
+position = Vector2(496, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua496_72" type="Sprite2D" parent="Rio"]
+position = Vector2(496, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua496_88" type="Sprite2D" parent="Rio"]
+position = Vector2(496, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida496" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida496"]
+polygon = PackedVector2Array(496, 40, 512, 40, 512, 104, 496, 104)
+
+[node name="Orilla512" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(512, 32, 528, 32, 528, 112, 512, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena512" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(512, 37, 528, 37, 528, 107, 512, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua512_40" type="Sprite2D" parent="Rio"]
+position = Vector2(512, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua512_56" type="Sprite2D" parent="Rio"]
+position = Vector2(512, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua512_72" type="Sprite2D" parent="Rio"]
+position = Vector2(512, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua512_88" type="Sprite2D" parent="Rio"]
+position = Vector2(512, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida512" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida512"]
+polygon = PackedVector2Array(512, 40, 528, 40, 528, 104, 512, 104)
+
+[node name="Orilla528" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(528, 32, 544, 32, 544, 112, 528, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena528" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(528, 37, 544, 37, 544, 107, 528, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua528_40" type="Sprite2D" parent="Rio"]
+position = Vector2(528, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua528_56" type="Sprite2D" parent="Rio"]
+position = Vector2(528, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua528_72" type="Sprite2D" parent="Rio"]
+position = Vector2(528, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua528_88" type="Sprite2D" parent="Rio"]
+position = Vector2(528, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida528" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida528"]
+polygon = PackedVector2Array(528, 40, 544, 40, 544, 104, 528, 104)
+
+[node name="Orilla544" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(544, 32, 560, 32, 560, 112, 544, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena544" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(544, 37, 560, 37, 560, 107, 544, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua544_40" type="Sprite2D" parent="Rio"]
+position = Vector2(544, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua544_56" type="Sprite2D" parent="Rio"]
+position = Vector2(544, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua544_72" type="Sprite2D" parent="Rio"]
+position = Vector2(544, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua544_88" type="Sprite2D" parent="Rio"]
+position = Vector2(544, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida544" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida544"]
+polygon = PackedVector2Array(544, 40, 560, 40, 560, 104, 544, 104)
+
+[node name="Orilla560" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(560, 32, 576, 32, 576, 112, 560, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena560" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(560, 37, 576, 37, 576, 107, 560, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua560_40" type="Sprite2D" parent="Rio"]
+position = Vector2(560, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua560_56" type="Sprite2D" parent="Rio"]
+position = Vector2(560, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua560_72" type="Sprite2D" parent="Rio"]
+position = Vector2(560, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua560_88" type="Sprite2D" parent="Rio"]
+position = Vector2(560, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida560" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida560"]
+polygon = PackedVector2Array(560, 40, 576, 40, 576, 104, 560, 104)
+
+[node name="Orilla576" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(576, 32, 592, 32, 592, 112, 576, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena576" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(576, 37, 592, 37, 592, 107, 576, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua576_40" type="Sprite2D" parent="Rio"]
+position = Vector2(576, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua576_56" type="Sprite2D" parent="Rio"]
+position = Vector2(576, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua576_72" type="Sprite2D" parent="Rio"]
+position = Vector2(576, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua576_88" type="Sprite2D" parent="Rio"]
+position = Vector2(576, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida576" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida576"]
+polygon = PackedVector2Array(576, 40, 592, 40, 592, 104, 576, 104)
+
+[node name="Orilla592" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(592, 32, 608, 32, 608, 112, 592, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena592" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(592, 37, 608, 37, 608, 107, 592, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua592_40" type="Sprite2D" parent="Rio"]
+position = Vector2(592, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua592_56" type="Sprite2D" parent="Rio"]
+position = Vector2(592, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua592_72" type="Sprite2D" parent="Rio"]
+position = Vector2(592, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua592_88" type="Sprite2D" parent="Rio"]
+position = Vector2(592, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida592" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida592"]
+polygon = PackedVector2Array(592, 40, 608, 40, 608, 104, 592, 104)
+
+[node name="Orilla608" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(608, 32, 624, 32, 624, 112, 608, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena608" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(608, 37, 624, 37, 624, 107, 608, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua608_40" type="Sprite2D" parent="Rio"]
+position = Vector2(608, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua608_56" type="Sprite2D" parent="Rio"]
+position = Vector2(608, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua608_72" type="Sprite2D" parent="Rio"]
+position = Vector2(608, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua608_88" type="Sprite2D" parent="Rio"]
+position = Vector2(608, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida608" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida608"]
+polygon = PackedVector2Array(608, 40, 624, 40, 624, 104, 608, 104)
+
+[node name="Orilla624" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(624, 32, 640, 32, 640, 112, 624, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena624" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(624, 37, 640, 37, 640, 107, 624, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua624_40" type="Sprite2D" parent="Rio"]
+position = Vector2(624, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua624_56" type="Sprite2D" parent="Rio"]
+position = Vector2(624, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua624_72" type="Sprite2D" parent="Rio"]
+position = Vector2(624, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua624_88" type="Sprite2D" parent="Rio"]
+position = Vector2(624, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida624" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida624"]
+polygon = PackedVector2Array(624, 40, 640, 40, 640, 104, 624, 104)
+
+[node name="Orilla640" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(640, 32, 656, 32, 656, 112, 640, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena640" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(640, 37, 656, 37, 656, 107, 640, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua640_40" type="Sprite2D" parent="Rio"]
+position = Vector2(640, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua640_56" type="Sprite2D" parent="Rio"]
+position = Vector2(640, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua640_72" type="Sprite2D" parent="Rio"]
+position = Vector2(640, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua640_88" type="Sprite2D" parent="Rio"]
+position = Vector2(640, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida640" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida640"]
+polygon = PackedVector2Array(640, 40, 656, 40, 656, 104, 640, 104)
+
+[node name="Orilla656" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(656, 32, 672, 32, 672, 112, 656, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena656" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(656, 37, 672, 37, 672, 107, 656, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua656_40" type="Sprite2D" parent="Rio"]
+position = Vector2(656, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua656_56" type="Sprite2D" parent="Rio"]
+position = Vector2(656, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua656_72" type="Sprite2D" parent="Rio"]
+position = Vector2(656, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua656_88" type="Sprite2D" parent="Rio"]
+position = Vector2(656, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida656" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida656"]
+polygon = PackedVector2Array(656, 40, 672, 40, 672, 104, 656, 104)
+
+[node name="Orilla672" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(672, 32, 688, 32, 688, 112, 672, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena672" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(672, 37, 688, 37, 688, 107, 672, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua672_40" type="Sprite2D" parent="Rio"]
+position = Vector2(672, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua672_56" type="Sprite2D" parent="Rio"]
+position = Vector2(672, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua672_72" type="Sprite2D" parent="Rio"]
+position = Vector2(672, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua672_88" type="Sprite2D" parent="Rio"]
+position = Vector2(672, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida672" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida672"]
+polygon = PackedVector2Array(672, 40, 688, 40, 688, 104, 672, 104)
+
+[node name="Orilla688" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(688, 32, 704, 32, 704, 112, 688, 112)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena688" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(688, 37, 704, 37, 704, 107, 688, 107)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua688_40" type="Sprite2D" parent="Rio"]
+position = Vector2(688, 40)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua688_56" type="Sprite2D" parent="Rio"]
+position = Vector2(688, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua688_72" type="Sprite2D" parent="Rio"]
+position = Vector2(688, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua688_88" type="Sprite2D" parent="Rio"]
+position = Vector2(688, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida688" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida688"]
+polygon = PackedVector2Array(688, 40, 704, 40, 704, 104, 688, 104)
+
+[node name="Orilla704" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(704, 48, 720, 48, 720, 128, 704, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena704" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(704, 53, 720, 53, 720, 123, 704, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua704_56" type="Sprite2D" parent="Rio"]
+position = Vector2(704, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua704_72" type="Sprite2D" parent="Rio"]
+position = Vector2(704, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua704_88" type="Sprite2D" parent="Rio"]
+position = Vector2(704, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua704_104" type="Sprite2D" parent="Rio"]
+position = Vector2(704, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida704" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida704"]
+polygon = PackedVector2Array(704, 56, 720, 56, 720, 120, 704, 120)
+
+[node name="Orilla720" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(720, 48, 736, 48, 736, 128, 720, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena720" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(720, 53, 736, 53, 736, 123, 720, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua720_56" type="Sprite2D" parent="Rio"]
+position = Vector2(720, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua720_72" type="Sprite2D" parent="Rio"]
+position = Vector2(720, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua720_88" type="Sprite2D" parent="Rio"]
+position = Vector2(720, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua720_104" type="Sprite2D" parent="Rio"]
+position = Vector2(720, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida720" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida720"]
+polygon = PackedVector2Array(720, 56, 736, 56, 736, 120, 720, 120)
+
+[node name="Orilla736" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(736, 48, 752, 48, 752, 128, 736, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena736" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(736, 53, 752, 53, 752, 123, 736, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua736_56" type="Sprite2D" parent="Rio"]
+position = Vector2(736, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua736_72" type="Sprite2D" parent="Rio"]
+position = Vector2(736, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua736_88" type="Sprite2D" parent="Rio"]
+position = Vector2(736, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua736_104" type="Sprite2D" parent="Rio"]
+position = Vector2(736, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida736" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida736"]
+polygon = PackedVector2Array(736, 56, 752, 56, 752, 120, 736, 120)
+
+[node name="Orilla752" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(752, 48, 768, 48, 768, 128, 752, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena752" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(752, 53, 768, 53, 768, 123, 752, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua752_56" type="Sprite2D" parent="Rio"]
+position = Vector2(752, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua752_72" type="Sprite2D" parent="Rio"]
+position = Vector2(752, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua752_88" type="Sprite2D" parent="Rio"]
+position = Vector2(752, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua752_104" type="Sprite2D" parent="Rio"]
+position = Vector2(752, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida752" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida752"]
+polygon = PackedVector2Array(752, 56, 768, 56, 768, 120, 752, 120)
+
+[node name="Orilla768" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(768, 48, 784, 48, 784, 128, 768, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena768" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(768, 53, 784, 53, 784, 123, 768, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua768_56" type="Sprite2D" parent="Rio"]
+position = Vector2(768, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua768_72" type="Sprite2D" parent="Rio"]
+position = Vector2(768, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua768_88" type="Sprite2D" parent="Rio"]
+position = Vector2(768, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua768_104" type="Sprite2D" parent="Rio"]
+position = Vector2(768, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida768" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida768"]
+polygon = PackedVector2Array(768, 56, 784, 56, 784, 120, 768, 120)
+
+[node name="Orilla784" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(784, 48, 800, 48, 800, 128, 784, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena784" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(784, 53, 800, 53, 800, 123, 784, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua784_56" type="Sprite2D" parent="Rio"]
+position = Vector2(784, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua784_72" type="Sprite2D" parent="Rio"]
+position = Vector2(784, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua784_88" type="Sprite2D" parent="Rio"]
+position = Vector2(784, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua784_104" type="Sprite2D" parent="Rio"]
+position = Vector2(784, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida784" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida784"]
+polygon = PackedVector2Array(784, 56, 800, 56, 800, 120, 784, 120)
+
+[node name="Orilla800" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(800, 48, 816, 48, 816, 128, 800, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena800" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(800, 53, 816, 53, 816, 123, 800, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua800_56" type="Sprite2D" parent="Rio"]
+position = Vector2(800, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua800_72" type="Sprite2D" parent="Rio"]
+position = Vector2(800, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua800_88" type="Sprite2D" parent="Rio"]
+position = Vector2(800, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua800_104" type="Sprite2D" parent="Rio"]
+position = Vector2(800, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida800" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida800"]
+polygon = PackedVector2Array(800, 56, 816, 56, 816, 120, 800, 120)
+
+[node name="Orilla816" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(816, 48, 832, 48, 832, 128, 816, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena816" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(816, 53, 832, 53, 832, 123, 816, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua816_56" type="Sprite2D" parent="Rio"]
+position = Vector2(816, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua816_72" type="Sprite2D" parent="Rio"]
+position = Vector2(816, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua816_88" type="Sprite2D" parent="Rio"]
+position = Vector2(816, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua816_104" type="Sprite2D" parent="Rio"]
+position = Vector2(816, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida816" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida816"]
+polygon = PackedVector2Array(816, 56, 832, 56, 832, 120, 816, 120)
+
+[node name="Orilla832" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(832, 48, 848, 48, 848, 128, 832, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena832" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(832, 53, 848, 53, 848, 123, 832, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua832_56" type="Sprite2D" parent="Rio"]
+position = Vector2(832, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua832_72" type="Sprite2D" parent="Rio"]
+position = Vector2(832, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua832_88" type="Sprite2D" parent="Rio"]
+position = Vector2(832, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua832_104" type="Sprite2D" parent="Rio"]
+position = Vector2(832, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida832" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida832"]
+polygon = PackedVector2Array(832, 56, 848, 56, 848, 120, 832, 120)
+
+[node name="Orilla848" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(848, 48, 864, 48, 864, 128, 848, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena848" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(848, 53, 864, 53, 864, 123, 848, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua848_56" type="Sprite2D" parent="Rio"]
+position = Vector2(848, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua848_72" type="Sprite2D" parent="Rio"]
+position = Vector2(848, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua848_88" type="Sprite2D" parent="Rio"]
+position = Vector2(848, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua848_104" type="Sprite2D" parent="Rio"]
+position = Vector2(848, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="AguaSolida848" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida848"]
+polygon = PackedVector2Array(848, 56, 864, 56, 864, 120, 848, 120)
+
+[node name="Orilla864" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(864, 48, 880, 48, 880, 128, 864, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena864" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(864, 53, 880, 53, 880, 123, 864, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua864_56" type="Sprite2D" parent="Rio"]
+position = Vector2(864, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua864_72" type="Sprite2D" parent="Rio"]
+position = Vector2(864, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua864_88" type="Sprite2D" parent="Rio"]
+position = Vector2(864, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua864_104" type="Sprite2D" parent="Rio"]
+position = Vector2(864, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida864" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida864"]
+polygon = PackedVector2Array(864, 56, 880, 56, 880, 120, 864, 120)
+
+[node name="Orilla880" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(880, 48, 896, 48, 896, 128, 880, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena880" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(880, 53, 896, 53, 896, 123, 880, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua880_56" type="Sprite2D" parent="Rio"]
+position = Vector2(880, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua880_72" type="Sprite2D" parent="Rio"]
+position = Vector2(880, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua880_88" type="Sprite2D" parent="Rio"]
+position = Vector2(880, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua880_104" type="Sprite2D" parent="Rio"]
+position = Vector2(880, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida880" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida880"]
+polygon = PackedVector2Array(880, 56, 896, 56, 896, 120, 880, 120)
+
+[node name="Orilla896" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(896, 48, 912, 48, 912, 128, 896, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena896" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(896, 53, 912, 53, 912, 123, 896, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua896_56" type="Sprite2D" parent="Rio"]
+position = Vector2(896, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua896_72" type="Sprite2D" parent="Rio"]
+position = Vector2(896, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua896_88" type="Sprite2D" parent="Rio"]
+position = Vector2(896, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua896_104" type="Sprite2D" parent="Rio"]
+position = Vector2(896, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="AguaSolida896" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida896"]
+polygon = PackedVector2Array(896, 56, 912, 56, 912, 120, 896, 120)
+
+[node name="Orilla912" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(912, 48, 928, 48, 928, 128, 912, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena912" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(912, 53, 928, 53, 928, 123, 912, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua912_56" type="Sprite2D" parent="Rio"]
+position = Vector2(912, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua912_72" type="Sprite2D" parent="Rio"]
+position = Vector2(912, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua912_88" type="Sprite2D" parent="Rio"]
+position = Vector2(912, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua912_104" type="Sprite2D" parent="Rio"]
+position = Vector2(912, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida912" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida912"]
+polygon = PackedVector2Array(912, 56, 928, 56, 928, 120, 912, 120)
+
+[node name="Orilla928" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(928, 48, 944, 48, 944, 128, 928, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena928" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(928, 53, 944, 53, 944, 123, 928, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua928_56" type="Sprite2D" parent="Rio"]
+position = Vector2(928, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua928_72" type="Sprite2D" parent="Rio"]
+position = Vector2(928, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua928_88" type="Sprite2D" parent="Rio"]
+position = Vector2(928, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua928_104" type="Sprite2D" parent="Rio"]
+position = Vector2(928, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida928" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida928"]
+polygon = PackedVector2Array(928, 56, 944, 56, 944, 120, 928, 120)
+
+[node name="Orilla944" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(944, 48, 960, 48, 960, 128, 944, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena944" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(944, 53, 960, 53, 960, 123, 944, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua944_56" type="Sprite2D" parent="Rio"]
+position = Vector2(944, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua944_72" type="Sprite2D" parent="Rio"]
+position = Vector2(944, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua944_88" type="Sprite2D" parent="Rio"]
+position = Vector2(944, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Agua944_104" type="Sprite2D" parent="Rio"]
+position = Vector2(944, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="AguaSolida944" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida944"]
+polygon = PackedVector2Array(944, 56, 960, 56, 960, 120, 944, 120)
+
+[node name="Orilla960" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(960, 48, 976, 48, 976, 128, 960, 128)
+color = Color(0.4823529411764706, 0.6039215686274509, 0.34901960784313724, 1)
+
+[node name="Arena960" type="Polygon2D" parent="Rio"]
+z_index = -1
+polygon = PackedVector2Array(960, 53, 976, 53, 976, 123, 960, 123)
+color = Color(0.7215686274509804, 0.7176470588235294, 0.5137254901960784, 1)
+
+[node name="Agua960_56" type="Sprite2D" parent="Rio"]
+position = Vector2(960, 56)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="Agua960_72" type="Sprite2D" parent="Rio"]
+position = Vector2(960, 72)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="Agua960_88" type="Sprite2D" parent="Rio"]
+position = Vector2(960, 88)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="Agua960_104" type="Sprite2D" parent="Rio"]
+position = Vector2(960, 104)
+z_index = -1
+texture = ExtResource("water")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="AguaSolida960" type="StaticBody2D" parent="Rio"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rio/AguaSolida960"]
+polygon = PackedVector2Array(960, 56, 976, 56, 976, 120, 960, 120)
+
+[node name="SombraPuente" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(265, 26, 335, 26, 335, 154, 265, 154)
+color = Color(0.29411764705882354, 0.47058823529411764, 0.396078431372549, 1)
+
+[node name="Vigas" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(268, 16, 332, 16, 332, 160, 268, 160)
+color = Color(0.44313725490196076, 0.3137254901960784, 0.22745098039215686, 1)
+
+[node name="Tabla0" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 16, 328, 16, 328, 23, 272, 23)
+color = Color(0.7764705882352941, 0.6078431372549019, 0.403921568627451, 1)
+
+[node name="Veta0" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 20, 319, 20, 319, 21, 278, 21)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla1" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 24, 328, 24, 328, 31, 272, 31)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta1" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 28, 319, 28, 319, 29, 278, 29)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla2" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 32, 328, 32, 328, 39, 272, 39)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta2" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 36, 319, 36, 319, 37, 278, 37)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla3" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 40, 328, 40, 328, 47, 272, 47)
+color = Color(0.7764705882352941, 0.6078431372549019, 0.403921568627451, 1)
+
+[node name="Veta3" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 44, 319, 44, 319, 45, 278, 45)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla4" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 48, 328, 48, 328, 55, 272, 55)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta4" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 52, 319, 52, 319, 53, 278, 53)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla5" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 56, 328, 56, 328, 63, 272, 63)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta5" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 60, 319, 60, 319, 61, 278, 61)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla6" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 64, 328, 64, 328, 71, 272, 71)
+color = Color(0.7764705882352941, 0.6078431372549019, 0.403921568627451, 1)
+
+[node name="Veta6" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 68, 319, 68, 319, 69, 278, 69)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla7" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 72, 328, 72, 328, 79, 272, 79)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta7" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 76, 319, 76, 319, 77, 278, 77)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla8" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 80, 328, 80, 328, 87, 272, 87)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta8" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 84, 319, 84, 319, 85, 278, 85)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla9" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 88, 328, 88, 328, 95, 272, 95)
+color = Color(0.7764705882352941, 0.6078431372549019, 0.403921568627451, 1)
+
+[node name="Veta9" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 92, 319, 92, 319, 93, 278, 93)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla10" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 96, 328, 96, 328, 103, 272, 103)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta10" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 100, 319, 100, 319, 101, 278, 101)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla11" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 104, 328, 104, 328, 111, 272, 111)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta11" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 108, 319, 108, 319, 109, 278, 109)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla12" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 112, 328, 112, 328, 119, 272, 119)
+color = Color(0.7764705882352941, 0.6078431372549019, 0.403921568627451, 1)
+
+[node name="Veta12" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 116, 319, 116, 319, 117, 278, 117)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla13" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 120, 328, 120, 328, 127, 272, 127)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta13" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 124, 319, 124, 319, 125, 278, 125)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla14" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 128, 328, 128, 328, 135, 272, 135)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta14" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 132, 319, 132, 319, 133, 278, 133)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla15" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 136, 328, 136, 328, 143, 272, 143)
+color = Color(0.7764705882352941, 0.6078431372549019, 0.403921568627451, 1)
+
+[node name="Veta15" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 140, 319, 140, 319, 141, 278, 141)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla16" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 144, 328, 144, 328, 151, 272, 151)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta16" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 148, 319, 148, 319, 149, 278, 149)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Tabla17" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(272, 152, 328, 152, 328, 159, 272, 159)
+color = Color(0.7333333333333333, 0.5647058823529412, 0.3764705882352941, 1)
+
+[node name="Veta17" type="Polygon2D" parent="Puente"]
+z_index = -1
+polygon = PackedVector2Array(278, 156, 319, 156, 319, 157, 278, 157)
+color = Color(0.6509803921568628, 0.47843137254901963, 0.3058823529411765, 1)
+
+[node name="Barandal268" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(268, 16, 272, 16, 272, 160, 268, 160)
+color = Color(0.45098039215686275, 0.3137254901960784, 0.21568627450980393, 1)
+
+[node name="LuzBarandal268" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(268, 16, 269, 16, 269, 160, 268, 160)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste268_16" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 16, 273, 16, 273, 24, 267, 24)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza268_16" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 16, 273, 16, 273, 18, 267, 18)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste268_56" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 56, 273, 56, 273, 64, 267, 64)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza268_56" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 56, 273, 56, 273, 58, 267, 58)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste268_104" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 104, 273, 104, 273, 112, 267, 112)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza268_104" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 104, 273, 104, 273, 106, 267, 106)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste268_152" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 152, 273, 152, 273, 160, 267, 160)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza268_152" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(267, 152, 273, 152, 273, 154, 267, 154)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="LimitePuente268" type="StaticBody2D" parent="Puente"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Puente/LimitePuente268"]
+polygon = PackedVector2Array(268, 16, 272, 16, 272, 160, 268, 160)
+
+[node name="Barandal328" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(328, 16, 332, 16, 332, 160, 328, 160)
+color = Color(0.45098039215686275, 0.3137254901960784, 0.21568627450980393, 1)
+
+[node name="LuzBarandal328" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(328, 16, 329, 16, 329, 160, 328, 160)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste328_16" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 16, 333, 16, 333, 24, 327, 24)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza328_16" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 16, 333, 16, 333, 18, 327, 18)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste328_56" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 56, 333, 56, 333, 64, 327, 64)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza328_56" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 56, 333, 56, 333, 58, 327, 58)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste328_104" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 104, 333, 104, 333, 112, 327, 112)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza328_104" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 104, 333, 104, 333, 106, 327, 106)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="Poste328_152" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 152, 333, 152, 333, 160, 327, 160)
+color = Color(0.5176470588235295, 0.3568627450980392, 0.23529411764705882, 1)
+
+[node name="Cabeza328_152" type="Polygon2D" parent="Puente"]
+z_index = 1
+polygon = PackedVector2Array(327, 152, 333, 152, 333, 154, 327, 154)
+color = Color(0.8235294117647058, 0.6823529411764706, 0.4666666666666667, 1)
+
+[node name="LimitePuente328" type="StaticBody2D" parent="Puente"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Puente/LimitePuente328"]
+polygon = PackedVector2Array(328, 16, 332, 16, 332, 160, 328, 160)
+
+[node name="Arbol0" type="Sprite2D" parent="Arboles"]
+position = Vector2(8, -200)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco0" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco0"]
+polygon = PackedVector2Array(19, -165, 29, -165, 29, -156, 19, -156)
+
+[node name="Arbol1" type="Sprite2D" parent="Arboles"]
+position = Vector2(56, -156)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco1" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco1"]
+polygon = PackedVector2Array(67, -121, 77, -121, 77, -112, 67, -112)
+
+[node name="Arbol2" type="Sprite2D" parent="Arboles"]
+position = Vector2(136, -136)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco2" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco2"]
+polygon = PackedVector2Array(147, -101, 157, -101, 157, -92, 147, -92)
+
+[node name="Arbol3" type="Sprite2D" parent="Arboles"]
+position = Vector2(204, -176)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco3" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco3"]
+polygon = PackedVector2Array(215, -141, 225, -141, 225, -132, 215, -132)
+
+[node name="Arbol4" type="Sprite2D" parent="Arboles"]
+position = Vector2(376, -144)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco4" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco4"]
+polygon = PackedVector2Array(387, -109, 397, -109, 397, -100, 387, -100)
+
+[node name="Arbol6" type="Sprite2D" parent="Arboles"]
+position = Vector2(536, -144)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco6" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco6"]
+polygon = PackedVector2Array(547, -109, 557, -109, 557, -100, 547, -100)
+
+[node name="Arbol7" type="Sprite2D" parent="Arboles"]
+position = Vector2(644, -176)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco7" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco7"]
+polygon = PackedVector2Array(655, -141, 665, -141, 665, -132, 655, -132)
+
+[node name="Arbol8" type="Sprite2D" parent="Arboles"]
+position = Vector2(752, -140)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco8" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco8"]
+polygon = PackedVector2Array(763, -105, 773, -105, 773, -96, 763, -96)
+
+[node name="Arbol9" type="Sprite2D" parent="Arboles"]
+position = Vector2(864, -192)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco9" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco9"]
+polygon = PackedVector2Array(875, -157, 885, -157, 885, -148, 875, -148)
+
+[node name="Arbol10" type="Sprite2D" parent="Arboles"]
+position = Vector2(916, -112)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco10" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco10"]
+polygon = PackedVector2Array(927, -77, 937, -77, 937, -68, 927, -68)
+
+[node name="Arbol11" type="Sprite2D" parent="Arboles"]
+position = Vector2(32, -48)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco11" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco11"]
+polygon = PackedVector2Array(43, -13, 53, -13, 53, -4, 43, -4)
+
+[node name="Arbol12" type="Sprite2D" parent="Arboles"]
+position = Vector2(104, -32)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco12" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco12"]
+polygon = PackedVector2Array(115, 3, 125, 3, 125, 12, 115, 12)
+
+[node name="Arbol13" type="Sprite2D" parent="Arboles"]
+position = Vector2(180, -24)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco13" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco13"]
+polygon = PackedVector2Array(191, 11, 201, 11, 201, 20, 191, 20)
+
+[node name="Arbol14" type="Sprite2D" parent="Arboles"]
+position = Vector2(372, -16)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco14" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco14"]
+polygon = PackedVector2Array(383, 19, 393, 19, 393, 28, 383, 28)
+
+[node name="Arbol15" type="Sprite2D" parent="Arboles"]
+position = Vector2(496, -32)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco15" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco15"]
+polygon = PackedVector2Array(507, 3, 517, 3, 517, 12, 507, 12)
+
+[node name="Arbol16" type="Sprite2D" parent="Arboles"]
+position = Vector2(612, -16)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco16" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco16"]
+polygon = PackedVector2Array(623, 19, 633, 19, 633, 28, 623, 28)
+
+[node name="Arbol17" type="Sprite2D" parent="Arboles"]
+position = Vector2(744, -16)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco17" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco17"]
+polygon = PackedVector2Array(755, 19, 765, 19, 765, 28, 755, 28)
+
+[node name="Arbol18" type="Sprite2D" parent="Arboles"]
+position = Vector2(848, -24)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco18" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco18"]
+polygon = PackedVector2Array(859, 11, 869, 11, 869, 20, 859, 20)
+
+[node name="Arbol19" type="Sprite2D" parent="Arboles"]
+position = Vector2(916, 0)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco19" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco19"]
+polygon = PackedVector2Array(927, 35, 937, 35, 937, 44, 927, 44)
+
+[node name="Arbol20" type="Sprite2D" parent="Arboles"]
+position = Vector2(0, 168)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco20" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco20"]
+polygon = PackedVector2Array(11, 203, 21, 203, 21, 212, 11, 212)
+
+[node name="Arbol21" type="Sprite2D" parent="Arboles"]
+position = Vector2(0, 256)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco21" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco21"]
+polygon = PackedVector2Array(11, 291, 21, 291, 21, 300, 11, 300)
+
+[node name="Arbol22" type="Sprite2D" parent="Arboles"]
+position = Vector2(16, 464)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco22" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco22"]
+polygon = PackedVector2Array(27, 499, 37, 499, 37, 508, 27, 508)
+
+[node name="Arbol23" type="Sprite2D" parent="Arboles"]
+position = Vector2(20, 568)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco23" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco23"]
+polygon = PackedVector2Array(31, 603, 41, 603, 41, 612, 31, 612)
+
+[node name="Arbol24" type="Sprite2D" parent="Arboles"]
+position = Vector2(12, 808)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco24" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco24"]
+polygon = PackedVector2Array(23, 843, 33, 843, 33, 852, 23, 852)
+
+[node name="Arbol25" type="Sprite2D" parent="Arboles"]
+position = Vector2(20, 896)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco25" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco25"]
+polygon = PackedVector2Array(31, 931, 41, 931, 41, 940, 31, 940)
+
+[node name="Arbol26" type="Sprite2D" parent="Arboles"]
+position = Vector2(864, 224)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco26" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco26"]
+polygon = PackedVector2Array(875, 259, 885, 259, 885, 268, 875, 268)
+
+[node name="Arbol27" type="Sprite2D" parent="Arboles"]
+position = Vector2(904, 320)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco27" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco27"]
+polygon = PackedVector2Array(915, 355, 925, 355, 925, 364, 915, 364)
+
+[node name="Arbol28" type="Sprite2D" parent="Arboles"]
+position = Vector2(860, 432)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco28" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco28"]
+polygon = PackedVector2Array(871, 467, 881, 467, 881, 476, 871, 476)
+
+[node name="Arbol29" type="Sprite2D" parent="Arboles"]
+position = Vector2(904, 536)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco29" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco29"]
+polygon = PackedVector2Array(915, 571, 925, 571, 925, 580, 915, 580)
+
+[node name="Arbol30" type="Sprite2D" parent="Arboles"]
+position = Vector2(868, 656)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco30" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco30"]
+polygon = PackedVector2Array(879, 691, 889, 691, 889, 700, 879, 700)
+
+[node name="Arbol31" type="Sprite2D" parent="Arboles"]
+position = Vector2(904, 768)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco31" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco31"]
+polygon = PackedVector2Array(915, 803, 925, 803, 925, 812, 915, 812)
+
+[node name="Arbol32" type="Sprite2D" parent="Arboles"]
+position = Vector2(864, 872)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco32" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco32"]
+polygon = PackedVector2Array(875, 907, 885, 907, 885, 916, 875, 916)
+
+[node name="Arbol33" type="Sprite2D" parent="Arboles"]
+position = Vector2(904, 976)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco33" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco33"]
+polygon = PackedVector2Array(915, 1011, 925, 1011, 925, 1020, 915, 1020)
+
+[node name="Arbol36" type="Sprite2D" parent="Arboles"]
+position = Vector2(584, 744)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco36" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco36"]
+polygon = PackedVector2Array(595, 779, 605, 779, 605, 788, 595, 788)
+
+[node name="Arbol38" type="Sprite2D" parent="Arboles"]
+position = Vector2(32, 1032)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="Tronco38" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco38"]
+polygon = PackedVector2Array(43, 1067, 53, 1067, 53, 1076, 43, 1076)
+
+[node name="Arbol39" type="Sprite2D" parent="Arboles"]
+position = Vector2(784, 1040)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(48, 16, 32, 48)
+
+[node name="Tronco39" type="StaticBody2D" parent="Arboles"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Arboles/Tronco39"]
+polygon = PackedVector2Array(795, 1075, 805, 1075, 805, 1084, 795, 1084)
+
+[node name="Roca1" type="Sprite2D" parent="Rocas"]
+position = Vector2(208, 136)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida1" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida1"]
+polygon = PackedVector2Array(214, 151, 236, 151, 236, 165, 214, 165)
+
+[node name="Roca3" type="Sprite2D" parent="Rocas"]
+position = Vector2(616, 120)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida3" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida3"]
+polygon = PackedVector2Array(622, 135, 644, 135, 644, 149, 622, 149)
+
+[node name="Roca4" type="Sprite2D" parent="Rocas"]
+position = Vector2(788, 136)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida4" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida4"]
+polygon = PackedVector2Array(794, 151, 816, 151, 816, 165, 794, 165)
+
+[node name="Roca5" type="Sprite2D" parent="Rocas"]
+position = Vector2(936, 144)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida5" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida5"]
+polygon = PackedVector2Array(942, 159, 964, 159, 964, 173, 942, 173)
+
+[node name="Roca6" type="Sprite2D" parent="Rocas"]
+position = Vector2(28, 744)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida6" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida6"]
+polygon = PackedVector2Array(34, 759, 56, 759, 56, 773, 34, 773)
+
+[node name="Roca7" type="Sprite2D" parent="Rocas"]
+position = Vector2(248, 736)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida7" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida7"]
+polygon = PackedVector2Array(254, 751, 276, 751, 276, 765, 254, 765)
+
+[node name="Roca10" type="Sprite2D" parent="Rocas"]
+position = Vector2(848, 952)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida10" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida10"]
+polygon = PackedVector2Array(854, 967, 876, 967, 876, 981, 854, 981)
+
+[node name="Roca11" type="Sprite2D" parent="Rocas"]
+position = Vector2(72, -96)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida11" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida11"]
+polygon = PackedVector2Array(78, -81, 100, -81, 100, -67, 78, -67)
+
+[node name="Roca12" type="Sprite2D" parent="Rocas"]
+position = Vector2(568, -88)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida12" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida12"]
+polygon = PackedVector2Array(574, -73, 596, -73, 596, -59, 574, -59)
+
+[node name="Roca13" type="Sprite2D" parent="Rocas"]
+position = Vector2(808, -96)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida13" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida13"]
+polygon = PackedVector2Array(814, -81, 836, -81, 836, -67, 814, -67)
+
+[node name="Roca14" type="Sprite2D" parent="Rocas"]
+position = Vector2(40, 960)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(224, 16, 32, 32)
+
+[node name="PiedraSolida14" type="StaticBody2D" parent="Rocas"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Rocas/PiedraSolida14"]
+polygon = PackedVector2Array(46, 975, 68, 975, 68, 989, 46, 989)
+
+[node name="Arbusto3" type="Sprite2D" parent="Arbustos"]
+position = Vector2(888, -104)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto4" type="Sprite2D" parent="Arbustos"]
+position = Vector2(584, 768)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto5" type="Sprite2D" parent="Arbustos"]
+position = Vector2(464, 376)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto6" type="Sprite2D" parent="Arbustos"]
+position = Vector2(88, -112)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto7" type="Sprite2D" parent="Arbustos"]
+position = Vector2(264, 16)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto8" type="Sprite2D" parent="Arbustos"]
+position = Vector2(464, -64)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto9" type="Sprite2D" parent="Arbustos"]
+position = Vector2(128, -120)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto10" type="Sprite2D" parent="Arbustos"]
+position = Vector2(192, 384)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto11" type="Sprite2D" parent="Arbustos"]
+position = Vector2(928, 752)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto12" type="Sprite2D" parent="Arbustos"]
+position = Vector2(912, -72)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto13" type="Sprite2D" parent="Arbustos"]
+position = Vector2(-8, -152)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto14" type="Sprite2D" parent="Arbustos"]
+position = Vector2(616, -128)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto15" type="Sprite2D" parent="Arbustos"]
+position = Vector2(840, 984)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto17" type="Sprite2D" parent="Arbustos"]
+position = Vector2(864, -24)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto19" type="Sprite2D" parent="Arbustos"]
+position = Vector2(688, -64)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto20" type="Sprite2D" parent="Arbustos"]
+position = Vector2(664, 296)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto21" type="Sprite2D" parent="Arbustos"]
+position = Vector2(336, -136)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto24" type="Sprite2D" parent="Arbustos"]
+position = Vector2(104, 1024)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto27" type="Sprite2D" parent="Arbustos"]
+position = Vector2(696, -112)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto28" type="Sprite2D" parent="Arbustos"]
+position = Vector2(224, 424)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto32" type="Sprite2D" parent="Arbustos"]
+position = Vector2(-32, -8)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto35" type="Sprite2D" parent="Arbustos"]
+position = Vector2(480, 416)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto36" type="Sprite2D" parent="Arbustos"]
+position = Vector2(112, -56)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto38" type="Sprite2D" parent="Arbustos"]
+position = Vector2(568, 776)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto41" type="Sprite2D" parent="Arbustos"]
+position = Vector2(848, 744)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto42" type="Sprite2D" parent="Arbustos"]
+position = Vector2(392, -8)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto44" type="Sprite2D" parent="Arbustos"]
+position = Vector2(768, -120)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto46" type="Sprite2D" parent="Arbustos"]
+position = Vector2(776, -112)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto47" type="Sprite2D" parent="Arbustos"]
+position = Vector2(656, -24)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto48" type="Sprite2D" parent="Arbustos"]
+position = Vector2(752, 272)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto51" type="Sprite2D" parent="Arbustos"]
+position = Vector2(592, 0)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto53" type="Sprite2D" parent="Arbustos"]
+position = Vector2(160, 752)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto56" type="Sprite2D" parent="Arbustos"]
+position = Vector2(16, -128)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto57" type="Sprite2D" parent="Arbustos"]
+position = Vector2(600, 400)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto58" type="Sprite2D" parent="Arbustos"]
+position = Vector2(696, -40)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto59" type="Sprite2D" parent="Arbustos"]
+position = Vector2(168, -32)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto60" type="Sprite2D" parent="Arbustos"]
+position = Vector2(848, -152)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto62" type="Sprite2D" parent="Arbustos"]
+position = Vector2(616, 736)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto63" type="Sprite2D" parent="Arbustos"]
+position = Vector2(760, -24)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto65" type="Sprite2D" parent="Arbustos"]
+position = Vector2(688, 752)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto68" type="Sprite2D" parent="Arbustos"]
+position = Vector2(96, -48)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto69" type="Sprite2D" parent="Arbustos"]
+position = Vector2(824, -8)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto70" type="Sprite2D" parent="Arbustos"]
+position = Vector2(584, -152)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto71" type="Sprite2D" parent="Arbustos"]
+position = Vector2(912, 528)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto72" type="Sprite2D" parent="Arbustos"]
+position = Vector2(872, 256)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto73" type="Sprite2D" parent="Arbustos"]
+position = Vector2(208, -48)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto76" type="Sprite2D" parent="Arbustos"]
+position = Vector2(712, -64)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto79" type="Sprite2D" parent="Arbustos"]
+position = Vector2(936, -48)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto80" type="Sprite2D" parent="Arbustos"]
+position = Vector2(616, -48)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto81" type="Sprite2D" parent="Arbustos"]
+position = Vector2(760, 1032)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto82" type="Sprite2D" parent="Arbustos"]
+position = Vector2(440, -16)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto83" type="Sprite2D" parent="Arbustos"]
+position = Vector2(752, 400)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto84" type="Sprite2D" parent="Arbustos"]
+position = Vector2(208, -48)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto87" type="Sprite2D" parent="Arbustos"]
+position = Vector2(136, -24)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Arbusto88" type="Sprite2D" parent="Arbustos"]
+position = Vector2(760, -24)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(176, 16, 16, 16)
+
+[node name="Arbusto89" type="Sprite2D" parent="Arbustos"]
+position = Vector2(680, -48)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(192, 16, 16, 16)
+
+[node name="Hierba1" type="Sprite2D" parent="Hierbas"]
+position = Vector2(8, 968)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba2" type="Sprite2D" parent="Hierbas"]
+position = Vector2(640, 184)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba3" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-24, 344)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba9" type="Sprite2D" parent="Hierbas"]
+position = Vector2(408, 400)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba10" type="Sprite2D" parent="Hierbas"]
+position = Vector2(456, 1040)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba11" type="Sprite2D" parent="Hierbas"]
+position = Vector2(136, -104)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba15" type="Sprite2D" parent="Hierbas"]
+position = Vector2(344, 384)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba16" type="Sprite2D" parent="Hierbas"]
+position = Vector2(216, -88)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba20" type="Sprite2D" parent="Hierbas"]
+position = Vector2(752, 272)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba21" type="Sprite2D" parent="Hierbas"]
+position = Vector2(32, 792)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba28" type="Sprite2D" parent="Hierbas"]
+position = Vector2(72, 664)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba29" type="Sprite2D" parent="Hierbas"]
+position = Vector2(744, -80)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba31" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-16, -32)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba32" type="Sprite2D" parent="Hierbas"]
+position = Vector2(360, -160)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba37" type="Sprite2D" parent="Hierbas"]
+position = Vector2(824, -16)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba40" type="Sprite2D" parent="Hierbas"]
+position = Vector2(688, 1016)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba43" type="Sprite2D" parent="Hierbas"]
+position = Vector2(672, 256)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba44" type="Sprite2D" parent="Hierbas"]
+position = Vector2(160, -40)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba47" type="Sprite2D" parent="Hierbas"]
+position = Vector2(928, 432)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba49" type="Sprite2D" parent="Hierbas"]
+position = Vector2(504, -128)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba51" type="Sprite2D" parent="Hierbas"]
+position = Vector2(896, 304)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba52" type="Sprite2D" parent="Hierbas"]
+position = Vector2(144, -120)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba54" type="Sprite2D" parent="Hierbas"]
+position = Vector2(96, 456)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba58" type="Sprite2D" parent="Hierbas"]
+position = Vector2(440, -72)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba60" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-8, -40)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba61" type="Sprite2D" parent="Hierbas"]
+position = Vector2(704, 144)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba63" type="Sprite2D" parent="Hierbas"]
+position = Vector2(408, 1016)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba67" type="Sprite2D" parent="Hierbas"]
+position = Vector2(880, 992)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba69" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-8, 360)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba70" type="Sprite2D" parent="Hierbas"]
+position = Vector2(600, 152)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba71" type="Sprite2D" parent="Hierbas"]
+position = Vector2(16, 728)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba72" type="Sprite2D" parent="Hierbas"]
+position = Vector2(200, -8)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba74" type="Sprite2D" parent="Hierbas"]
+position = Vector2(936, 928)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba75" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-32, -184)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba76" type="Sprite2D" parent="Hierbas"]
+position = Vector2(0, 344)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba79" type="Sprite2D" parent="Hierbas"]
+position = Vector2(48, -16)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba80" type="Sprite2D" parent="Hierbas"]
+position = Vector2(784, 360)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba84" type="Sprite2D" parent="Hierbas"]
+position = Vector2(744, 224)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba86" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-32, 1008)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba87" type="Sprite2D" parent="Hierbas"]
+position = Vector2(832, 752)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba90" type="Sprite2D" parent="Hierbas"]
+position = Vector2(160, 408)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba96" type="Sprite2D" parent="Hierbas"]
+position = Vector2(112, 1048)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba98" type="Sprite2D" parent="Hierbas"]
+position = Vector2(0, -104)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba103" type="Sprite2D" parent="Hierbas"]
+position = Vector2(264, -96)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba109" type="Sprite2D" parent="Hierbas"]
+position = Vector2(400, -40)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba110" type="Sprite2D" parent="Hierbas"]
+position = Vector2(728, 1072)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba111" type="Sprite2D" parent="Hierbas"]
+position = Vector2(224, 272)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba112" type="Sprite2D" parent="Hierbas"]
+position = Vector2(936, 960)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba115" type="Sprite2D" parent="Hierbas"]
+position = Vector2(232, -136)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba116" type="Sprite2D" parent="Hierbas"]
+position = Vector2(440, -48)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba119" type="Sprite2D" parent="Hierbas"]
+position = Vector2(912, 488)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba120" type="Sprite2D" parent="Hierbas"]
+position = Vector2(792, 1008)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba121" type="Sprite2D" parent="Hierbas"]
+position = Vector2(32, 616)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba123" type="Sprite2D" parent="Hierbas"]
+position = Vector2(24, 736)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba126" type="Sprite2D" parent="Hierbas"]
+position = Vector2(864, 160)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba131" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-16, 360)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba134" type="Sprite2D" parent="Hierbas"]
+position = Vector2(472, 328)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba139" type="Sprite2D" parent="Hierbas"]
+position = Vector2(736, -104)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba140" type="Sprite2D" parent="Hierbas"]
+position = Vector2(40, 1008)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba141" type="Sprite2D" parent="Hierbas"]
+position = Vector2(928, 848)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba146" type="Sprite2D" parent="Hierbas"]
+position = Vector2(728, -16)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba148" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-8, 192)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba149" type="Sprite2D" parent="Hierbas"]
+position = Vector2(24, 848)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba151" type="Sprite2D" parent="Hierbas"]
+position = Vector2(920, 440)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba154" type="Sprite2D" parent="Hierbas"]
+position = Vector2(920, 352)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba157" type="Sprite2D" parent="Hierbas"]
+position = Vector2(352, 184)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba160" type="Sprite2D" parent="Hierbas"]
+position = Vector2(496, -40)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba163" type="Sprite2D" parent="Hierbas"]
+position = Vector2(416, 344)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba171" type="Sprite2D" parent="Hierbas"]
+position = Vector2(672, -80)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba172" type="Sprite2D" parent="Hierbas"]
+position = Vector2(848, 752)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba174" type="Sprite2D" parent="Hierbas"]
+position = Vector2(928, 432)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba177" type="Sprite2D" parent="Hierbas"]
+position = Vector2(776, 360)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba182" type="Sprite2D" parent="Hierbas"]
+position = Vector2(280, 1072)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba184" type="Sprite2D" parent="Hierbas"]
+position = Vector2(504, 352)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba187" type="Sprite2D" parent="Hierbas"]
+position = Vector2(688, 344)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba189" type="Sprite2D" parent="Hierbas"]
+position = Vector2(88, -168)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba191" type="Sprite2D" parent="Hierbas"]
+position = Vector2(720, -176)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba194" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-16, -88)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba195" type="Sprite2D" parent="Hierbas"]
+position = Vector2(384, 416)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba196" type="Sprite2D" parent="Hierbas"]
+position = Vector2(448, 1016)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba197" type="Sprite2D" parent="Hierbas"]
+position = Vector2(800, 720)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba198" type="Sprite2D" parent="Hierbas"]
+position = Vector2(800, -176)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba199" type="Sprite2D" parent="Hierbas"]
+position = Vector2(920, 528)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba200" type="Sprite2D" parent="Hierbas"]
+position = Vector2(896, -96)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba201" type="Sprite2D" parent="Hierbas"]
+position = Vector2(336, -152)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba203" type="Sprite2D" parent="Hierbas"]
+position = Vector2(16, 576)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba204" type="Sprite2D" parent="Hierbas"]
+position = Vector2(832, 936)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba207" type="Sprite2D" parent="Hierbas"]
+position = Vector2(656, 248)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba208" type="Sprite2D" parent="Hierbas"]
+position = Vector2(360, 536)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba210" type="Sprite2D" parent="Hierbas"]
+position = Vector2(824, 256)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba211" type="Sprite2D" parent="Hierbas"]
+position = Vector2(56, -8)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba214" type="Sprite2D" parent="Hierbas"]
+position = Vector2(808, 680)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba217" type="Sprite2D" parent="Hierbas"]
+position = Vector2(824, 248)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba220" type="Sprite2D" parent="Hierbas"]
+position = Vector2(232, -64)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba222" type="Sprite2D" parent="Hierbas"]
+position = Vector2(768, 176)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba223" type="Sprite2D" parent="Hierbas"]
+position = Vector2(472, -56)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba227" type="Sprite2D" parent="Hierbas"]
+position = Vector2(776, 744)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba228" type="Sprite2D" parent="Hierbas"]
+position = Vector2(-16, 800)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba230" type="Sprite2D" parent="Hierbas"]
+position = Vector2(848, 1048)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba231" type="Sprite2D" parent="Hierbas"]
+position = Vector2(32, -96)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba234" type="Sprite2D" parent="Hierbas"]
+position = Vector2(880, 624)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Hierba235" type="Sprite2D" parent="Hierbas"]
+position = Vector2(576, 728)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba238" type="Sprite2D" parent="Hierbas"]
+position = Vector2(192, -72)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Hierba239" type="Sprite2D" parent="Hierbas"]
+position = Vector2(528, -24)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="ArbolPlaza" type="Sprite2D" parent="Jardines"]
+position = Vector2(426, 872)
+z_index = 1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(16, 16, 32, 48)
+
+[node name="TroncoPlaza" type="StaticBody2D" parent="Jardines"]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Forma" type="CollisionPolygon2D" parent="Jardines/TroncoPlaza"]
+polygon = PackedVector2Array(437, 907, 447, 907, 447, 918, 437, 918)
+
+[node name="Banco0" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(400, 932, 427, 932, 427, 938, 400, 938)
+color = Color(0.52,0.35,0.20,1)
+
+[node name="PataA0" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(402, 938, 405, 938, 405, 943, 402, 943)
+color = Color(0.37,0.27,0.17,1)
+
+[node name="PataB0" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(422, 938, 425, 938, 425, 943, 422, 943)
+color = Color(0.37,0.27,0.17,1)
+
+[node name="Banco1" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(458, 874, 485, 874, 485, 880, 458, 880)
+color = Color(0.52,0.35,0.20,1)
+
+[node name="PataA1" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(460, 880, 463, 880, 463, 885, 460, 885)
+color = Color(0.37,0.27,0.17,1)
+
+[node name="PataB1" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(480, 880, 483, 880, 483, 885, 480, 885)
+color = Color(0.37,0.27,0.17,1)
+
+[node name="Huerto0" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(194, 640, 226, 640, 226, 663, 194, 663)
+color = Color(0.59,0.46,0.29,1)
+
+[node name="Cultivo0_0" type="Sprite2D" parent="Jardines"]
+position = Vector2(194, 640)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Cultivo0_1" type="Sprite2D" parent="Jardines"]
+position = Vector2(203, 640)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Cultivo0_2" type="Sprite2D" parent="Jardines"]
+position = Vector2(212, 640)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Huerto3" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(250, 1004, 282, 1004, 282, 1027, 250, 1027)
+color = Color(0.59,0.46,0.29,1)
+
+[node name="Cultivo3_0" type="Sprite2D" parent="Jardines"]
+position = Vector2(250, 1004)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Cultivo3_1" type="Sprite2D" parent="Jardines"]
+position = Vector2(259, 1004)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Cultivo3_2" type="Sprite2D" parent="Jardines"]
+position = Vector2(268, 1004)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Huerto4" type="Polygon2D" parent="Jardines"]
+z_index = -1
+polygon = PackedVector2Array(814, 936, 846, 936, 846, 959, 814, 959)
+color = Color(0.59,0.46,0.29,1)
+
+[node name="Cultivo4_0" type="Sprite2D" parent="Jardines"]
+position = Vector2(814, 936)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Cultivo4_1" type="Sprite2D" parent="Jardines"]
+position = Vector2(823, 936)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Cultivo4_2" type="Sprite2D" parent="Jardines"]
+position = Vector2(832, 936)
+z_index = -1
+texture = ExtResource("plants")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="Lena1" type="Sprite2D" parent="Jardines"]
+position = Vector2(751, 567)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(128, 104, 16, 16)
+
+[node name="Lena5" type="Sprite2D" parent="Jardines"]
+position = Vector2(643, 1159)
+z_index = -1
+texture = ExtResource("nature")
+centered = false
+region_enabled = true
+region_rect = Rect2(128, 104, 16, 16)

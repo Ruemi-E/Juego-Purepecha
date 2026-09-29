@@ -1,0 +1,2001 @@
+[gd_scene format=3]
+
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Wooden House.png" id="roof"]
+
+[ext_resource type="Texture2D" path="res://Little Dreamyland - Free Pack/Little Dreamyland - Free Pack/Tileset/House_Tileset.png" id="wood"]
+
+[node name="CasaMaderaLateral" type="Node2D"]
+
+[node name="Sombra" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(5, 125, 141, 125, 141, 137, 5, 137)
+color = Color(0.22,0.24,0.15,0.25)
+
+[node name="Cimiento" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(8, 120, 136, 120, 136, 132, 8, 132)
+color = Color(0.46,0.45,0.36,1)
+
+[node name="Piedra8" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(8, 122, 18, 122, 18, 129, 8, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra20" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(20, 122, 30, 122, 30, 129, 20, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra32" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(32, 122, 42, 122, 42, 129, 32, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra44" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(44, 122, 54, 122, 54, 129, 44, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra56" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(56, 122, 66, 122, 66, 129, 56, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra68" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(68, 122, 78, 122, 78, 129, 68, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra80" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(80, 122, 90, 122, 90, 129, 80, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra92" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(92, 122, 102, 122, 102, 129, 92, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra104" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(104, 122, 114, 122, 114, 129, 104, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra116" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(116, 122, 126, 122, 126, 129, 116, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Piedra128" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(128, 122, 136, 122, 136, 129, 128, 129)
+color = Color(0.60,0.57,0.45,1)
+
+[node name="Tabla8_80" type="Sprite2D" parent="."]
+position = Vector2(8, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla16_80" type="Sprite2D" parent="."]
+position = Vector2(16, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla24_80" type="Sprite2D" parent="."]
+position = Vector2(24, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla32_80" type="Sprite2D" parent="."]
+position = Vector2(32, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla40_80" type="Sprite2D" parent="."]
+position = Vector2(40, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla48_80" type="Sprite2D" parent="."]
+position = Vector2(48, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla56_80" type="Sprite2D" parent="."]
+position = Vector2(56, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla64_80" type="Sprite2D" parent="."]
+position = Vector2(64, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla72_80" type="Sprite2D" parent="."]
+position = Vector2(72, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla80_80" type="Sprite2D" parent="."]
+position = Vector2(80, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla88_80" type="Sprite2D" parent="."]
+position = Vector2(88, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla96_80" type="Sprite2D" parent="."]
+position = Vector2(96, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla104_80" type="Sprite2D" parent="."]
+position = Vector2(104, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla112_80" type="Sprite2D" parent="."]
+position = Vector2(112, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla120_80" type="Sprite2D" parent="."]
+position = Vector2(120, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla128_80" type="Sprite2D" parent="."]
+position = Vector2(128, 80)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla8_88" type="Sprite2D" parent="."]
+position = Vector2(8, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla16_88" type="Sprite2D" parent="."]
+position = Vector2(16, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla24_88" type="Sprite2D" parent="."]
+position = Vector2(24, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla32_88" type="Sprite2D" parent="."]
+position = Vector2(32, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla40_88" type="Sprite2D" parent="."]
+position = Vector2(40, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla48_88" type="Sprite2D" parent="."]
+position = Vector2(48, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla56_88" type="Sprite2D" parent="."]
+position = Vector2(56, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla64_88" type="Sprite2D" parent="."]
+position = Vector2(64, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla72_88" type="Sprite2D" parent="."]
+position = Vector2(72, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla80_88" type="Sprite2D" parent="."]
+position = Vector2(80, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla88_88" type="Sprite2D" parent="."]
+position = Vector2(88, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla96_88" type="Sprite2D" parent="."]
+position = Vector2(96, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla104_88" type="Sprite2D" parent="."]
+position = Vector2(104, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla112_88" type="Sprite2D" parent="."]
+position = Vector2(112, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla120_88" type="Sprite2D" parent="."]
+position = Vector2(120, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla128_88" type="Sprite2D" parent="."]
+position = Vector2(128, 88)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla8_96" type="Sprite2D" parent="."]
+position = Vector2(8, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla16_96" type="Sprite2D" parent="."]
+position = Vector2(16, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla24_96" type="Sprite2D" parent="."]
+position = Vector2(24, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla32_96" type="Sprite2D" parent="."]
+position = Vector2(32, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla40_96" type="Sprite2D" parent="."]
+position = Vector2(40, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla48_96" type="Sprite2D" parent="."]
+position = Vector2(48, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla56_96" type="Sprite2D" parent="."]
+position = Vector2(56, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla64_96" type="Sprite2D" parent="."]
+position = Vector2(64, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla72_96" type="Sprite2D" parent="."]
+position = Vector2(72, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla80_96" type="Sprite2D" parent="."]
+position = Vector2(80, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla88_96" type="Sprite2D" parent="."]
+position = Vector2(88, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla96_96" type="Sprite2D" parent="."]
+position = Vector2(96, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla104_96" type="Sprite2D" parent="."]
+position = Vector2(104, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla112_96" type="Sprite2D" parent="."]
+position = Vector2(112, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla120_96" type="Sprite2D" parent="."]
+position = Vector2(120, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla128_96" type="Sprite2D" parent="."]
+position = Vector2(128, 96)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla8_104" type="Sprite2D" parent="."]
+position = Vector2(8, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla16_104" type="Sprite2D" parent="."]
+position = Vector2(16, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla24_104" type="Sprite2D" parent="."]
+position = Vector2(24, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla32_104" type="Sprite2D" parent="."]
+position = Vector2(32, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla40_104" type="Sprite2D" parent="."]
+position = Vector2(40, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla48_104" type="Sprite2D" parent="."]
+position = Vector2(48, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla56_104" type="Sprite2D" parent="."]
+position = Vector2(56, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla64_104" type="Sprite2D" parent="."]
+position = Vector2(64, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla72_104" type="Sprite2D" parent="."]
+position = Vector2(72, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla80_104" type="Sprite2D" parent="."]
+position = Vector2(80, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla88_104" type="Sprite2D" parent="."]
+position = Vector2(88, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla96_104" type="Sprite2D" parent="."]
+position = Vector2(96, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla104_104" type="Sprite2D" parent="."]
+position = Vector2(104, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla112_104" type="Sprite2D" parent="."]
+position = Vector2(112, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla120_104" type="Sprite2D" parent="."]
+position = Vector2(120, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 40, 8, 8)
+
+[node name="Tabla128_104" type="Sprite2D" parent="."]
+position = Vector2(128, 104)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 40, 8, 8)
+
+[node name="Tabla8_112" type="Sprite2D" parent="."]
+position = Vector2(8, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla16_112" type="Sprite2D" parent="."]
+position = Vector2(16, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla24_112" type="Sprite2D" parent="."]
+position = Vector2(24, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla32_112" type="Sprite2D" parent="."]
+position = Vector2(32, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla40_112" type="Sprite2D" parent="."]
+position = Vector2(40, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla48_112" type="Sprite2D" parent="."]
+position = Vector2(48, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla56_112" type="Sprite2D" parent="."]
+position = Vector2(56, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla64_112" type="Sprite2D" parent="."]
+position = Vector2(64, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla72_112" type="Sprite2D" parent="."]
+position = Vector2(72, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla80_112" type="Sprite2D" parent="."]
+position = Vector2(80, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla88_112" type="Sprite2D" parent="."]
+position = Vector2(88, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla96_112" type="Sprite2D" parent="."]
+position = Vector2(96, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla104_112" type="Sprite2D" parent="."]
+position = Vector2(104, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla112_112" type="Sprite2D" parent="."]
+position = Vector2(112, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="Tabla120_112" type="Sprite2D" parent="."]
+position = Vector2(120, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(352, 32, 8, 8)
+
+[node name="Tabla128_112" type="Sprite2D" parent="."]
+position = Vector2(128, 112)
+z_index = -1
+texture = ExtResource("wood")
+centered = false
+region_enabled = true
+region_rect = Rect2(344, 32, 8, 8)
+
+[node name="MarcoPuerta" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(91, 85, 125, 85, 125, 121, 91, 121)
+color = Color(0.36,0.25,0.16,1)
+
+[node name="Puerta" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(95, 88, 121, 88, 121, 120, 95, 120)
+color = Color(0.18,0.18,0.14,1)
+
+[node name="HojaPuerta" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(96, 89, 104, 89, 104, 120, 96, 120)
+color = Color(0.44,0.30,0.18,1)
+
+[node name="MarcoVentana0" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(28, 90, 48, 90, 48, 109, 28, 109)
+color = Color(0.40,0.28,0.18,1)
+
+[node name="Vidrio0" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(31, 93, 45, 93, 45, 105, 31, 105)
+color = Color(0.21,0.25,0.21,1)
+
+[node name="Parteluz0" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(37, 93, 39, 93, 39, 105, 37, 105)
+color = Color(0.65,0.45,0.27,1)
+
+[node name="Dintel" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(88, 82, 128, 82, 128, 86, 88, 86)
+color = Color(0.52,0.34,0.20,1)
+
+[node name="Escalon" type="Polygon2D" parent="."]
+z_index = -1
+polygon = PackedVector2Array(88, 130, 128, 130, 128, 135, 88, 135)
+color = Color(0.64,0.60,0.48,1)
+
+[node name="Techo0_48" type="Sprite2D" parent="."]
+position = Vector2(0, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo0_56" type="Sprite2D" parent="."]
+position = Vector2(0, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo0_64" type="Sprite2D" parent="."]
+position = Vector2(0, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo0_72" type="Sprite2D" parent="."]
+position = Vector2(0, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo8_40" type="Sprite2D" parent="."]
+position = Vector2(8, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo8_48" type="Sprite2D" parent="."]
+position = Vector2(8, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo8_56" type="Sprite2D" parent="."]
+position = Vector2(8, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo8_64" type="Sprite2D" parent="."]
+position = Vector2(8, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo8_72" type="Sprite2D" parent="."]
+position = Vector2(8, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo16_32" type="Sprite2D" parent="."]
+position = Vector2(16, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo16_40" type="Sprite2D" parent="."]
+position = Vector2(16, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo16_48" type="Sprite2D" parent="."]
+position = Vector2(16, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo16_56" type="Sprite2D" parent="."]
+position = Vector2(16, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo16_64" type="Sprite2D" parent="."]
+position = Vector2(16, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo16_72" type="Sprite2D" parent="."]
+position = Vector2(16, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_24" type="Sprite2D" parent="."]
+position = Vector2(24, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_32" type="Sprite2D" parent="."]
+position = Vector2(24, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_40" type="Sprite2D" parent="."]
+position = Vector2(24, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_48" type="Sprite2D" parent="."]
+position = Vector2(24, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_56" type="Sprite2D" parent="."]
+position = Vector2(24, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_64" type="Sprite2D" parent="."]
+position = Vector2(24, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo24_72" type="Sprite2D" parent="."]
+position = Vector2(24, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_32" type="Sprite2D" parent="."]
+position = Vector2(32, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_40" type="Sprite2D" parent="."]
+position = Vector2(32, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_48" type="Sprite2D" parent="."]
+position = Vector2(32, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_56" type="Sprite2D" parent="."]
+position = Vector2(32, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_64" type="Sprite2D" parent="."]
+position = Vector2(32, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_72" type="Sprite2D" parent="."]
+position = Vector2(32, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_40" type="Sprite2D" parent="."]
+position = Vector2(40, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_48" type="Sprite2D" parent="."]
+position = Vector2(40, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_56" type="Sprite2D" parent="."]
+position = Vector2(40, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_64" type="Sprite2D" parent="."]
+position = Vector2(40, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_72" type="Sprite2D" parent="."]
+position = Vector2(40, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_48" type="Sprite2D" parent="."]
+position = Vector2(48, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_56" type="Sprite2D" parent="."]
+position = Vector2(48, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_64" type="Sprite2D" parent="."]
+position = Vector2(48, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_72" type="Sprite2D" parent="."]
+position = Vector2(48, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_16" type="Sprite2D" parent="."]
+position = Vector2(32, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo32_24" type="Sprite2D" parent="."]
+position = Vector2(32, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_8" type="Sprite2D" parent="."]
+position = Vector2(40, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_16" type="Sprite2D" parent="."]
+position = Vector2(40, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_24" type="Sprite2D" parent="."]
+position = Vector2(40, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo40_32" type="Sprite2D" parent="."]
+position = Vector2(40, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_0" type="Sprite2D" parent="."]
+position = Vector2(48, 0)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_8" type="Sprite2D" parent="."]
+position = Vector2(48, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_16" type="Sprite2D" parent="."]
+position = Vector2(48, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_24" type="Sprite2D" parent="."]
+position = Vector2(48, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_32" type="Sprite2D" parent="."]
+position = Vector2(48, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo48_40" type="Sprite2D" parent="."]
+position = Vector2(48, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_0" type="Sprite2D" parent="."]
+position = Vector2(56, 0)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_8" type="Sprite2D" parent="."]
+position = Vector2(56, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_16" type="Sprite2D" parent="."]
+position = Vector2(56, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_24" type="Sprite2D" parent="."]
+position = Vector2(56, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_32" type="Sprite2D" parent="."]
+position = Vector2(56, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_40" type="Sprite2D" parent="."]
+position = Vector2(56, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_48" type="Sprite2D" parent="."]
+position = Vector2(56, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_56" type="Sprite2D" parent="."]
+position = Vector2(56, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_64" type="Sprite2D" parent="."]
+position = Vector2(56, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo56_72" type="Sprite2D" parent="."]
+position = Vector2(56, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_0" type="Sprite2D" parent="."]
+position = Vector2(64, 0)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_8" type="Sprite2D" parent="."]
+position = Vector2(64, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_16" type="Sprite2D" parent="."]
+position = Vector2(64, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_24" type="Sprite2D" parent="."]
+position = Vector2(64, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_32" type="Sprite2D" parent="."]
+position = Vector2(64, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_40" type="Sprite2D" parent="."]
+position = Vector2(64, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_48" type="Sprite2D" parent="."]
+position = Vector2(64, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_56" type="Sprite2D" parent="."]
+position = Vector2(64, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_64" type="Sprite2D" parent="."]
+position = Vector2(64, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo80_72" type="Sprite2D" parent="."]
+position = Vector2(64, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_0" type="Sprite2D" parent="."]
+position = Vector2(72, 0)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_8" type="Sprite2D" parent="."]
+position = Vector2(72, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_16" type="Sprite2D" parent="."]
+position = Vector2(72, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_24" type="Sprite2D" parent="."]
+position = Vector2(72, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_32" type="Sprite2D" parent="."]
+position = Vector2(72, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_40" type="Sprite2D" parent="."]
+position = Vector2(72, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_48" type="Sprite2D" parent="."]
+position = Vector2(72, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_56" type="Sprite2D" parent="."]
+position = Vector2(72, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_64" type="Sprite2D" parent="."]
+position = Vector2(72, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo88_72" type="Sprite2D" parent="."]
+position = Vector2(72, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_0" type="Sprite2D" parent="."]
+position = Vector2(80, 0)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_8" type="Sprite2D" parent="."]
+position = Vector2(80, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_16" type="Sprite2D" parent="."]
+position = Vector2(80, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_24" type="Sprite2D" parent="."]
+position = Vector2(80, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_32" type="Sprite2D" parent="."]
+position = Vector2(80, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_40" type="Sprite2D" parent="."]
+position = Vector2(80, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_48" type="Sprite2D" parent="."]
+position = Vector2(80, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_56" type="Sprite2D" parent="."]
+position = Vector2(80, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_64" type="Sprite2D" parent="."]
+position = Vector2(80, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo96_72" type="Sprite2D" parent="."]
+position = Vector2(80, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_0" type="Sprite2D" parent="."]
+position = Vector2(88, 0)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_8" type="Sprite2D" parent="."]
+position = Vector2(88, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_16" type="Sprite2D" parent="."]
+position = Vector2(88, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_24" type="Sprite2D" parent="."]
+position = Vector2(88, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_32" type="Sprite2D" parent="."]
+position = Vector2(88, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_40" type="Sprite2D" parent="."]
+position = Vector2(88, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_48" type="Sprite2D" parent="."]
+position = Vector2(88, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_56" type="Sprite2D" parent="."]
+position = Vector2(88, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_64" type="Sprite2D" parent="."]
+position = Vector2(88, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo104_72" type="Sprite2D" parent="."]
+position = Vector2(88, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_8" type="Sprite2D" parent="."]
+position = Vector2(96, 8)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_16" type="Sprite2D" parent="."]
+position = Vector2(96, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_24" type="Sprite2D" parent="."]
+position = Vector2(96, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_32" type="Sprite2D" parent="."]
+position = Vector2(96, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_40" type="Sprite2D" parent="."]
+position = Vector2(96, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_48" type="Sprite2D" parent="."]
+position = Vector2(96, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_56" type="Sprite2D" parent="."]
+position = Vector2(96, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_64" type="Sprite2D" parent="."]
+position = Vector2(96, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo112_72" type="Sprite2D" parent="."]
+position = Vector2(96, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_16" type="Sprite2D" parent="."]
+position = Vector2(104, 16)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_24" type="Sprite2D" parent="."]
+position = Vector2(104, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_32" type="Sprite2D" parent="."]
+position = Vector2(104, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_40" type="Sprite2D" parent="."]
+position = Vector2(104, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_48" type="Sprite2D" parent="."]
+position = Vector2(104, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_56" type="Sprite2D" parent="."]
+position = Vector2(104, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_64" type="Sprite2D" parent="."]
+position = Vector2(104, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo120_72" type="Sprite2D" parent="."]
+position = Vector2(104, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_24" type="Sprite2D" parent="."]
+position = Vector2(112, 24)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_32" type="Sprite2D" parent="."]
+position = Vector2(112, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_40" type="Sprite2D" parent="."]
+position = Vector2(112, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_48" type="Sprite2D" parent="."]
+position = Vector2(112, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_56" type="Sprite2D" parent="."]
+position = Vector2(112, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_64" type="Sprite2D" parent="."]
+position = Vector2(112, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo128_72" type="Sprite2D" parent="."]
+position = Vector2(112, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo136_32" type="Sprite2D" parent="."]
+position = Vector2(120, 32)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo136_40" type="Sprite2D" parent="."]
+position = Vector2(120, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo136_48" type="Sprite2D" parent="."]
+position = Vector2(120, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo136_56" type="Sprite2D" parent="."]
+position = Vector2(120, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo136_64" type="Sprite2D" parent="."]
+position = Vector2(120, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo136_72" type="Sprite2D" parent="."]
+position = Vector2(120, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo144_40" type="Sprite2D" parent="."]
+position = Vector2(128, 40)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo144_48" type="Sprite2D" parent="."]
+position = Vector2(128, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo144_56" type="Sprite2D" parent="."]
+position = Vector2(128, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo144_64" type="Sprite2D" parent="."]
+position = Vector2(128, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo144_72" type="Sprite2D" parent="."]
+position = Vector2(128, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(80, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo152_48" type="Sprite2D" parent="."]
+position = Vector2(136, 48)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 40, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo152_56" type="Sprite2D" parent="."]
+position = Vector2(136, 56)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 48, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo152_64" type="Sprite2D" parent="."]
+position = Vector2(136, 64)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 56, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Techo152_72" type="Sprite2D" parent="."]
+position = Vector2(136, 72)
+z_index = 1
+texture = ExtResource("roof")
+centered = false
+region_enabled = true
+region_rect = Rect2(88, 64, 8, 8)
+modulate = Color(1, 0.91, 0.82, 1)
+
+[node name="Colision" type="StaticBody2D" parent="."]
+collision_layer = 1
+collision_mask = 2
+
+[node name="Paredes" type="CollisionPolygon2D" parent="Colision"]
+polygon = PackedVector2Array(8, 80, 136, 80, 136, 128, 8, 128)
