@@ -1,0 +1,35 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://quest_pickup.gd" id="script"]
+[ext_resource type="Texture2D" path="res://Sprout Lands - Sprites - Basic pack/Objects/Basic_Plants.png" id="plants"]
+[sub_resource type="CircleShape2D" id="range"]
+radius = 54.230988
+
+[node name="QuestPickup" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("script")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("plants")
+region_enabled = true
+region_rect = Rect2(32, 16, 16, 16)
+
+[node name="Rango" type="CollisionShape2D" parent="."]
+shape = SubResource("range")
+
+[node name="Pista" type="Label" parent="."]
+visible = false
+offset_left = -45.0
+offset_top = -23.0
+offset_right = 45.0
+offset_bottom = -9.0
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 9
+text = "E · Recoger"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_range_entered"]
+[connection signal="body_exited" from="." to="." method="_on_range_exited"]

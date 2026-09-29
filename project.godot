@@ -17,13 +17,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Inventory="*uid://rpx6ijrg0jjt"
-DialogueManager="*uid://kcja3i4t6yxf"
-DictionaryManager="*uid://csghjucs71v40"
-ItemNotification="*uid://djqxocxwqx2at"
-InventoryUi="*uid://bq0d2n27p1jjc"
-DictionaryUi="*uid://bdrse4ko5lmy2"
-Economia="*uid://bcdkbf4gtvisj"
+Inventory="*res://Inventory.gd"
+DialogueManager="*res://DialogueBox.tscn"
+DictionaryManager="*res://DictionaryManager.gd"
+ItemNotification="*res://Item_Notification.tscn"
+InventoryUi="*res://InventoryUI.tscn"
+DictionaryUi="*res://dictionary_ui.tscn"
+Economia="*res://economia.gd"
+QuestManager="*res://quest_manager.gd"
+QuestJournal="*res://quest_journal.gd"
+QuestHud="*res://quest_hud.gd"
 
 [display]
 
@@ -34,6 +37,16 @@ window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 
 [input]
+
+cycle_quest={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":81)]
+}
+
+open_quests={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"physical_keycode":77)]
+}
 
 ui_left={
 "deadzone": 0.5,
@@ -73,7 +86,7 @@ ui_down={
 }
 interact={
 "deadzone": 0.2,
-"events": []
+"events": [Object(InputEventKey,"physical_keycode":69)]
 }
 open_dictionary={
 "deadzone": 0.2,
