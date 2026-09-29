@@ -5,12 +5,21 @@ const ROAD: Color = Color("d9bd83")
 const HOUSE: Color = Color("ac7653")
 const WATER: Color = Color("57969a")
 var features: Array[Dictionary] = []
+var service_markers: Array[Dictionary] = []
 var player_position := Vector2.ZERO
 var navigation_position := Vector2.ZERO
 var has_target: bool = false
 
 func configure(world: Node) -> void:
  features.clear()
+ service_markers.clear()
+ var services = world.get_node_or_null("VillageServices")
+ if services != null:
+  add_box(Vector2(344, 1180), Vector2(80, 680), ROAD)
+  for id in services.SERVICES:
+   var data: Dictionary = services.SERVICES[id]
+   add_box(data["position"] + Vector2(8, 80), Vector2(112, 56), HOUSE)
+   service_markers.append({"position": services.doors[id].global_position, "letter": {"library": "B", "food": "C", "remedies": "R", "smith": "H"}[id], "color": data["color"]})
  var tiles = world.get_node_or_null("TileMap")
  if tiles != null:
   for layer in [2, 3, 5]:
@@ -55,6 +64,11 @@ func _draw() -> void:
   var rect := Rect2(map_point(source.position), source.size * MAP_SCALE)
   if rect.intersects(view):
    draw_rect(rect, feature["color"])
+ for service in service_markers:
+  var pos: Vector2 = map_point(service["position"])
+  if view.grow(-7).has_point(pos):
+   draw_circle(pos, 6, Color("23342c"))
+   draw_string(ThemeDB.fallback_font, pos + Vector2(-3, 3), service["letter"], HORIZONTAL_ALIGNMENT_LEFT, -1, 9, service["color"])
  var center := size * 0.5
  if has_target:
   var delta := (navigation_position - player_position) * MAP_SCALE

@@ -13,7 +13,7 @@ func interact(_player: CharacterBody2D) -> void:
   
   DialogueManager.start_dialogue(
    "[color=yellow]Tátita:[/color]\n" +
-   "Hijo, lleva este morral con tu tía en el pueblo vecino.\n" +
+   "Lleva este [b]sutupu[/b] con tu tía en el pueblo vecino. Busca su significado en el diccionario con J.\n" +
    "El camino es largo. Llévate este cuaderno para que recuerdes nuestras palabras.\n" +
    "[color=green](Presiona 'J' para consultar tu diccionario en cualquier momento).[/color]"
   )

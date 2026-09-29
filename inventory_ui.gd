@@ -16,6 +16,8 @@ func _process(_delta):
  $Panel/Dinero/Bronce.text = str(Economia.monedas_bronce)
 
 func _unhandled_input(event: InputEvent) -> void:
+ if not is_instance_valid(get_tree().get_first_node_in_group("player")):
+  return
  if event.is_action_pressed("open_inventory"):
   if get_tree().paused and not is_open:
    return
@@ -45,5 +47,8 @@ func _on_item_selected(index: int) -> void:
  var data = Inventory.item_database.get(item_id, {})
  
  item_details.text = "[b][color=yellow]" + data.get("purepecha", "") + "[/color][/b]\n"
+ if DictionaryManager.Vocabulary.ENTRIES.has(item_id):
+  item_details.append_text("J · Consulta el significado en tu diccionario.")
+  return
  item_details.append_text("[color=gray]" + data.get("name", "") + "[/color]\n\n")
  item_details.append_text(data.get("desc", ""))

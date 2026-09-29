@@ -1,0 +1,42 @@
+extends RefCounted
+
+static func products(shop: String) -> Array[String]:
+	var result: Array[String] = []
+	for id in Inventory.item_database:
+		if Inventory.item_database[id].get("shop", "") == shop:
+			result.append(id)
+	return result
+
+static func purchase(shop: String, item_id: String) -> String:
+	if not item_id in products(shop):
+		return "Este objeto no está a la venta aquí."
+	var data: Dictionary = Inventory.item_database[item_id]
+	var price: int = int(data.get("price", 0))
+	if price <= 0:
+		return "Este objeto todavía no tiene precio."
+	if not Economia.gastar_bronce(price):
+		return "No tienes monedas suficientes. Puedes ganar más en la biblioteca."
+	Inventory.add_item(item_id)
+	GameSession.save_game()
+	return "Compraste: %s · −%d bronce" % [data.get("purepecha", data["name"]), price]
+
+static func repair_cost(equipment: Dictionary) -> int:
+	var data: Dictionary = Inventory.item_database.get(equipment.get("item_id", ""), {})
+	var maximum: int = int(data.get("max_durability", 0))
+	if maximum <= 0 or not data.get("repairable", false):
+		return 0
+	return maxi(0, maximum - int(equipment.get("durability", maximum))) * maxi(1, int(data.get("repair_price_per_point", 1)))
+
+static func repair(uid: int) -> String:
+	for equipment in Inventory.equipment:
+		if equipment["uid"] != uid:
+			continue
+		var cost: int = repair_cost(equipment)
+		if cost <= 0:
+			return "Este objeto no necesita reparación o no es reparable."
+		if not Economia.gastar_bronce(cost):
+			return "No tienes monedas suficientes para esta reparación."
+		equipment["durability"] = int(Inventory.item_database[equipment["item_id"]]["max_durability"])
+		GameSession.save_game()
+		return "Objeto reparado · −%d bronce" % cost
+	return "Ya no tienes ese objeto."

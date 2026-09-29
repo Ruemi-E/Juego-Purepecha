@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const MapView = preload("res://minimap_view.gd")
+var floating: VBoxContainer
 var card: PanelContainer
 var map_view: Control
 var objective: Label
@@ -25,35 +26,43 @@ func _ready() -> void:
  style.set_content_margin_all(6)
  card.add_theme_stylebox_override("panel",style)
  add_child(card)
- var column := VBoxContainer.new()
- column.add_theme_constant_override("separation",4)
- card.add_child(column)
- var heading := Label.new()
- heading.text = "PUEBLO                           N ↑"
- heading.add_theme_font_size_override("font_size",9)
- heading.add_theme_color_override("font_color",Color("ead9ad"))
- column.add_child(heading)
  map_view = MapView.new()
  map_view.custom_minimum_size = Vector2(144,104)
  map_view.clip_contents = true
  map_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
- column.add_child(map_view)
+ card.add_child(map_view)
+ floating = VBoxContainer.new()
+ floating.position = Vector2(8, 128)
+ floating.size.x = 156
+ floating.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ floating.add_theme_constant_override("separation", 5)
+ add_child(floating)
  objective = Label.new()
  objective.custom_minimum_size = Vector2(144,44)
  objective.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
  objective.add_theme_font_size_override("font_size",9)
  objective.add_theme_color_override("font_color",Color("fff1ce"))
- column.add_child(objective)
+ objective.add_theme_color_override("font_shadow_color", Color.BLACK)
+ objective.add_theme_constant_override("shadow_outline_size", 2)
+ floating.add_child(objective)
  var legend := Label.new()
  legend.text = "● Tú   ◆ Destino\nQ · Cambiar misión"
  legend.add_theme_font_size_override("font_size",8)
  legend.add_theme_color_override("font_color",Color("ccbfa0"))
- column.add_child(legend)
+ legend.add_theme_color_override("font_shadow_color", Color.BLACK)
+ legend.add_theme_constant_override("shadow_outline_size", 2)
+ floating.add_child(legend)
+ card.hide()
+ floating.hide()
  QuestManager.changed.connect(refresh)
  refresh()
 
 func _process(delta: float) -> void:
- card.visible = not get_tree().paused
+ var in_game: bool = is_instance_valid(get_tree().get_first_node_in_group("player"))
+ var current_player = get_tree().get_first_node_in_group("player")
+ var inside: bool = in_game and current_player.get_meta("inside_service", false)
+ card.visible = in_game and not inside and not get_tree().paused
+ floating.visible = card.visible
  elapsed += delta
  if elapsed < 0.1:
   return
@@ -115,6 +124,10 @@ func refresh() -> void:
   map_view.queue_redraw()
   return
  var quest: Dictionary = QuestManager.QUESTS[id]
+ if not DictionaryManager.consulted.get(quest["item"], false):
+  objective.text = str(quest["title"]) + "\n" + DictionaryManager.word_for(quest["item"]) + " × " + str(quest["amount"]) + "\nJ · Consulta esta palabra para orientarte"
+  map_view.queue_redraw()
+  return
  target = resolve_target(id)
  var count: int = mini(QuestManager.progress(id), int(quest["amount"]))
  var instruction: String
@@ -123,7 +136,7 @@ func refresh() -> void:
  elif quest["item"] == "morral_recado":
   instruction = "Habla con Tátita"
  else:
-  instruction = "Recoge: %d/%d" % [count, int(quest["amount"])]
+  instruction = "%s: %d/%d" % [DictionaryManager.word_for(quest["item"]), count, int(quest["amount"])]
  if is_instance_valid(target):
   navigation_position = target.global_position
   # Stage the crossing: approach, cross fully, then follow the real objective.

@@ -3,10 +3,10 @@ extends Node
 signal changed
 
 const QUESTS: Dictionary = {
- "hierbas": {"speaker": "Teresa · Curandera", "title": "Hierbas de la otra orilla", "item": "hierbas_medicinales", "amount": 3, "bronze": 6, "silver": 0, "request": "Necesito 3 hierbas medicinales. Cruza el puente y búscalas junto al sendero de la otra orilla. Recógelas con E y vuelve conmigo."},
- "lena": {"speaker": "Mateo · Carpintero", "title": "Madera para el taller", "item": "lena_seca", "amount": 3, "bronze": 0, "silver": 1, "request": "Necesito 3 haces de leña seca para el taller. Están al este del pueblo, cerca de los árboles. Recógelos con E y tráemelos."},
- "maiz": {"speaker": "Rosa · Agricultora", "title": "La cosecha del patio", "item": "mazorca", "amount": 4, "bronze": 8, "silver": 0, "request": "Ayúdame a reunir 4 mazorcas de mi huerto, al oeste de la plaza. Recógelas con E y vuelve para entregar la cosecha."},
- "recado": {"speaker": "Tía Juana", "title": "El encargo de Tátita", "item": "morral_recado", "amount": 1, "bronze": 0, "silver": 2, "request": "Tátita tiene un morral para mí. Habla con él junto a la casa del inicio y tráeme su encargo. Si ya lo tienes, vuelve a hablar conmigo para entregarlo."}
+ "hierbas": {"speaker": "Teresa · Curandera", "title": "El encargo de Teresa", "item": "hierbas_medicinales", "amount": 3, "bronze": 6, "silver": 0, "request": "Necesito reunir: [b]uitsakua[/b] × 3. Consulta la palabra con J; después cruza el puente y busca junto al sendero. Recoge con E y vuelve conmigo."},
+ "lena": {"speaker": "Mateo · Carpintero", "title": "El encargo de Mateo", "item": "lena_seca", "amount": 3, "bronze": 0, "silver": 1, "request": "Necesito reunir: [b]chkári[/b] × 3. Consulta la palabra con J; después busca al este del pueblo, cerca de los árboles. Recoge con E y vuelve conmigo."},
+ "maiz": {"speaker": "Rosa · Agricultora", "title": "El encargo de Rosa", "item": "mazorca", "amount": 4, "bronze": 8, "silver": 0, "request": "Necesito reunir: [b]xanini[/b] × 4. Consulta la palabra con J; después busca en mi patio, al oeste de la plaza. Recoge con E y vuelve conmigo."},
+ "recado": {"speaker": "Tía Juana", "title": "El encargo de Tátita", "item": "morral_recado", "amount": 1, "bronze": 0, "silver": 2, "request": "Tráeme el [b]sutupu[/b] de Tátita. Consulta la palabra con J. Habla con él junto a la casa del inicio y vuelve conmigo para entregarlo."}
 }
 var states: Dictionary = {}
 var tracked_quest: String = ""
@@ -37,6 +37,7 @@ func talk(id: String) -> String:
  if not QUESTS.has(id):
   return "Este encargo no está disponible."
  var q: Dictionary = QUESTS[id]
+ DictionaryManager.encountered[q["item"]] = true
  var heading: String = "[color=yellow]%s[/color]\n" % q["speaker"]
  if status(id) == "completed":
   return heading + "Gracias por tu ayuda. Ya te entregué la recompensa de este encargo."
@@ -55,7 +56,7 @@ func talk(id: String) -> String:
  Economia.anadir_bronce(q["bronze"])
  Economia.anadir_plata(q["silver"])
  changed.emit()
- return heading + "¡Gracias! Recibí el encargo completo.\n[color=green]Recompensa: %s[/color]\nPulsa I para consultar tus monedas." % reward_text(id)
+ return heading + "¡Gracias! Recibí el encargo completo. Practica esta palabra en la biblioteca al sur del pueblo.\n[color=green]Recompensa: %s[/color]\nPulsa I para consultar tus monedas." % reward_text(id)
 
 
 func tracked_id() -> String:

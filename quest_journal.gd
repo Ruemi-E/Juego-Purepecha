@@ -14,8 +14,9 @@ func _ready() -> void:
  hint.add_theme_color_override("font_shadow_color", Color.BLACK)
  hint.add_theme_constant_override("shadow_offset_x", 1)
  hint.add_theme_constant_override("shadow_offset_y", 1)
- hint.text = "E · Hablar / recoger    M · Misiones    I · Inventario"
+ hint.text = "E · Hablar / recoger    M · Misiones    I · Inventario    J · Diccionario"
  add_child(hint)
+ hint.hide()
  panel = PanelContainer.new()
  panel.position = Vector2(50, 35)
  panel.size = Vector2(540, 290)
@@ -33,9 +34,11 @@ func _ready() -> void:
  QuestManager.changed.connect(refresh)
 
 func _process(_delta: float) -> void:
- hint.visible = not get_tree().paused
+ hint.visible = is_instance_valid(get_tree().get_first_node_in_group("player")) and not get_tree().paused
 
 func _unhandled_input(event: InputEvent) -> void:
+ if not is_instance_valid(get_tree().get_first_node_in_group("player")):
+  return
  if event.is_echo():
   return
  if opened and (event.is_action_pressed("open_quests") or event.is_action_pressed("ui_cancel")):
@@ -60,7 +63,7 @@ func refresh() -> void:
   var label := "Habla con " + str(q["speaker"])
   if state == "active":
    var count: int = mini(QuestManager.progress(id), q["amount"])
-   label = "%s: %d/%d" % [Inventory.item_database[q["item"]]["name"], count, q["amount"]]
+   label = "%s: %d/%d" % [Inventory.item_database[q["item"]]["purepecha"], count, q["amount"]]
    if count == q["amount"]:
     label += " · Vuelve para entregar"
   elif state == "completed":

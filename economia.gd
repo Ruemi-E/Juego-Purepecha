@@ -15,3 +15,14 @@ func anadir_bronce(cantidad: int) -> void:
 func anadir_plata(cantidad: int) -> void:
  if cantidad > 0:
   monedas_plata += cantidad
+
+func total_bronce() -> int:
+ return monedas_plata * 10 + monedas_bronce
+
+func gastar_bronce(cantidad: int) -> bool:
+ if cantidad <= 0 or total_bronce() < cantidad:
+  return false
+ var remaining: int = total_bronce() - cantidad
+ monedas_plata = int(remaining / 10)
+ monedas_bronce = remaining % 10
+ return true
