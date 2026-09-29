@@ -56,7 +56,7 @@ func remove_item(item_id: String) -> bool:
   for index in range(equipment.size()):
    if equipment[index]["item_id"] == item_id:
     equipment.remove_at(index)
-   break
+    break
   item_removed.emit(item_id)
   return true
  return false
