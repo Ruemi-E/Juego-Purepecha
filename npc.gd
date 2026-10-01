@@ -4,6 +4,7 @@ var introduced: bool = false
 
 func _ready() -> void:
  add_to_group("interactables")
+ preload("res://npc_appearance.gd").apply($Sprite2D, 0)
 
 func interact(_player: CharacterBody2D) -> void:
  if not DictionaryManager.has_dictionary:

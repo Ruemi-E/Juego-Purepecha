@@ -5,9 +5,15 @@ extends CanvasLayer
 @onready var item_details: RichTextLabel = $Panel/ItemDetails
 
 var is_open: bool = false
+var selected_item_id: String = ""
 
 func _ready() -> void:
  panel.hide()
+ var hint := Label.new()
+ hint.text = "Selecciona un objeto y pulsa 1–5 para asignarlo a la barra"
+ hint.position = Vector2(4, 216)
+ hint.add_theme_font_size_override("font_size", 10)
+ panel.add_child(hint)
  item_list.item_selected.connect(_on_item_selected)
 
 func _process(_delta):
@@ -33,6 +39,7 @@ func toggle_inventory() -> void:
   refresh_inventory()
 
 func refresh_inventory() -> void:
+ selected_item_id = ""
  item_list.clear()
  item_details.clear()
  
@@ -44,6 +51,7 @@ func refresh_inventory() -> void:
 
 func _on_item_selected(index: int) -> void:
  var item_id = item_list.get_item_metadata(index)
+ selected_item_id = str(item_id)
  var data = Inventory.item_database.get(item_id, {})
  
  item_details.text = "[b][color=yellow]" + data.get("purepecha", "") + "[/color][/b]\n"

@@ -21,29 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://d1vmo1ghednkd" path="res://Sprout Lands - Sprites - Basic pack/Tilesets/Hills.png" id="18_ydbc3"]
 [ext_resource type="Texture2D" uid="uid://bwotf6ut0sik6" path="res://Modular Village Houses 32x32/tiles-door-32x32.png" id="19_jyqkj"]
 [ext_resource type="Texture2D" uid="uid://cxx3cng3esbu1" path="res://Little Dreamyland - Free Pack/Little Dreamyland - Free Pack/pollo_der.png" id="20_ydbc3"]
-[ext_resource type="Texture2D" uid="uid://c35h1rgjd8kju" path="res://Little Dreamyland - Free Pack/Little Dreamyland - Free Pack/Tileset/Nature_Tileset.png" id="21_5j71u"]
-
-[ext_resource type="PackedScene" path="res://TrojePurepecha.tscn" id="30_troje"]
-
 [ext_resource type="PackedScene" path="res://PuebloEntorno.tscn" id="31_entorno"]
-
 [ext_resource type="PackedScene" path="res://CasaAdobeChica.tscn" id="organic_0"]
-
 [ext_resource type="PackedScene" path="res://TrojePortalAncho.tscn" id="organic_1"]
-
 [ext_resource type="PackedScene" path="res://CasaMaderaLateral.tscn" id="organic_2"]
-
 [ext_resource type="PackedScene" path="res://CasaAdobePatio.tscn" id="organic_3"]
-
 [ext_resource type="PackedScene" path="res://TrojePequeno.tscn" id="organic_4"]
-
 [ext_resource type="PackedScene" path="res://CasaTaller.tscn" id="organic_5"]
-
+[ext_resource type="Texture2D" uid="uid://c35h1rgjd8kju" path="res://Little Dreamyland - Free Pack/Little Dreamyland - Free Pack/Tileset/Nature_Tileset.png" id="quest_nature"]
 [ext_resource type="PackedScene" path="res://QuestNPC.tscn" id="quest_npc"]
 [ext_resource type="PackedScene" path="res://QuestPickup.tscn" id="quest_pickup"]
-[ext_resource type="Texture2D" path="res://Little Dreamyland - Free Pack/Little Dreamyland - Free Pack/Tileset/Nature_Tileset.png" id="quest_nature"]
-
-[ext_resource type="Script" path="res://village_services.gd" id="services_script"]
+[ext_resource type="Script" uid="uid://bf03dt23eklex" path="res://village_services.gd" id="services_script"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj1ai"]
 texture = ExtResource("4_cvq6i")
@@ -5450,7 +5438,7 @@ texture_region_size = Vector2i(8, 8)
 7:15/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jyqkj"]
-texture = ExtResource("21_5j71u")
+texture = ExtResource("quest_nature")
 texture_region_size = Vector2i(8, 8)
 14:2/0 = 0
 15:2/0 = 0
@@ -5876,131 +5864,124 @@ texture = ExtResource("9_b2ar6")
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1861986215]
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1697931924]
+visible = false
 position = Vector2(0.99999994, 17.999998)
 rotation = 1.5707964
 scale = Vector2(0.9687495, 1.0000001)
 polygon = PackedVector2Array(300.25806, -135.99994, 300.25806, -124.39057, 300.3872, -59.000004, 291.0969, -59, 292.25806, -125.2757, 292.25806, -142.99994, 292.12915, -186.99998, 301.4195, -186.99998)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=825488486]
+visible = false
 position = Vector2(5.8000946, -1.5258789e-05)
 scale = Vector2(0.9687495, 1.0000001)
 polygon = PackedVector2Array(196, 272, 196, 336, 188, 336, 188, 265, 188, 232, 196, 232)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=322693116]
+visible = false
 position = Vector2(5.8000946, -1.5258789e-05)
 scale = Vector2(0.9687495, 1.0000001)
 polygon = PackedVector2Array(55.612843, 272, 55.612843, 336, 47.612843, 336, 47.612843, 265, 47.612843, 232, 55.612843, 232)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1028059841]
+visible = false
 polygon = PackedVector2Array(188, 232, 60, 232, 60, 239, 188, 239)
 
-[node name="ColisionCasaDerecha" type="StaticBody2D" parent="."]
-collision_layer = 1
+[node name="ColisionCasaDerecha" type="StaticBody2D" parent="." unique_id=2072743157]
+visible = false
 collision_mask = 2
 
-[node name="Paredes" type="CollisionPolygon2D" parent="ColisionCasaDerecha"]
+[node name="Paredes" type="CollisionPolygon2D" parent="ColisionCasaDerecha" unique_id=155109500]
+visible = false
 polygon = PackedVector2Array(388, 224, 572, 224, 572, 312, 388, 312)
 
+[node name="PuebloEntorno" parent="." unique_id=1616345140 instance=ExtResource("31_entorno")]
 
-
-
-
-
-
-
-
-
-[node name="PuebloEntorno" parent="." instance=ExtResource("31_entorno")]
-
-[node name="CasaAdobeChica" parent="." instance=ExtResource("organic_0")]
+[node name="CasaAdobeChica" parent="." unique_id=1880203097 instance=ExtResource("organic_0")]
 position = Vector2(96, 488)
 
-[node name="TrojePortalAncho" parent="." instance=ExtResource("organic_1")]
+[node name="TrojePortalAncho" parent="." unique_id=1447308802 instance=ExtResource("organic_1")]
 position = Vector2(584, 424)
 
-[node name="CasaMaderaLateral" parent="." instance=ExtResource("organic_2")]
+[node name="CasaMaderaLateral" parent="." unique_id=1448898118 instance=ExtResource("organic_2")]
 position = Vector2(412, 660)
 
-[node name="CasaAdobePatio" parent="." instance=ExtResource("organic_3")]
+[node name="CasaAdobePatio" parent="." unique_id=2055275819 instance=ExtResource("organic_3")]
 position = Vector2(104, 844)
 
-[node name="TrojePequeno" parent="." instance=ExtResource("organic_4")]
+[node name="TrojePequeno" parent="." unique_id=195517271 instance=ExtResource("organic_4")]
 position = Vector2(716, 792)
 
-[node name="CasaTaller" parent="." instance=ExtResource("organic_5")]
+[node name="CasaTaller" parent="." unique_id=700263254 instance=ExtResource("organic_5")]
 position = Vector2(492, 1016)
 
-[node name="MisionesPueblo" type="Node2D" parent="."]
+[node name="MisionesPueblo" type="Node2D" parent="." unique_id=1642670215]
 
-[node name="Teresa" parent="MisionesPueblo" instance=ExtResource("quest_npc")]
+[node name="Teresa" parent="MisionesPueblo" unique_id=184709853 instance=ExtResource("quest_npc")]
 position = Vector2(198, 676)
 quest_id = "hierbas"
-clothing_tint = Color(0.82, 1, 0.80, 1)
+clothing_tint = Color(0.82, 1, 0.8, 1)
 
-[node name="Mateo" parent="MisionesPueblo" instance=ExtResource("quest_npc")]
+[node name="Mateo" parent="MisionesPueblo" unique_id=1392870288 instance=ExtResource("quest_npc")]
 position = Vector2(626, 1204)
 quest_id = "lena"
 clothing_tint = Color(0.84, 0.89, 1, 1)
 
-[node name="Rosa" parent="MisionesPueblo" instance=ExtResource("quest_npc")]
+[node name="Rosa" parent="MisionesPueblo" unique_id=820235106 instance=ExtResource("quest_npc")]
 position = Vector2(190, 1056)
 quest_id = "maiz"
-clothing_tint = Color(1, 0.85, 0.70, 1)
+clothing_tint = Color(1, 0.85, 0.7, 1)
 
-[node name="TiaJuana" parent="MisionesPueblo" instance=ExtResource("quest_npc")]
+[node name="TiaJuana" parent="MisionesPueblo" unique_id=1371741075 instance=ExtResource("quest_npc")]
 position = Vector2(688, 628)
 quest_id = "recado"
 clothing_tint = Color(1, 0.78, 0.86, 1)
 
-[node name="Hierba1" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Hierba1" parent="MisionesPueblo" unique_id=716548832 instance=ExtResource("quest_pickup")]
 position = Vector2(148, -120)
-item_id = "hierbas_medicinales"
 
-[node name="Hierba2" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Hierba2" parent="MisionesPueblo" unique_id=835970647 instance=ExtResource("quest_pickup")]
 position = Vector2(472, -120)
-item_id = "hierbas_medicinales"
 
-[node name="Hierba3" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Hierba3" parent="MisionesPueblo" unique_id=1025545291 instance=ExtResource("quest_pickup")]
 position = Vector2(728, -72)
-item_id = "hierbas_medicinales"
 
-[node name="Lena1" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Lena1" parent="MisionesPueblo" unique_id=1595565900 instance=ExtResource("quest_pickup")]
 position = Vector2(840, 700)
 item_id = "lena_seca"
 icon_texture = ExtResource("quest_nature")
 icon_region = Rect2(128, 104, 16, 16)
 
-[node name="Lena2" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Lena2" parent="MisionesPueblo" unique_id=66689668 instance=ExtResource("quest_pickup")]
 position = Vector2(856, 840)
 item_id = "lena_seca"
 icon_texture = ExtResource("quest_nature")
 icon_region = Rect2(128, 104, 16, 16)
 
-[node name="Lena3" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Lena3" parent="MisionesPueblo" unique_id=185785885 instance=ExtResource("quest_pickup")]
 position = Vector2(816, 1072)
 item_id = "lena_seca"
 icon_texture = ExtResource("quest_nature")
 icon_region = Rect2(128, 104, 16, 16)
 
-[node name="Maiz1" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Maiz1" parent="MisionesPueblo" unique_id=1423393929 instance=ExtResource("quest_pickup")]
 position = Vector2(252, 1008)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
-[node name="Maiz2" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Maiz2" parent="MisionesPueblo" unique_id=471520812 instance=ExtResource("quest_pickup")]
 position = Vector2(268, 1008)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
-[node name="Maiz3" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Maiz3" parent="MisionesPueblo" unique_id=291504037 instance=ExtResource("quest_pickup")]
 position = Vector2(252, 1024)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
-[node name="Maiz4" parent="MisionesPueblo" instance=ExtResource("quest_pickup")]
+[node name="Maiz4" parent="MisionesPueblo" unique_id=1070216043 instance=ExtResource("quest_pickup")]
 position = Vector2(268, 1024)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
-[node name="VillageServices" type="Node2D" parent="."]
+[node name="VillageServices" type="Node2D" parent="." unique_id=1902469072]
 script = ExtResource("services_script")

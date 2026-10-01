@@ -21,6 +21,7 @@ var reward: int = 0
 var counters: Label
 var board: GridContainer
 var repairing: bool = false
+var crafting: bool = false
 var result_text: String = ""
 var was_paused: bool = false
 
@@ -36,9 +37,10 @@ func _ready() -> void:
 	overlay.add_child(shade)
 	var center := CenterContainer.new()
 	center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	center.offset_bottom = -52
 	overlay.add_child(center)
 	var card := PanelContainer.new()
-	card.custom_minimum_size = Vector2(596, 328)
+	card.custom_minimum_size = Vector2(596, 292)
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color("253a37")
 	style.border_color = Color("bba570")
@@ -91,6 +93,7 @@ func open_service(id: String) -> void:
 	if id == "library":
 		show_library()
 	else:
+		crafting = false
 		repairing = false
 		show_shop()
 
@@ -238,20 +241,25 @@ func show_shop() -> void:
 	if service_id == "smith":
 		var tabs := HBoxContainer.new()
 		column.add_child(tabs)
-		_button(tabs, "Comprar", func(): repairing = false; show_shop())
-		_button(tabs, "Reparar", func(): repairing = true; show_shop())
+		_button(tabs, "Comprar", func(): repairing = false; crafting = false; show_shop())
+		_button(tabs, "Reparar", func(): repairing = true; crafting = false; show_shop())
+		_button(tabs, "Fabricar", func(): repairing = false; crafting = true; show_shop())
 	var scroll := ScrollContainer.new()
-	scroll.custom_minimum_size.y = 145
+	scroll.custom_minimum_size.y = 108
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	column.add_child(scroll)
 	list = VBoxContainer.new()
 	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(list)
-	if repairing:
+	if crafting:
+		_build_recipes()
+	elif repairing:
 		_build_repairs()
 	else:
 		_build_products()
 	message = _label("Selecciona un objeto para comprarlo." if not repairing else "El coste depende del desgaste del objeto.", 12)
+	if crafting:
+		message.text = "Trae materiales de la mina. Selecciona una receta."
 	message.custom_minimum_size.y = 30
 	_button(column, "Volver al local · Esc", close_service).grab_focus()
 
@@ -295,5 +303,20 @@ func _build_repairs() -> void:
 
 func repair(uid: int) -> void:
 	var result: String = Transactions.repair(uid)
+	show_shop()
+	message.text = result
+
+func _build_recipes() -> void:
+	for id in Transactions.RECIPES:
+		var recipe: Dictionary = Transactions.RECIPES[id]
+		var cost_text: Array[String] = []
+		for material in recipe["materials"]:
+			cost_text.append("%s %d/%d" % [Inventory.item_database[material]["name"], Inventory.items.count(material), recipe["materials"][material]])
+		var button := _button(list, "%s · %d bronce" % [Inventory.item_database[id]["name"], recipe["price"]], craft.bind(id))
+		button.disabled = not Transactions.can_craft(id)
+		_empty(", ".join(cost_text))
+
+func craft(id: String) -> void:
+	var result: String = Transactions.craft(id)
 	show_shop()
 	message.text = result

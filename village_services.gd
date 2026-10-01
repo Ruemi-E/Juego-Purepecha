@@ -36,6 +36,7 @@ func _ready() -> void:
 		_build_exterior(id)
 		_build_room(id, Vector2(2600 + index * 600, 2000))
 		index += 1
+	_build_mine()
 
 func _rect(parent: Node, rect: Rect2, color: Color, z: int = 0) -> Polygon2D:
 	var shape := Polygon2D.new()
@@ -142,9 +143,7 @@ func _build_room(id: String, origin: Vector2) -> void:
 	npc.prompt = "E · Hablar con " + str(SERVICES[id]["npc"]).split(" · ")[0]
 	npc.action = talk.bind(id)
 	var sprite := Sprite2D.new()
-	sprite.texture = preload("res://viejo_frontal_xxx.png")
-	sprite.scale = Vector2(0.2, 0.2)
-	sprite.self_modulate = SERVICES[id]["color"]
+	preload("res://npc_appearance.gd").apply(sprite, {"library": 5, "food": 6, "remedies": 7, "smith": 8}[id])
 	npc.add_child(sprite)
 	room.add_child(npc)
 	merchants[id] = npc
@@ -208,3 +207,53 @@ func _update_room(player: CharacterBody2D) -> void:
 		camera.limit_right = int(origin.x + 448)
 		camera.limit_bottom = int(origin.y + 288)
 	camera.reset_smoothing()
+
+func _build_mine() -> void:
+	_rect(self, Rect2(840, 1530, 400, 382), Color("829858"), -3)
+	_rect(self, Rect2(730, 1770, 388, 48), Color("c1aa78"), -2)
+	_rect(self, Rect2(1054, 1710, 52, 90), Color("c1aa78"), -2)
+	_rect(self, Rect2(970, 1570, 224, 160), Color("656666"))
+	_rect(self, Rect2(994, 1554, 176, 154), Color("818075"))
+	_rect(self, Rect2(1048, 1650, 64, 84), Color("252b2e"), 1)
+	for x in [1038, 1112]:
+		_rect(self, Rect2(x, 1642, 10, 90), Color("826343"), 2)
+	_rect(self, Rect2(1038, 1636, 84, 12), Color("b39566"), 2)
+	_wall(self, Rect2(970, 1570, 68, 160))
+	_wall(self, Rect2(1122, 1570, 72, 160))
+	_wall(self, Rect2(1038, 1570, 84, 66))
+	_label(self, "MINA", Vector2(1020, 1590), 120, 14)
+	var door := Interaction.new()
+	door.position = Vector2(1080, 1738)
+	door.prompt = "E · Entrar a la mina"
+	door.action = enter_room.bind("mine")
+	add_child(door)
+	doors["mine"] = door
+	var room := Node2D.new()
+	room.position = Vector2(5200, 2000)
+	room.name = "Interior_mine"
+	add_child(room)
+	rooms["mine"] = room
+	_rect(room, Rect2(-400, -400, 1248, 1088), Color("171b22"), -5)
+	_rect(room, Rect2(0, 0, 448, 288), Color("4b4844"), -3)
+	for y in range(36, 280, 24):
+		for x in range(12, 440, 32):
+			_rect(room, Rect2(x, y, 28, 20), Color("57544d") if (x + y) % 3 == 0 else Color("504d48"), -2)
+	for wall in [Rect2(0, 0, 448, 32), Rect2(0, 0, 8, 288), Rect2(440, 0, 8, 288), Rect2(0, 280, 448, 8)]:
+		_wall(room, wall)
+		_rect(room, wall, Color("34383d"))
+	_label(room, "MINA · Selecciona tu pico (1–5) y pulsa E cerca de una veta", Vector2(8, 10), 432, 10)
+	var ores := ["mineral_hierro", "piedra", "carbon", "mineral_hierro", "piedra", "mineral_hierro", "carbon", "piedra"]
+	for i in range(ores.size()):
+		var vein := preload("res://mine_vein.gd").new()
+		vein.position = Vector2(70 + (i % 4) * 100, 76 + int(i / 4.0) * 84)
+		vein.vein_id = "mine_" + str(i)
+		vein.ore_id = ores[i]
+		room.add_child(vein)
+	var exit_door := Interaction.new()
+	exit_door.position = Vector2(224, 266)
+	exit_door.prompt = "E · Volver al pueblo"
+	exit_door.action = leave_room.bind("mine")
+	room.add_child(exit_door)
+	exits["mine"] = exit_door
+	_rect(room, Rect2(202, 259, 44, 20), Color("c1aa78"), -1)
+	_label(room, "SALIDA", Vector2(184, 264), 80, 8)

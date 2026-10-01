@@ -8,6 +8,7 @@ var active: bool = false
 var transitioning: bool = false
 var pickup_paths: Array[String] = []
 var initial_words: Dictionary
+var mine_state: Dictionary = {}
 
 func _ready() -> void:
 	initial_words = DictionaryManager.known_words.duplicate(true)
@@ -56,7 +57,9 @@ func _open_world(data: Dictionary) -> void:
 		return
 	await get_tree().scene_changed
 	DictionaryManager.reset_learning()
+	mine_state.clear()
 	Inventory.items.clear()
+	Inventory.restore_hotbar([], 0)
 	Inventory.equipment.clear()
 	Inventory.next_equipment_uid = 1
 	QuestManager.states.clear()
@@ -93,6 +96,10 @@ func _open_world(data: Dictionary) -> void:
 					pickup.free()
 		var player := get_tree().get_first_node_in_group("player") as Node2D
 		player.global_position = Vector2(float(data["position"][0]), float(data["position"][1]))
+	if data.get("mine_state", {}) is Dictionary:
+		mine_state = data.get("mine_state", {}).duplicate(true)
+	var saved_hotbar = data.get("hotbar", [])
+	Inventory.restore_hotbar(saved_hotbar if saved_hotbar is Array else [], int(data.get("selected_slot", 0)))
 	var saved_equipment = data.get("equipment", [])
 	Inventory.restore_equipment(saved_equipment if saved_equipment is Array else [])
 	QuestManager.changed.emit()
@@ -114,6 +121,7 @@ func save_game() -> void:
 			removed.append(path)
 	var data := {
 		"version": 1, "position": [player.global_position.x, player.global_position.y],
+		"hotbar": Inventory.hotbar, "selected_slot": Inventory.selected_slot, "mine_state": mine_state,
 		"items": Inventory.items, "equipment": Inventory.equipment, "quests": QuestManager.states,
 		"tracked": QuestManager.tracked_quest, "bronze": Economia.monedas_bronce,
 		"silver": Economia.monedas_plata, "dictionary": DictionaryManager.has_dictionary,

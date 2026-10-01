@@ -40,3 +40,33 @@ static func repair(uid: int) -> String:
 		GameSession.save_game()
 		return "Objeto reparado · −%d bronce" % cost
 	return "Ya no tienes ese objeto."
+
+const RECIPES: Dictionary = {
+	"pico_hierro": {"materials": {"mineral_hierro": 6, "piedra": 4, "carbon": 2}, "price": 4},
+	"hacha_hierro": {"materials": {"mineral_hierro": 4, "piedra": 2, "carbon": 2}, "price": 3},
+	"martillo_hierro": {"materials": {"mineral_hierro": 4, "piedra": 4, "carbon": 2}, "price": 3}
+}
+
+static func can_craft(id: String) -> bool:
+	if not RECIPES.has(id):
+		return false
+	var recipe: Dictionary = RECIPES[id]
+	if Economia.total_bronce() < int(recipe["price"]):
+		return false
+	for material in recipe["materials"]:
+		if Inventory.items.count(material) < int(recipe["materials"][material]):
+			return false
+	return true
+
+static func craft(id: String) -> String:
+	if not can_craft(id):
+		return "Faltan materiales o monedas. No se ha consumido nada."
+	var recipe: Dictionary = RECIPES[id]
+	if not Economia.gastar_bronce(int(recipe["price"])):
+		return "No tienes suficientes monedas."
+	for material in recipe["materials"]:
+		for i in range(int(recipe["materials"][material])):
+			Inventory.remove_item(material)
+	Inventory.add_item(id)
+	GameSession.save_game()
+	return "Tomás fabricó: " + str(Inventory.item_database[id]["name"])

@@ -18,8 +18,8 @@ func _ready() -> void:
  add_child(hint)
  hint.hide()
  panel = PanelContainer.new()
- panel.position = Vector2(50, 35)
- panel.size = Vector2(540, 290)
+ panel.position = Vector2(50, 24)
+ panel.size = Vector2(540, 260)
  add_child(panel)
  var margin = MarginContainer.new()
  for edge in ["left", "right", "top", "bottom"]:

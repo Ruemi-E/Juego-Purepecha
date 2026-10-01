@@ -43,6 +43,7 @@ func _ready() -> void:
 	hide()
 
 func open() -> void:
+	get_child(0).offset_bottom = -52 if is_instance_valid(get_tree().get_first_node_in_group("player")) else 0
 	volume_slider.set_value_no_signal(GameSession.volume * 100)
 	fullscreen_toggle.set_pressed_no_signal(GameSession.fullscreen)
 	show()

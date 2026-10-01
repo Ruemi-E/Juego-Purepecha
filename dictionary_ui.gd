@@ -24,9 +24,10 @@ func _ready() -> void:
     panel.add_child(shade)
     var center := CenterContainer.new()
     center.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+    center.offset_bottom = -52
     panel.add_child(center)
     var card := PanelContainer.new()
-    card.custom_minimum_size = Vector2(592, 320)
+    card.custom_minimum_size = Vector2(592, 292)
     center.add_child(card)
     var margin := MarginContainer.new()
     for edge in ["left", "top", "right", "bottom"]:

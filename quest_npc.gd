@@ -5,7 +5,7 @@ extends "res://npc.gd"
 
 func _ready() -> void:
  super._ready()
- $Sprite2D.self_modulate = clothing_tint
+ preload("res://npc_appearance.gd").apply($Sprite2D, {"hierbas": 1, "lena": 2, "maiz": 3, "recado": 4}[quest_id])
  $Nombre.text = QuestManager.QUESTS[quest_id]["speaker"]
 
 func interact(_player: CharacterBody2D) -> void:

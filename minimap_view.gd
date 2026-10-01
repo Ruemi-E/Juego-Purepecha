@@ -20,6 +20,9 @@ func configure(world: Node) -> void:
    var data: Dictionary = services.SERVICES[id]
    add_box(data["position"] + Vector2(8, 80), Vector2(112, 56), HOUSE)
    service_markers.append({"position": services.doors[id].global_position, "letter": {"library": "B", "food": "C", "remedies": "R", "smith": "H"}[id], "color": data["color"]})
+  add_box(Vector2(730, 1770), Vector2(388, 48), ROAD)
+  add_box(Vector2(970, 1570), Vector2(224, 160), Color("656666"))
+  service_markers.append({"position": services.doors["mine"].global_position, "letter": "M", "color": Color("ded0b7")})
  var tiles = world.get_node_or_null("TileMap")
  if tiles != null:
   for layer in [2, 3, 5]:

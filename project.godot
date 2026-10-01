@@ -29,6 +29,7 @@ QuestJournal="*res://quest_journal.gd"
 QuestHud="*res://quest_hud.gd"
 GameSession="*res://game_session.gd"
 PauseMenu="*res://pause_menu.gd"
+QuickBar="*res://quick_bar.gd"
 
 [display]
 

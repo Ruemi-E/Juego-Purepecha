@@ -5,6 +5,13 @@ signal item_removed(item_id: String)
 
 # Base de datos global de objetos del juego
 var item_database: Dictionary = {
+ "pico_basico": {"name": "Pico básico", "purepecha": "Pico básico", "desc": "Selecciónalo en la barra rápida y pulsa E junto a una veta. Se repara en la herrería.", "shop": "smith", "price": 6, "max_durability": 30, "repairable": true, "repair_price_per_point": 1, "mining_power": 1},
+ "pico_hierro": {"name": "Pico de hierro", "purepecha": "Pico de hierro", "desc": "Pico reforzado: extrae vetas en menos golpes. Selecciónalo con 1–5.", "max_durability": 60, "repairable": true, "mining_power": 2},
+ "hacha_hierro": {"name": "Hacha de hierro", "purepecha": "Hacha de hierro", "desc": "Herramienta fabricada. La tala se añadirá después; no sirve para minar.", "max_durability": 40, "repairable": true},
+ "martillo_hierro": {"name": "Martillo de hierro", "purepecha": "Martillo de hierro", "desc": "Herramienta fabricada para trabajos futuros. No sirve para minar.", "max_durability": 40, "repairable": true},
+ "mineral_hierro": {"name": "Mineral de hierro", "purepecha": "Mineral de hierro", "desc": "Material de la mina para fabricar herramientas con Tomás."},
+ "piedra": {"name": "Piedra", "purepecha": "Piedra", "desc": "Material de la mina para la herrería."},
+ "carbon": {"name": "Carbón", "purepecha": "Carbón", "desc": "Combustible de la fragua. Se obtiene en la mina."},
  "remedio_sencillo": {"name": "Remedio sencillo", "purepecha": "Remedio sencillo", "desc": "Objeto del botiquín del juego. Su uso se habilitará cuando se añada el sistema de salud.", "shop": "remedies", "price": 4},
  "unguento": {"name": "Ungüento", "purepecha": "Ungüento", "desc": "Objeto del botiquín del juego. Su uso se habilitará cuando se añada el sistema de salud.", "shop": "remedies", "price": 6},
  "hierbas_medicinales": {"name": "Hierbas medicinales", "purepecha": "uitsakua", "desc": "Entrega tres a Teresa, junto a la casa de adobe pequeña."},
@@ -39,6 +46,12 @@ var items: Array[String] = []
 
 func add_item(item_id: String) -> void:
  items.append(item_id)
+ if not item_id in hotbar:
+  var slot: int = hotbar.find("")
+  if slot >= 0:
+   hotbar[slot] = item_id
+   if int(item_database.get(item_id, {}).get("mining_power", 0)) > 0:
+    selected_slot = slot
  var maximum: int = int(item_database.get(item_id, {}).get("max_durability", 0))
  if maximum > 0:
   equipment.append({"uid": next_equipment_uid, "item_id": item_id, "durability": maximum})
@@ -98,3 +111,39 @@ func restore_equipment(saved: Array) -> void:
    else:
     equipment.append({"uid": next_equipment_uid, "item_id": id, "durability": maximum})
     next_equipment_uid += 1
+
+var hotbar: Array[String] = ["", "", "", "", ""]
+var selected_slot: int = 0
+
+func assign_slot(index: int, id: String) -> void:
+ if index < 0 or index >= 5 or (not id.is_empty() and not has_item(id)):
+  return
+ for i in range(5):
+  if hotbar[i] == id:
+   hotbar[i] = ""
+ hotbar[index] = id
+ selected_slot = index
+
+func active_equipment() -> Dictionary:
+ var id: String = hotbar[selected_slot]
+ var broken: Dictionary = {}
+ for entry in equipment:
+  if entry["item_id"] == id:
+   if int(entry["durability"]) > 0:
+    return entry
+   broken = entry
+ return broken
+
+func restore_hotbar(saved: Array, selected: int) -> void:
+ hotbar.assign(["", "", "", "", ""])
+ selected_slot = clampi(selected, 0, 4)
+ for i in range(mini(5, saved.size())):
+  var id: String = str(saved[i])
+  if item_database.has(id) and not id in hotbar:
+   hotbar[i] = id
+ if saved.is_empty():
+  var slot := 0
+  for id in items:
+   if slot < 5 and not id in hotbar:
+    hotbar[slot] = id
+    slot += 1
