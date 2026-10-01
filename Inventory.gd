@@ -37,7 +37,7 @@ var item_database: Dictionary = {
  "morral_recado": {
   "name": "Morral con encargo",
   "purepecha": "sutupu",
-  "desc": "Entrego importante para la tía."
+  "desc": "Encargo para tu tía al final del viaje. Consérvalo mientras completas los pueblos."
  }
 }
 

@@ -65,7 +65,7 @@ func refresh() -> void:
    var count: int = mini(QuestManager.progress(id), q["amount"])
    label = "%s: %d/%d" % [Inventory.item_database[q["item"]]["purepecha"], count, q["amount"]]
    if count == q["amount"]:
-    label += " · Vuelve para entregar"
+    label += " · Conserva el encargo; consulta la ruta al este" if id == "recado" else " · Vuelve para entregar"
   elif state == "completed":
    label = "[color=light_green]Completada · Recompensa recibida[/color]"
   text += "[b]%s[/b] · %s\n%s\n\n" % [q["title"], QuestManager.reward_text(id), label]

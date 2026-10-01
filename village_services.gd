@@ -21,13 +21,6 @@ func _ready() -> void:
 	add_to_group("village_services")
 	ui = ServicesUI.new()
 	add_child(ui)
-	# Nueva plaza al sur, conectada al camino existente por el centro.
-	_rect(self, Rect2(24, 1232, 832, 680), Color("829858"), -3)
-	_rect(self, Rect2(344, 1180, 80, 680), Color("c1aa78"), -2)
-	for y in [1450, 1770]:
-		_rect(self, Rect2(144, y, 596, 48), Color("c1aa78"), -2)
-		for x in range(160, 736, 32):
-			_rect(self, Rect2(x, y + 16, 18, 8), Color("d5c494"), -1)
 	_label(self, "↓ BIBLIOTECA Y COMERCIOS ↓", Vector2(254, 1216), 260, 11)
 	_rect(self, Rect2(254, 394, 154, 24), Color("4b4430"), 1)
 	_label(self, "↓ Biblioteca y comercios", Vector2(250, 398), 162, 10)
@@ -86,7 +79,6 @@ func _build_exterior(id: String) -> void:
 	doors[id] = door
 	_rect(house, Rect2(14, 60, 104 if id != "smith" else 144, 18), Color("433b2d"), 2)
 	_label(house, data["title"], Vector2(12, 62), 108 if id != "smith" else 148, 10)
-	_rect(self, Rect2(door.position + Vector2(-18, 12), Vector2(36, 35)), Color("c1aa78"), -1)
 
 func _build_room(id: String, origin: Vector2) -> void:
 	var room := Node2D.new()
@@ -195,10 +187,11 @@ func _update_room(player: CharacterBody2D) -> void:
 		return
 	if active_room.is_empty():
 		camera.position = original_camera_position
-		camera.limit_left = -10000000
-		camera.limit_top = -10000000
-		camera.limit_right = 10000000
-		camera.limit_bottom = 10000000
+		var bounds: Rect2 = preload("res://world_catalog.gd").BOUNDS
+		camera.limit_left = int(bounds.position.x)
+		camera.limit_top = int(bounds.position.y)
+		camera.limit_right = int(bounds.end.x)
+		camera.limit_bottom = int(bounds.end.y)
 	else:
 		var origin: Vector2 = rooms[active_room].global_position
 		camera.position = Vector2.ZERO
@@ -209,9 +202,6 @@ func _update_room(player: CharacterBody2D) -> void:
 	camera.reset_smoothing()
 
 func _build_mine() -> void:
-	_rect(self, Rect2(840, 1530, 400, 382), Color("829858"), -3)
-	_rect(self, Rect2(730, 1770, 388, 48), Color("c1aa78"), -2)
-	_rect(self, Rect2(1054, 1710, 52, 90), Color("c1aa78"), -2)
 	_rect(self, Rect2(970, 1570, 224, 160), Color("656666"))
 	_rect(self, Rect2(994, 1554, 176, 154), Color("818075"))
 	_rect(self, Rect2(1048, 1650, 64, 84), Color("252b2e"), 1)

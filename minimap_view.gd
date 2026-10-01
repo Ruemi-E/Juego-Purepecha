@@ -23,6 +23,11 @@ func configure(world: Node) -> void:
   add_box(Vector2(730, 1770), Vector2(388, 48), ROAD)
   add_box(Vector2(970, 1570), Vector2(224, 160), Color("656666"))
   service_markers.append({"position": services.doors["mine"].global_position, "letter": "M", "color": Color("ded0b7")})
+ var landscape = world.get_node_or_null("WorldLandscape")
+ if landscape != null:
+  for rect in landscape.map_features:
+   add_box(rect.position, rect.size, WATER)
+  service_markers.append({"position": landscape.exit_gate.global_position, "letter": "S", "color": Color("ffe3a3")})
  var tiles = world.get_node_or_null("TileMap")
  if tiles != null:
   for layer in [2, 3, 5]:

@@ -88,6 +88,9 @@ func bind_world() -> bool:
 
 func resolve_target(id: String) -> Node2D:
  var quest: Dictionary = QuestManager.QUESTS[id]
+ if id == "recado" and Inventory.has_item("morral_recado"):
+  var landscape := world.get_node_or_null("WorldLandscape")
+  return landscape.exit_gate if landscape != null else null
  if QuestManager.progress(id) >= int(quest["amount"]):
   for candidate in get_tree().get_nodes_in_group("interactables"):
    if candidate.get("quest_id") == id and not candidate.is_queued_for_deletion():
@@ -133,6 +136,8 @@ func refresh() -> void:
  var instruction: String
  if count >= int(quest["amount"]):
   instruction = "Entrega a " + str(quest["speaker"]).split(" · ")[0]
+  if id == "recado":
+   instruction = "¡Pueblo completado! · Consulta la ruta al este" if Journey.requirements_met() else "Conserva el sutupu · Consulta la ruta al este"
  elif quest["item"] == "morral_recado":
   instruction = "Habla con Tátita"
  else:

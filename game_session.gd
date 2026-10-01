@@ -9,6 +9,8 @@ var transitioning: bool = false
 var pickup_paths: Array[String] = []
 var initial_words: Dictionary
 var mine_state: Dictionary = {}
+const WorldCatalog = preload("res://world_catalog.gd")
+var current_world_id: String = WorldCatalog.FIRST
 
 func _ready() -> void:
 	initial_words = DictionaryManager.known_words.duplicate(true)
@@ -43,6 +45,8 @@ func load_game() -> bool:
 	for key in ["quests", "words"]:
 		if not data.get(key) is Dictionary:
 			return false
+	if not WorldCatalog.available(str(data.get("world_id", WorldCatalog.FIRST))):
+		return false
 	_open_world(data)
 	return true
 
@@ -52,7 +56,8 @@ func _open_world(data: Dictionary) -> void:
 	transitioning = true
 	active = false
 	get_tree().paused = false
-	if get_tree().change_scene_to_file("res://World.tscn") != OK:
+	current_world_id = str(data.get("world_id", WorldCatalog.FIRST))
+	if get_tree().change_scene_to_file(WorldCatalog.TOWNS[current_world_id]["scene"]) != OK:
 		transitioning = false
 		return
 	await get_tree().scene_changed
@@ -102,6 +107,12 @@ func _open_world(data: Dictionary) -> void:
 	Inventory.restore_hotbar(saved_hotbar if saved_hotbar is Array else [], int(data.get("selected_slot", 0)))
 	var saved_equipment = data.get("equipment", [])
 	Inventory.restore_equipment(saved_equipment if saved_equipment is Array else [])
+	# Earlier versions placed the final recipient in this village. Preserve coins,
+	# restore her parcel, and continue the journey without completing it here.
+	if current_world_id == WorldCatalog.FIRST and DictionaryManager.has_dictionary:
+		if not Inventory.has_item("morral_recado"):
+			Inventory.add_item("morral_recado")
+		QuestManager.states["recado"] = "active"
 	QuestManager.changed.emit()
 	active = true
 	transitioning = false
@@ -120,7 +131,7 @@ func save_game() -> void:
 		if node == null or node.is_queued_for_deletion():
 			removed.append(path)
 	var data := {
-		"version": 1, "position": [player.global_position.x, player.global_position.y],
+		"version": 1, "world_id": current_world_id, "position": [player.global_position.x, player.global_position.y],
 		"hotbar": Inventory.hotbar, "selected_slot": Inventory.selected_slot, "mine_state": mine_state,
 		"items": Inventory.items, "equipment": Inventory.equipment, "quests": QuestManager.states,
 		"tracked": QuestManager.tracked_quest, "bronze": Economia.monedas_bronce,
@@ -161,3 +172,17 @@ func _save_settings() -> void:
 	config.set_value("audio", "volume", volume)
 	config.set_value("video", "fullscreen", fullscreen)
 	config.save(SETTINGS_PATH)
+
+func travel_to(id: String) -> bool:
+	if transitioning or not active or not Journey.can_travel(id):
+		return false
+	save_game()
+	var data = JSON.parse_string(FileAccess.get_file_as_string(SAVE_PATH))
+	if not data is Dictionary:
+		return false
+	data["world_id"] = id
+	var spawn: Vector2 = WorldCatalog.TOWNS[id]["spawn"]
+	data["position"] = [spawn.x, spawn.y]
+	data["removed"] = []
+	_open_world(data)
+	return true

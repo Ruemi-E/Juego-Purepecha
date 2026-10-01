@@ -11,10 +11,13 @@ func interact(_player: CharacterBody2D) -> void:
   DictionaryManager.has_dictionary = true
   Inventory.add_item("morral_recado")
   Inventory.add_item("diccionario")
+  QuestManager.states["recado"] = "active"
+  QuestManager.tracked_quest = "recado"
+  QuestManager.changed.emit()
   
   DialogueManager.start_dialogue(
    "[color=yellow]Tátita:[/color]\n" +
-   "Lleva este [b]sutupu[/b] con tu tía en el pueblo vecino. Busca su significado en el diccionario con J.\n" +
+   "Lleva este [b]sutupu[/b] con tu tía al final del viaje. Primero ayuda a los vecinos de este pueblo; Amalia te espera en la salida del este. Busca su significado en el diccionario con J.\n" +
    "El camino es largo. Llévate este cuaderno para que recuerdes nuestras palabras.\n" +
    "[color=green](Presiona 'J' para consultar tu diccionario en cualquier momento).[/color]"
   )

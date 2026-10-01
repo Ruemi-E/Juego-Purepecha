@@ -6,7 +6,7 @@ const QUESTS: Dictionary = {
  "hierbas": {"speaker": "Teresa · Curandera", "title": "El encargo de Teresa", "item": "hierbas_medicinales", "amount": 3, "bronze": 6, "silver": 0, "request": "Necesito reunir: [b]uitsakua[/b] × 3. Consulta la palabra con J; después cruza el puente y busca junto al sendero. Recoge con E y vuelve conmigo."},
  "lena": {"speaker": "Mateo · Carpintero", "title": "El encargo de Mateo", "item": "lena_seca", "amount": 3, "bronze": 0, "silver": 1, "request": "Necesito reunir: [b]chkári[/b] × 3. Consulta la palabra con J; después busca al este del pueblo, cerca de los árboles. Recoge con E y vuelve conmigo."},
  "maiz": {"speaker": "Rosa · Agricultora", "title": "El encargo de Rosa", "item": "mazorca", "amount": 4, "bronze": 8, "silver": 0, "request": "Necesito reunir: [b]xanini[/b] × 4. Consulta la palabra con J; después busca en mi patio, al oeste de la plaza. Recoge con E y vuelve conmigo."},
- "recado": {"speaker": "Tía Juana", "title": "El encargo de Tátita", "item": "morral_recado", "amount": 1, "bronze": 0, "silver": 2, "request": "Tráeme el [b]sutupu[/b] de Tátita. Consulta la palabra con J. Habla con él junto a la casa del inicio y vuelve conmigo para entregarlo."}
+ "recado": {"speaker": "Tía Juana", "title": "El viaje a casa de tu tía", "item": "morral_recado", "amount": 1, "bronze": 0, "silver": 2, "request": "Conserva el [b]sutupu[/b] de Tátita durante el viaje. Ayuda a los vecinos y consulta la ruta con Amalia, en la salida del este. Tu tía espera en un pueblo posterior."}
 }
 var states: Dictionary = {}
 var tracked_quest: String = ""
@@ -36,6 +36,8 @@ func reward_text(id: String) -> String:
 func talk(id: String) -> String:
  if not QUESTS.has(id):
   return "Este encargo no está disponible."
+ if id == "recado":
+  return "Tu tía te espera al final del viaje. Conserva el sutupu y consulta la ruta con Amalia en la salida del este."
  var q: Dictionary = QUESTS[id]
  DictionaryManager.encountered[q["item"]] = true
  var heading: String = "[color=yellow]%s[/color]\n" % q["speaker"]
