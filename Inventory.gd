@@ -5,6 +5,12 @@ signal item_removed(item_id: String)
 
 # Base de datos global de objetos del juego
 var item_database: Dictionary = {
+ "cana_pesca": {"name":"Caña de pesca","purepecha":"Caña de pesca","desc":"Equípala con 1–5 y usa E en los puestos del lago. Necesita un anzuelo por intento.","shop":"smith","price":8,"max_durability":35,"repairable":true,"fishing_rod":true},
+ "anzuelo": {"name":"Anzuelo","purepecha":"Anzuelo","desc":"Se consume al lanzar la caña.","shop":"food","price":1},
+ "charal": {"name":"Charal","purepecha":"Charal","desc":"Lucía compra este pescado.","sell_price":3},
+ "mojarra": {"name":"Mojarra","purepecha":"Mojarra","desc":"Lucía compra este pescado.","sell_price":5},
+ "carpa": {"name":"Carpa","purepecha":"Carpa","desc":"Lucía compra este pescado.","sell_price":8},
+
  "pico_basico": {"name": "Pico básico", "purepecha": "Pico básico", "desc": "Selecciónalo en la barra rápida y pulsa E junto a una veta. Se repara en la herrería.", "shop": "smith", "price": 6, "max_durability": 30, "repairable": true, "repair_price_per_point": 1, "mining_power": 1},
  "pico_hierro": {"name": "Pico de hierro", "purepecha": "Pico de hierro", "desc": "Pico reforzado: extrae vetas en menos golpes. Selecciónalo con 1–5.", "max_durability": 60, "repairable": true, "mining_power": 2},
  "hacha_hierro": {"name": "Hacha de hierro", "purepecha": "Hacha de hierro", "desc": "Herramienta fabricada. La tala se añadirá después; no sirve para minar.", "max_durability": 40, "repairable": true},

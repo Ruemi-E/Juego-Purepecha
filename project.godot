@@ -30,7 +30,11 @@ QuestHud="*res://quest_hud.gd"
 GameSession="*res://game_session.gd"
 PauseMenu="*res://pause_menu.gd"
 QuickBar="*res://quick_bar.gd"
+AdventureState="*res://adventure_state.gd"
 Journey="*res://journey.gd"
+Fishing="*res://fishing.gd"
+ExplorationUI="*res://exploration_ui.gd"
+CurrencyDisplay="*res://currency_display.gd"
 
 [display]
 

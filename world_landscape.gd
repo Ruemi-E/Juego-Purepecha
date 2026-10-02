@@ -45,7 +45,7 @@ func _path_rect(rect: Rect2) -> void:
    new_paths[Vector2i(x, y)] = true
 
 func _paths() -> void:
- for rect in [Rect2(344, 1180, 80, 780), Rect2(144, 1450, 596, 48), Rect2(144, 1770, 970, 48), Rect2(1054, 1710, 52, 108), Rect2(920, 300, 64, 1504), Rect2(848, 1040, 528, 64), Rect2(-124, 360, 196, 40), Rect2(-124, 360, 40, 1120), Rect2(-104, 1450, 264, 48)]:
+ for rect in [Rect2(344, 1180, 80, 1140), Rect2(1300, 1040, 460, 64), Rect2(1424, 688, 48, 1576), Rect2(1424, 704, 248, 40), Rect2(1424, 1184, 248, 40), Rect2(1424, 1664, 248, 40), Rect2(0, 1984, 1456, 40), Rect2(144, 1450, 596, 48), Rect2(144, 1770, 970, 48), Rect2(1054, 1710, 52, 108), Rect2(920, 300, 64, 1504), Rect2(848, 1040, 528, 64), Rect2(-124, 360, 196, 40), Rect2(-124, 360, 40, 1120), Rect2(-104, 1450, 264, 48)]:
   _path_rect(rect)
  for id in get_parent().get_node("VillageServices").doors:
   if id != "mine":
@@ -106,11 +106,11 @@ func _lake() -> void:
  _water_wall(Rect2(-96, 48, 32, 64))
  map_features.append(Rect2(-96, 48, 32, 64))
  # Extend the existing river to the eastern edge of the bounded map.
- for x in range(976, 1440, 16):
+ for x in range(976, 1840, 16):
   for y in range(64, 128, 16):
    lake_cells[Vector2i(x / 16, y / 16)] = true
- _water_wall(Rect2(976, 64, 464, 64))
- map_features.append(Rect2(976, 64, 464, 64))
+ _water_wall(Rect2(976, 64, 864, 64))
+ map_features.append(Rect2(976, 64, 864, 64))
  for cell in lake_cells:
   layer.set_cell(cell, 0, Vector2i(rng.randi_range(0, 3), 0))
  _sign(Vector2(-116, 408), "LAGO DE\nPÁTZCUARO", 100)
@@ -136,14 +136,14 @@ func _boundaries() -> void:
  _wall(Rect2(bounds.position.x - 24, bounds.position.y, 24, bounds.size.y), "LimiteOeste")
  _wall(Rect2(bounds.end.x, bounds.position.y, 24, bounds.size.y), "LimiteEste")
  # Dense trees make the physical limits visible. The lake forms the west edge.
- for x in range(-680, 1440, 32):
+ for x in range(-680, 1840, 32):
   _tree(Vector2(x, -260), false)
-  _tree(Vector2(x, 2060), false)
- for y in range(-224, 2064, 32):
+  _tree(Vector2(x, 2444), false)
+ for y in range(-224, 2448, 32):
   if y < 48 or y > 152:
-   _tree(Vector2(1420, y), false)
- for x in range(-656, 1400, 56):
-  _tree(Vector2(x, 2012), false)
+   _tree(Vector2(1820, y), false)
+ for x in range(-656, 1800, 56):
+  _tree(Vector2(x, 2396), false)
 
 func _gate() -> void:
  exit_gate = Interaction.new()
@@ -215,8 +215,8 @@ func _decorate_when_physics_ready() -> void:
  await get_tree().physics_frame
  await get_tree().physics_frame
  _recover_old_position()
- for i in range(600):
-  var pos := Vector2(rng.randi_range(-180, 1350), rng.randi_range(-190, 1970)).snapped(Vector2(8, 8))
+ for i in range(850):
+  var pos := Vector2(rng.randi_range(-180, 1750), rng.randi_range(-190, 2350)).snapped(Vector2(8, 8))
   if _safe_decor(pos, 30):
    if i % 4 == 0:
     _tree(pos)

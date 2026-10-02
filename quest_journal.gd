@@ -14,7 +14,7 @@ func _ready() -> void:
  hint.add_theme_color_override("font_shadow_color", Color.BLACK)
  hint.add_theme_constant_override("shadow_offset_x", 1)
  hint.add_theme_constant_override("shadow_offset_y", 1)
- hint.text = "E · Hablar / recoger    M · Misiones    I · Inventario    J · Diccionario"
+ hint.text = "E · Interactuar  M · Misiones  I · Inventario  J · Diccionario  Tab · Mapa"
  add_child(hint)
  hint.hide()
  panel = PanelContainer.new()
@@ -32,6 +32,7 @@ func _ready() -> void:
  margin.add_child(content)
  panel.hide()
  QuestManager.changed.connect(refresh)
+ AdventureState.changed.connect(refresh)
 
 func _process(_delta: float) -> void:
  hint.visible = is_instance_valid(get_tree().get_first_node_in_group("player")) and not get_tree().paused
@@ -69,4 +70,9 @@ func refresh() -> void:
   elif state == "completed":
    label = "[color=light_green]Completada · Recompensa recibida[/color]"
   text += "[b]%s[/b] · %s\n%s\n\n" % [q["title"], QuestManager.reward_text(id), label]
+ for id in AdventureState.PUZZLES:
+  var data: Dictionary = AdventureState.entry(id)
+  var spec: Dictionary = AdventureState.PUZZLES[id]
+  var state := "Completada" if data.paid else ("Resuelto · Vuelve con " + str(spec.npc) if data.solved else (str(spec.hint) if data.accepted else "Habla con " + str(spec.npc)))
+  text += "[b]%s[/b] · %d bronce\n%s\n\n" % [spec.title,spec.reward,state]
  content.text = text

@@ -33,6 +33,8 @@
 [ext_resource type="PackedScene" path="res://QuestPickup.tscn" id="quest_pickup"]
 [ext_resource type="Script" uid="uid://bf03dt23eklex" path="res://village_services.gd" id="services_script"]
 
+[ext_resource type="Script" path="res://adventure_district.gd" id="adventure_script"]
+
 [ext_resource type="Script" path="res://world_landscape.gd" id="landscape_script"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj1ai"]
@@ -5987,6 +5989,9 @@ icon_region = Rect2(64, 0, 16, 16)
 
 [node name="VillageServices" type="Node2D" parent="." unique_id=1902469072]
 script = ExtResource("services_script")
+
+[node name="AdventureDistrict" type="Node2D" parent="."]
+script = ExtResource("adventure_script")
 
 [node name="WorldLandscape" type="Node2D" parent="."]
 script = ExtResource("landscape_script")

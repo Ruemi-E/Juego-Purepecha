@@ -9,6 +9,19 @@ var selected_item_id: String = ""
 
 func _ready() -> void:
  panel.hide()
+ var coins := $Panel/Dinero
+ coins.offset_left = -116
+ coins.add_theme_constant_override("separation",4)
+ for currency in ["plata","bronce"]:
+  var icon := TextureRect.new()
+  icon.texture = load("res://assets/ui/moneda_" + currency + ".svg")
+  icon.custom_minimum_size = Vector2(16,16)
+  icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+  icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+  icon.tooltip_text = "Monedas de " + currency
+  coins.add_child(icon)
+  coins.move_child(icon,0 if currency == "plata" else 2)
+  coins.get_node("Plata" if currency == "plata" else "Bronce").add_theme_font_size_override("font_size",11)
  var hint := Label.new()
  hint.text = "Selecciona un objeto y pulsa 1–5 para asignarlo a la barra"
  hint.position = Vector2(4, 216)

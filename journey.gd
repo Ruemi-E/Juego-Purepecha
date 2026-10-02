@@ -9,10 +9,14 @@ func _ready() -> void:
  process_mode = Node.PROCESS_MODE_ALWAYS
  layer = 19
  QuestManager.changed.connect(_refresh)
+ AdventureState.changed.connect(_refresh)
 
 func requirements_met() -> bool:
  for id in Catalog.TOWNS[GameSession.current_world_id]["quests"]:
   if QuestManager.status(id) != "completed":
+   return false
+ for id in AdventureState.PUZZLES:
+  if not AdventureState.entry(id).paid:
    return false
  return DictionaryManager.has_dictionary and Inventory.has_item("morral_recado")
 
@@ -57,7 +61,11 @@ func open_route(_player: CharacterBody2D = null) -> void:
  status_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
  status_label.custom_minimum_size.x = 520
  status_label.size_flags_vertical = Control.SIZE_EXPAND_FILL
- column.add_child(status_label)
+ var scroll := ScrollContainer.new()
+ scroll.custom_minimum_size.y = 142
+ scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+ column.add_child(scroll)
+ scroll.add_child(status_label)
  travel_button = Button.new()
  travel_button.custom_minimum_size.y = 32
  travel_button.pressed.connect(func(): travel_to(next_id()))
@@ -76,10 +84,12 @@ func _refresh() -> void:
  var lines: Array[String] = ["1 · Pueblo de la ribera — estás aquí"]
  for id in Catalog.TOWNS[GameSession.current_world_id]["quests"]:
   lines.append("   %s %s" % ["✓" if QuestManager.status(id) == "completed" else "○", QuestManager.QUESTS[id]["title"]])
+ for id in AdventureState.PUZZLES:
+  lines.append("   %s %s" % ["✓" if AdventureState.entry(id).paid else "○", AdventureState.PUZZLES[id].title])
  lines.append("   %s Llevar el sutupu de Tátita" % ["✓" if Inventory.has_item("morral_recado") else "○"])
  lines.append("2 · Siguiente pueblo — disponible en una futura actualización")
  lines.append("Destino final · Entregar el encargo a tu tía al terminar el viaje")
- lines.append("\n¡Primer pueblo completado! Conserva el encargo; puedes seguir explorando." if requirements_met() else "\nAyuda a Teresa, Mateo y Rosa y habla con Tátita para preparar tu viaje.")
+ lines.append("\n¡Primer pueblo completado! Conserva el encargo; puedes seguir explorando." if requirements_met() else "\nCompleta los encargos y puzzles del pueblo y lleva el encargo de Tátita.")
  status_label.text = "\n".join(lines)
  travel_button.disabled = not can_travel(next_id())
  travel_button.text = "Viajar al siguiente pueblo" if can_travel(next_id()) else ("Ruta preparada · Próximo pueblo en desarrollo" if requirements_met() else "Ruta bloqueada · Completa los encargos")

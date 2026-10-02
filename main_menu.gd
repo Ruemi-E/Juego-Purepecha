@@ -47,6 +47,7 @@ func _ready() -> void:
 	var new_button := add_button("Juego Nuevo", _new_game)
 	load_button = add_button("Cargar partida", _load_game)
 	load_button.disabled = not GameSession.has_save()
+	add_button("Mundos", ExplorationUI.open_worlds)
 	add_button("Ajustes", _show_settings)
 	status_label = Label.new()
 	status_label.text = "Guardado automático durante el juego"
@@ -104,9 +105,11 @@ func _show_settings() -> void:
 func _close_settings() -> void:
 	settings.hide()
 	buttons.show()
-	buttons.get_child(4).grab_focus()
+	buttons.get_child(5).grab_focus()
 
 func _input(event: InputEvent) -> void:
+	if ExplorationUI.opened:
+		return
 	if settings.visible and not event.is_echo() and event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		settings.close()

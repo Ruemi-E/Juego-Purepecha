@@ -22,6 +22,7 @@ var counters: Label
 var board: GridContainer
 var repairing: bool = false
 var crafting: bool = false
+var selling: bool = false
 var result_text: String = ""
 var was_paused: bool = false
 
@@ -94,6 +95,7 @@ func open_service(id: String) -> void:
 		show_library()
 	else:
 		crafting = false
+		selling = false
 		repairing = false
 		show_shop()
 
@@ -244,6 +246,11 @@ func show_shop() -> void:
 		_button(tabs, "Comprar", func(): repairing = false; crafting = false; show_shop())
 		_button(tabs, "Reparar", func(): repairing = true; crafting = false; show_shop())
 		_button(tabs, "Fabricar", func(): repairing = false; crafting = true; show_shop())
+	if service_id == "food":
+		var tabs := HBoxContainer.new()
+		column.add_child(tabs)
+		_button(tabs, "Comprar", func(): selling = false; show_shop())
+		_button(tabs, "Vender pescado", func(): selling = true; show_shop())
 	var scroll := ScrollContainer.new()
 	scroll.custom_minimum_size.y = 108
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -251,13 +258,17 @@ func show_shop() -> void:
 	list = VBoxContainer.new()
 	list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	scroll.add_child(list)
-	if crafting:
+	if selling:
+		_build_fish_sales()
+	elif crafting:
 		_build_recipes()
 	elif repairing:
 		_build_repairs()
 	else:
 		_build_products()
 	message = _label("Selecciona un objeto para comprarlo." if not repairing else "El coste depende del desgaste del objeto.", 12)
+	if selling:
+		message.text = "Selecciona un pescado para vender una unidad."
 	if crafting:
 		message.text = "Trae materiales de la mina. Selecciona una receta."
 	message.custom_minimum_size.y = 30
@@ -318,5 +329,15 @@ func _build_recipes() -> void:
 
 func craft(id: String) -> void:
 	var result: String = Transactions.craft(id)
+	show_shop()
+	message.text = result
+
+func _build_fish_sales() -> void:
+	for id in ["charal","mojarra","carpa"]:
+		var data: Dictionary = Inventory.item_database[id]
+		var button := _button(list,"Vender %s · %d bronce · Tienes %d" % [data.name,data.sell_price,Inventory.items.count(id)],sell.bind(id))
+		button.disabled = not Inventory.has_item(id)
+func sell(id: String) -> void:
+	var result: String = Transactions.sell_fish(id)
 	show_shop()
 	message.text = result

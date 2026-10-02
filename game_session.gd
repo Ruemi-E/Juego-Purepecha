@@ -63,6 +63,7 @@ func _open_world(data: Dictionary) -> void:
 	await get_tree().scene_changed
 	DictionaryManager.reset_learning()
 	mine_state.clear()
+	AdventureState.progress.clear()
 	Inventory.items.clear()
 	Inventory.restore_hotbar([], 0)
 	Inventory.equipment.clear()
@@ -113,6 +114,9 @@ func _open_world(data: Dictionary) -> void:
 		if not Inventory.has_item("morral_recado"):
 			Inventory.add_item("morral_recado")
 		QuestManager.states["recado"] = "active"
+	if data.get("adventures", {}) is Dictionary:
+		AdventureState.progress = data.get("adventures", {}).duplicate(true)
+	AdventureState.changed.emit()
 	QuestManager.changed.emit()
 	active = true
 	transitioning = false
@@ -132,7 +136,7 @@ func save_game() -> void:
 			removed.append(path)
 	var data := {
 		"version": 1, "world_id": current_world_id, "position": [player.global_position.x, player.global_position.y],
-		"hotbar": Inventory.hotbar, "selected_slot": Inventory.selected_slot, "mine_state": mine_state,
+		"hotbar": Inventory.hotbar, "selected_slot": Inventory.selected_slot, "mine_state": mine_state, "adventures": AdventureState.progress,
 		"items": Inventory.items, "equipment": Inventory.equipment, "quests": QuestManager.states,
 		"tracked": QuestManager.tracked_quest, "bronze": Economia.monedas_bronce,
 		"silver": Economia.monedas_plata, "dictionary": DictionaryManager.has_dictionary,

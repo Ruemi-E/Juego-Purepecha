@@ -208,6 +208,7 @@ func _build_mine() -> void:
 	for x in [1038, 1112]:
 		_rect(self, Rect2(x, 1642, 10, 90), Color("826343"), 2)
 	_rect(self, Rect2(1038, 1636, 84, 12), Color("b39566"), 2)
+	_wall(self, Rect2(970, 1554, 224, 180))
 	_wall(self, Rect2(970, 1570, 68, 160))
 	_wall(self, Rect2(1122, 1570, 72, 160))
 	_wall(self, Rect2(1038, 1570, 84, 66))

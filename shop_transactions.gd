@@ -70,3 +70,12 @@ static func craft(id: String) -> String:
 	Inventory.add_item(id)
 	GameSession.save_game()
 	return "Tomás fabricó: " + str(Inventory.item_database[id]["name"])
+
+static func sell_fish(id: String) -> String:
+	var data: Dictionary = Inventory.item_database.get(id,{})
+	var price: int = int(data.get("sell_price",0))
+	if price <= 0 or not Inventory.remove_item(id):
+		return "No tienes ese pescado para vender."
+	Economia.anadir_bronce(price)
+	GameSession.save_game()
+	return "Vendiste %s por %d bronce." % [data.name,price]

@@ -27,13 +27,14 @@ func _ready() -> void:
         margin.add_theme_constant_override("margin_" + edge, 18)
     panel.add_child(margin)
     var column := VBoxContainer.new()
-    column.add_theme_constant_override("separation", 12)
+    column.add_theme_constant_override("separation", 8)
     margin.add_child(column)
     var title := Label.new()
     title.text = "PAUSA"
     title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
     column.add_child(title)
     resume_button = _button(column, "Continuar · Esc", resume_game)
+    _button(column, "Mundos", ExplorationUI.open_worlds)
     settings_button = _button(column, "Ajustes", show_settings)
     _button(column, "Salir del juego", exit_game)
     settings = preload("res://settings_panel.gd").new()
@@ -46,7 +47,7 @@ func _ready() -> void:
 func _button(parent: Control, text: String, callback: Callable) -> Button:
     var button := Button.new()
     button.text = text
-    button.custom_minimum_size.y = 38
+    button.custom_minimum_size.y = 30
     button.pressed.connect(callback)
     parent.add_child(button)
     return button
@@ -59,6 +60,8 @@ func _unhandled_input(event: InputEvent) -> void:
         open_pause()
 
 func _input(event: InputEvent) -> void:
+    if ExplorationUI.opened:
+        return
     if overlay.visible and not event.is_echo() and event.is_action_pressed("ui_cancel"):
         get_viewport().set_input_as_handled()
         if settings.visible:
