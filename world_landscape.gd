@@ -191,6 +191,10 @@ func _tree(base: Vector2, solid: bool = true) -> void:
 func _safe_decor(pos: Vector2, clearance: float) -> bool:
  if Rect2(1024,2080,288,256).has_point(pos):
   return false
+ for house_name in ["CasaInicialTatita", "CasaInicialPatio"]:
+  var house := get_parent().get_node_or_null(house_name) as Node2D
+  if house != null and Rect2(house.position - Vector2(24,24), Vector2(224,200)).has_point(pos):
+   return false
  if not Catalog.BOUNDS.grow(-48).has_point(pos) or lake_cells.has(Vector2i(floori(pos.x / 16), floori(pos.y / 16))):
   return false
  if pos.y > 24 and pos.y < 152:
