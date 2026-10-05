@@ -74,11 +74,11 @@ func _build_exterior(id: String) -> void:
 	door.name = "Entrada_" + id
 	door.position = house.position + Vector2(70 if id != "smith" else 90, 156)
 	door.prompt = "E · Entrar a " + str(data["title"]).to_lower()
+	door.floating_name = true
 	door.action = enter_room.bind(id)
 	add_child(door)
 	doors[id] = door
-	_rect(house, Rect2(14, 60, 104 if id != "smith" else 144, 18), Color("433b2d"), 2)
-	_label(house, data["title"], Vector2(12, 62), 108 if id != "smith" else 148, 10)
+	# The entrance displays the name as a proximity prompt, not a roof sign.
 
 func _build_room(id: String, origin: Vector2) -> void:
 	var room := Node2D.new()
@@ -212,10 +212,10 @@ func _build_mine() -> void:
 	_wall(self, Rect2(970, 1570, 68, 160))
 	_wall(self, Rect2(1122, 1570, 72, 160))
 	_wall(self, Rect2(1038, 1570, 84, 66))
-	_label(self, "MINA", Vector2(1020, 1590), 120, 14)
 	var door := Interaction.new()
 	door.position = Vector2(1080, 1738)
 	door.prompt = "E · Entrar a la mina"
+	door.floating_name = true
 	door.action = enter_room.bind("mine")
 	add_child(door)
 	doors["mine"] = door

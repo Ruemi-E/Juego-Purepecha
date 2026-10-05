@@ -13,7 +13,11 @@ func _ready() -> void:
   var npc := Interaction.new()
   npc.position = base+Vector2(72,185)
   npc.prompt = "E · Hablar con " + str(AdventureState.PUZZLES[id].npc).split(" · ")[0]
-  npc.action = func(_player): DialogueManager.start_dialogue(AdventureState.talk(id))
+  npc.action = func(_player):
+   if id == "faroles" and LanternHelp.eligible():
+    LanternHelp.offer()
+   else:
+    DialogueManager.start_dialogue(AdventureState.talk(id))
   _person(npc,2 if i==0 else (3 if i==1 else 8),str(AdventureState.PUZZLES[id].npc))
   add_child(npc)
   var positions: Array[Vector2] = []

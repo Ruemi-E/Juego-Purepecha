@@ -5476,7 +5476,7 @@ region_enabled = true
 region_rect = Rect2(16, 16, 16, 16)
 
 [node name="ArbolPlaza" type="Sprite2D" parent="Jardines"]
-position = Vector2(426, 872)
+position = Vector2(506, 840)
 z_index = 1
 texture = ExtResource("nature")
 centered = false
@@ -5484,6 +5484,7 @@ region_enabled = true
 region_rect = Rect2(16, 16, 32, 48)
 
 [node name="TroncoPlaza" type="StaticBody2D" parent="Jardines"]
+position = Vector2(80, -32)
 collision_layer = 1
 collision_mask = 2
 
@@ -5491,31 +5492,37 @@ collision_mask = 2
 polygon = PackedVector2Array(437, 907, 447, 907, 447, 918, 437, 918)
 
 [node name="Banco0" type="Polygon2D" parent="Jardines"]
+position = Vector2(-26, 6)
 z_index = -1
 polygon = PackedVector2Array(400, 932, 427, 932, 427, 938, 400, 938)
 color = Color(0.52,0.35,0.20,1)
 
 [node name="PataA0" type="Polygon2D" parent="Jardines"]
+position = Vector2(-26, 6)
 z_index = -1
 polygon = PackedVector2Array(402, 938, 405, 938, 405, 943, 402, 943)
 color = Color(0.37,0.27,0.17,1)
 
 [node name="PataB0" type="Polygon2D" parent="Jardines"]
+position = Vector2(-26, 6)
 z_index = -1
 polygon = PackedVector2Array(422, 938, 425, 938, 425, 943, 422, 943)
 color = Color(0.37,0.27,0.17,1)
 
 [node name="Banco1" type="Polygon2D" parent="Jardines"]
+position = Vector2(34, 64)
 z_index = -1
 polygon = PackedVector2Array(458, 874, 485, 874, 485, 880, 458, 880)
 color = Color(0.52,0.35,0.20,1)
 
 [node name="PataA1" type="Polygon2D" parent="Jardines"]
+position = Vector2(34, 64)
 z_index = -1
 polygon = PackedVector2Array(460, 880, 463, 880, 463, 885, 460, 885)
 color = Color(0.37,0.27,0.17,1)
 
 [node name="PataB1" type="Polygon2D" parent="Jardines"]
+position = Vector2(34, 64)
 z_index = -1
 polygon = PackedVector2Array(480, 880, 483, 880, 483, 885, 480, 885)
 color = Color(0.37,0.27,0.17,1)

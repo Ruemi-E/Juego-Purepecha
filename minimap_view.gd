@@ -20,22 +20,22 @@ func configure(world: Node) -> void:
   for id in services.SERVICES:
    var data: Dictionary = services.SERVICES[id]
    add_box(data["position"] + Vector2(8, 80), Vector2(112, 56), HOUSE)
-   service_markers.append({"position": services.doors[id].global_position, "letter": {"library": "B", "food": "C", "remedies": "R", "smith": "H"}[id], "color": data["color"]})
+   service_markers.append({"position": services.doors[id].global_position, "letter": {"library": "B", "food": "C", "remedies": "R", "smith": "H"}[id], "color": data["color"], "name": data["title"]})
   add_box(Vector2(730, 1770), Vector2(388, 48), ROAD)
   add_box(Vector2(970, 1570), Vector2(224, 160), Color("656666"))
-  service_markers.append({"position": services.doors["mine"].global_position, "letter": "M", "color": Color("ded0b7")})
+  service_markers.append({"position": services.doors["mine"].global_position, "name": "Mina", "letter": "M", "color": Color("ded0b7")})
  var landscape = world.get_node_or_null("WorldLandscape")
  if landscape != null:
   for rect in landscape.map_features:
    add_box(rect.position, rect.size, WATER)
-  service_markers.append({"position": landscape.exit_gate.global_position, "letter": "S", "color": Color("ffe3a3")})
+  service_markers.append({"position": landscape.exit_gate.global_position, "name": "Salida del pueblo", "letter": "S", "color": Color("ffe3a3")})
  var district = world.get_node_or_null("AdventureDistrict")
  if district != null:
   for pos in district.house_positions:
    add_box(pos + Vector2(8,80),Vector2(112,56),HOUSE)
-   service_markers.append({"position":pos+Vector2(72,180),"letter":"N","color":Color("ffe3a3")})
+   service_markers.append({"position":pos+Vector2(72,180),"name":"Vecino · " + (["Nicolás · Hortelano","María · Tejedora","Beto · Farolero","Adrián · Pescador"][district.house_positions.find(pos)]),"letter":"N","color":Color("ffe3a3")})
   for spot in world.get_tree().get_nodes_in_group("fishing_spots"):
-   service_markers.append({"position":spot.global_position,"letter":"P","color":Color("9edce6")})
+   service_markers.append({"position":spot.global_position,"name":"Lugar de pesca","letter":"P","color":Color("9edce6")})
  var tiles = world.get_node_or_null("TileMap")
  if tiles != null:
   for layer in [2, 3, 5]:
@@ -86,6 +86,24 @@ func _draw() -> void:
    draw_circle(pos, 6, Color("23342c"))
    draw_string(ThemeDB.fallback_font, pos + Vector2(-3, 3), service["letter"], HORIZONTAL_ALIGNMENT_LEFT, -1, 9, service["color"])
  var center := map_point(player_position)
+ if MapRoute.active:
+  for i in range(1,MapRoute.points.size()):
+   draw_line(map_point(MapRoute.points[i-1]),map_point(MapRoute.points[i]),Color("95e9f5"),2)
+  var pin := map_point(MapRoute.destination)
+  draw_circle(pin,5,Color("153846"))
+  draw_circle(pin,3,Color("95e9f5"))
+  if not overview and not view.grow(-9).has_point(pin):
+   var guide := pin
+   for point in MapRoute.points:
+    guide = map_point(point)
+    if not view.grow(-9).has_point(guide):
+     break
+   var direction := (guide-center).normalized()
+   var inset := size*0.5-Vector2(9,9)
+   var delta := guide-center
+   var factor := maxf(1.0,maxf(absf(delta.x)/inset.x,absf(delta.y)/inset.y))
+   var tip := center+delta/factor
+   draw_colored_polygon(PackedVector2Array([tip+direction*5,tip-direction*4+direction.orthogonal()*4,tip-direction*4-direction.orthogonal()*4]),Color("95e9f5"))
  if has_target and not overview:
   var delta := (navigation_position - player_position) * map_scale
   var inset := size * 0.5 - Vector2(9,9)
@@ -104,3 +122,28 @@ func _draw() -> void:
  draw_circle(center,4,Color("173c46"))
  draw_circle(center,2.5,Color("91f2ff"))
  draw_rect(view,Color("cfb985"),false,1)
+
+func _ready() -> void:
+ mouse_filter = Control.MOUSE_FILTER_STOP
+ clip_contents = true
+func _process(_delta: float) -> void:
+ queue_redraw()
+func _get_tooltip(at_position: Vector2) -> String:
+ for service in service_markers:
+  if map_point(service.position).distance_to(at_position) <= 9:
+   return str(service.get("name","Lugar del pueblo"))
+ return "Clic: fijar ruta · Clic derecho: borrar" + ("\n" + MapRoute.status if not MapRoute.status.is_empty() else "")
+func _gui_input(event: InputEvent) -> void:
+ if event is InputEventMouseButton and event.pressed:
+  if event.button_index == MOUSE_BUTTON_RIGHT:
+   MapRoute.clear_route()
+   accept_event()
+  elif event.button_index == MOUSE_BUTTON_LEFT:
+   var pos: Vector2 = (event.position-size*0.5)/map_scale + (preload("res://world_catalog.gd").BOUNDS.get_center() if overview else player_position)
+   for service in service_markers:
+    if map_point(service.position).distance_to(event.position) <= 9:
+     pos = service.position
+     break
+   if not MapRoute.set_destination(pos,player_position):
+    ItemNotification.show_message("Elige un destino accesible dentro del pueblo")
+   accept_event()

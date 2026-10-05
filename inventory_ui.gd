@@ -37,7 +37,7 @@ func _process(_delta):
 func _unhandled_input(event: InputEvent) -> void:
  if not is_instance_valid(get_tree().get_first_node_in_group("player")):
   return
- if event.is_action_pressed("open_inventory"):
+ if not event.is_echo() and (event.is_action_pressed("open_inventory") or (is_open and event.is_action_pressed("ui_cancel"))):
   if get_tree().paused and not is_open:
    return
   get_viewport().set_input_as_handled()
@@ -56,11 +56,16 @@ func refresh_inventory() -> void:
  item_list.clear()
  item_details.clear()
  
- for i in range(Inventory.items.size()):
-  var item_id = Inventory.items[i]
-  var data = Inventory.item_database.get(item_id, {"purepecha": item_id})
-  item_list.add_item(data["purepecha"])
-  item_list.set_item_metadata(i, item_id)
+ var counts: Dictionary = {}
+ for item_id in Inventory.items:
+  counts[item_id] = int(counts.get(item_id, 0)) + 1
+ for item_id in counts:
+  var data: Dictionary = Inventory.item_database.get(item_id, {"purepecha": item_id})
+  var caption: String = str(data["purepecha"])
+  if counts[item_id] > 1:
+   caption += " × %d" % counts[item_id]
+  var index: int = item_list.add_item(caption)
+  item_list.set_item_metadata(index, item_id)
 
 func _on_item_selected(index: int) -> void:
  var item_id = item_list.get_item_metadata(index)
@@ -68,6 +73,10 @@ func _on_item_selected(index: int) -> void:
  var data = Inventory.item_database.get(item_id, {})
  
  item_details.text = "[b][color=yellow]" + data.get("purepecha", "") + "[/color][/b]\n"
+ item_details.append_text("Cantidad: %d\n" % Inventory.items.count(item_id))
+ for tool in Inventory.equipment:
+  if tool["item_id"] == item_id:
+   item_details.append_text("Herramienta #%d · Durabilidad: %d\n" % [tool["uid"], tool["durability"]])
  if DictionaryManager.Vocabulary.ENTRIES.has(item_id):
   item_details.append_text("J · Consulta el significado en tu diccionario.")
   return

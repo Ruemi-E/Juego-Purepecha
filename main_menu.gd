@@ -31,7 +31,7 @@ func _ready() -> void:
 	add_child(center)
 	buttons = VBoxContainer.new()
 	buttons.custom_minimum_size.x = 240
-	buttons.add_theme_constant_override("separation", 10)
+	buttons.add_theme_constant_override("separation", 6)
 	center.add_child(buttons)
 	var title := Label.new()
 	title.text = "JUEGO PURÉPECHA"
@@ -49,6 +49,7 @@ func _ready() -> void:
 	load_button.disabled = not GameSession.has_save()
 	add_button("Mundos", ExplorationUI.open_worlds)
 	add_button("Ajustes", _show_settings)
+	add_button("Ayuda", GameHelp.open_help)
 	status_label = Label.new()
 	status_label.text = "Guardado automático durante el juego"
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
@@ -60,7 +61,7 @@ func _ready() -> void:
 func add_button(text: String, callback: Callable) -> Button:
 	var button := Button.new()
 	button.text = text
-	button.custom_minimum_size.y = 38
+	button.custom_minimum_size.y = 32
 	button.add_theme_font_size_override("font_size", 15)
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color("30463a")
@@ -108,7 +109,7 @@ func _close_settings() -> void:
 	buttons.get_child(5).grab_focus()
 
 func _input(event: InputEvent) -> void:
-	if ExplorationUI.opened:
+	if ExplorationUI.opened or GameHelp.opened:
 		return
 	if settings.visible and not event.is_echo() and event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()

@@ -18,3 +18,8 @@ Las páginas indicadas son las impresas, no el número de página del visor PDF.
 `uitsakua` no se enseña como traducción de «hierbas medicinales», ni `chkári` de «leña seca»: esas características pertenecen al encargo ficticio. La revisión de estas cuatro entradas no certifica las expresiones que ya existían en el juego.
 
 Los identificadores internos se conservan para mantener las partidas anteriores. La fuente editable de las palabras nuevas es learning_words.gd. La consulta desbloquea la orientación del minimapa, no impide recoger objetos ni entregar misiones. El repaso está en la biblioteca: juego de memoria con cuatro parejas, hasta doce turnos y recompensas en monedas. Los errores no restan monedas ni progreso. El guardado conserva consultas, palabras encontradas y resultados.
+
+## Pistas de los faroles
+
+- jurhijkandani: derecha; uikixkandani: izquierda. Maxwell Lathrop, *Vocabulario del idioma purépecha* (2007), entradas castellanas «derecha» e «izquierda». https://www.purepecha.mx/files/G026-VocabularioPurepecha-tsz.pdf
+- Las instrucciones mezclan español y vocabulario purépecha; no se presentan como oraciones completas en purépecha. Las grafías pueden variar entre comunidades.

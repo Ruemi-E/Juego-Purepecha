@@ -9,6 +9,7 @@ var transitioning: bool = false
 var pickup_paths: Array[String] = []
 var initial_words: Dictionary
 var mine_state: Dictionary = {}
+var tutorial_step: int = 0
 const WorldCatalog = preload("res://world_catalog.gd")
 var current_world_id: String = WorldCatalog.FIRST
 
@@ -56,6 +57,8 @@ func _open_world(data: Dictionary) -> void:
 	transitioning = true
 	active = false
 	get_tree().paused = false
+	MapRoute.clear_route()
+	tutorial_step = clampi(int(data.get("tutorial_step", 0 if data.is_empty() else 6)), 0, 6)
 	current_world_id = str(data.get("world_id", WorldCatalog.FIRST))
 	if get_tree().change_scene_to_file(WorldCatalog.TOWNS[current_world_id]["scene"]) != OK:
 		transitioning = false
@@ -135,7 +138,7 @@ func save_game() -> void:
 		if node == null or node.is_queued_for_deletion():
 			removed.append(path)
 	var data := {
-		"version": 1, "world_id": current_world_id, "position": [player.global_position.x, player.global_position.y],
+		"version": 1, "tutorial_step": tutorial_step, "world_id": current_world_id, "position": [player.global_position.x, player.global_position.y],
 		"hotbar": Inventory.hotbar, "selected_slot": Inventory.selected_slot, "mine_state": mine_state, "adventures": AdventureState.progress,
 		"items": Inventory.items, "equipment": Inventory.equipment, "quests": QuestManager.states,
 		"tracked": QuestManager.tracked_quest, "bronze": Economia.monedas_bronce,

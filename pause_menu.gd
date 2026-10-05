@@ -36,6 +36,7 @@ func _ready() -> void:
     resume_button = _button(column, "Continuar · Esc", resume_game)
     _button(column, "Mundos", ExplorationUI.open_worlds)
     settings_button = _button(column, "Ajustes", show_settings)
+    _button(column, "Ayuda", GameHelp.open_help)
     _button(column, "Salir del juego", exit_game)
     settings = preload("res://settings_panel.gd").new()
     overlay.add_child(settings)
@@ -60,7 +61,7 @@ func _unhandled_input(event: InputEvent) -> void:
         open_pause()
 
 func _input(event: InputEvent) -> void:
-    if ExplorationUI.opened:
+    if ExplorationUI.opened or GameHelp.opened or LanternHelp.opened:
         return
     if overlay.visible and not event.is_echo() and event.is_action_pressed("ui_cancel"):
         get_viewport().set_input_as_handled()

@@ -37,6 +37,8 @@
 
 [ext_resource type="Script" path="res://world_landscape.gd" id="landscape_script"]
 
+[ext_resource type="Script" path="res://plaza_kiosk.gd" id="kiosk_script"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aj1ai"]
 texture = ExtResource("4_cvq6i")
 texture_region_size = Vector2i(8, 8)
@@ -5968,22 +5970,22 @@ icon_texture = ExtResource("quest_nature")
 icon_region = Rect2(128, 104, 16, 16)
 
 [node name="Maiz1" parent="MisionesPueblo" unique_id=1423393929 instance=ExtResource("quest_pickup")]
-position = Vector2(252, 1008)
+position = Vector2(1092, 2164)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
 [node name="Maiz2" parent="MisionesPueblo" unique_id=471520812 instance=ExtResource("quest_pickup")]
-position = Vector2(268, 1008)
+position = Vector2(1236, 2164)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
 [node name="Maiz3" parent="MisionesPueblo" unique_id=291504037 instance=ExtResource("quest_pickup")]
-position = Vector2(252, 1024)
+position = Vector2(1092, 2276)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
 [node name="Maiz4" parent="MisionesPueblo" unique_id=1070216043 instance=ExtResource("quest_pickup")]
-position = Vector2(268, 1024)
+position = Vector2(1236, 2276)
 item_id = "mazorca"
 icon_region = Rect2(64, 0, 16, 16)
 
@@ -5995,3 +5997,7 @@ script = ExtResource("adventure_script")
 
 [node name="WorldLandscape" type="Node2D" parent="."]
 script = ExtResource("landscape_script")
+
+[node name="KioskoPlaza" type="Node2D" parent="."]
+position = Vector2(440, 918)
+script = ExtResource("kiosk_script")

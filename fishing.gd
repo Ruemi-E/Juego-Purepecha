@@ -3,6 +3,7 @@ const UI = preload("res://modal_ui.gd")
 var opened := false
 var overlay: Control
 var text: Label
+var hooks_label: Label
 var action_button: Button
 var meter: Control
 var phase := "ready"
@@ -23,7 +24,9 @@ func open_fishing() -> void:
  var ui := UI.build(self,"PESCA · LAGO DE PÁTZCUARO")
  overlay = ui.overlay
  text = UI.label(ui.column,"Equipa una caña en la barra rápida. Cada intento consume un anzuelo\ny 1 punto de durabilidad. Espacio: lanzar, enganchar y recoger.")
- text.custom_minimum_size.y = 62
+ hooks_label = UI.label(ui.column, "", 13)
+ _update_hooks()
+ text.custom_minimum_size.y = 48
  meter = preload("res://fishing_meter.gd").new()
  meter.custom_minimum_size = Vector2(510,34)
  ui.column.add_child(meter)
@@ -41,6 +44,7 @@ func cast() -> bool:
  if not Inventory.remove_item("anzuelo"):
   text.text = "Necesitas un anzuelo. Lucía los vende en la tienda de comida."
   return false
+ _update_hooks()
  Inventory.damage_equipment(rod.uid,1)
  phase = "waiting"
  timer = rng.randf_range(1.4,3.2)
@@ -88,6 +92,7 @@ func finish(caught: bool, reason: String) -> void:
 func _process(delta: float) -> void:
  if not opened:
   return
+ _update_hooks()
  if phase in ["waiting","bite"]:
   timer -= delta
   if timer <= 0:
@@ -116,3 +121,7 @@ func _input(event: InputEvent) -> void:
  elif event is InputEventKey and event.pressed and event.physical_keycode == KEY_SPACE:
   get_viewport().set_input_as_handled()
   act()
+
+func _update_hooks() -> void:
+ if is_instance_valid(hooks_label):
+  hooks_label.text = "Anzuelos restantes: %d" % Inventory.items.count("anzuelo")

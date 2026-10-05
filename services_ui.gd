@@ -18,6 +18,7 @@ var playing: bool = false
 var paid: bool = false
 var round_token: int = 0
 var reward: int = 0
+var reward_eligible := false
 var counters: Label
 var board: GridContainer
 var repairing: bool = false
@@ -113,7 +114,8 @@ func show_library() -> void:
 	_clear()
 	_label("ELENA · BIBLIOTECA", 19)
 	_label("EL RETO DE LAS PAREJAS", 15)
-	var instructions := _label("Destapa dos cartas: une una palabra en purépecha con su objeto y significado.\n\nEncuentra 4 parejas en un máximo de 12 turnos.\nCada pareja vale 2 monedas de bronce.\nCompletar en 4 turnos da +4; en 5 o 6, +2.\n\nPuedes estudiar las palabras antes de comenzar.\nSalir de una ronda sin terminar no entrega premios.")
+	_label("Intentos con premio hoy: %d/3 disponibles. Después puedes practicar sin monedas." % DailyRewards.remaining(), 12)
+	var instructions := _label("Une cada palabra en purépecha con su objeto y significado.\nEncuentra 4 parejas en 12 turnos como máximo.\nCada pareja vale 2 bronces; 4 turnos dan +4 y 5–6 turnos, +2.\n\nPuedes estudiar antes de comenzar. Cada ronda iniciada\nconsume un intento, aunque salgas sin terminar.", 12)
 	instructions.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var actions := HBoxContainer.new()
 	column.add_child(actions)
@@ -134,6 +136,7 @@ func show_study() -> void:
 	_button(actions, "Volver", show_library)
 
 func start_round() -> void:
+	reward_eligible = DailyRewards.begin_attempt()
 	round_token += 1
 	_clear()
 	playing = true
@@ -169,7 +172,7 @@ func start_round() -> void:
 	cards[0].grab_focus()
 
 func _update_counters() -> void:
-	counters.text = "Parejas: %d / 4     Turnos: %d / %d     Premio acumulado: %d bronce" % [pairs, turns, MAX_TURNS, pairs * 2]
+	counters.text = "Parejas: %d / 4     Turnos: %d / %d     Premio acumulado: %d bronce" % [pairs, turns, MAX_TURNS, pairs * 2 if reward_eligible else 0]
 
 func flip_card(index: int) -> void:
 	if not playing or locked or index < 0 or index >= cards.size():
@@ -221,12 +224,16 @@ func finish_round() -> void:
 	reward = pairs * 2
 	if pairs == 4:
 		reward += 4 if turns <= 4 else (2 if turns <= 6 else 0)
+	if not reward_eligible:
+		reward = 0
 	Economia.anadir_bronce(reward)
 	GameSession.save_game()
 	_clear()
 	var medal := "MEMORIA BRILLANTE" if pairs == 4 and turns <= 6 else ("¡RETO COMPLETADO!" if pairs == 4 else "SIGUE DESCUBRIENDO")
 	_label(medal, 21)
-	result_text = "%d de 4 parejas · %d turnos\n\nGanaste %d monedas de bronce.\nSaldo: %d plata y %d bronce." % [pairs, turns, reward, Economia.monedas_plata, Economia.monedas_bronce]
+	result_text = "%d de 4 parejas · %d turnos\n\nGanaste %d monedas de bronce." % [pairs, turns, reward]
+	if not reward_eligible:
+		result_text += "\nRonda de práctica: ya usaste tus 3 intentos con premio de hoy."
 	var result := _label(result_text, 16)
 	result.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	_label("Elena: cada intento te ayuda a recordar. ¡Puedes volver a jugar!")
@@ -239,7 +246,7 @@ func show_shop() -> void:
 	_clear()
 	var names := {"food": "LUCÍA · TIENDA DE COMIDA", "remedies": "INÉS · CASA DE REMEDIOS", "smith": "TOMÁS · HERRERÍA"}
 	_label(names[service_id], 19)
-	balance = _label("Saldo: %d plata · %d bronce     1 plata = 10 bronce" % [Economia.monedas_plata, Economia.monedas_bronce])
+	balance = _label("Consulta tus monedas en el inventario al salir · I")
 	if service_id == "smith":
 		var tabs := HBoxContainer.new()
 		column.add_child(tabs)

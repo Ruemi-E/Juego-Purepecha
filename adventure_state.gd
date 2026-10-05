@@ -44,11 +44,15 @@ func operate(id: String, index: int) -> void:
  else:
   data.values[index] = 1-int(data.values[index])
   if id == "faroles":
+   data["attempts"] = int(data.get("attempts",0)) + 1
    var next: int = (index+1)%5
    data.values[next] = 1-int(data.values[next])
    var previous: int = (index+4)%5
    data.values[previous] = 1-int(data.values[previous])
   data.solved = data.values == PUZZLES[id].answer
+ if id == "faroles" and LanternHelp.eligible() and not data.get("help_offered",false):
+  data["help_offered"] = true
+  LanternHelp.offer.call_deferred()
  if data.solved:
   ItemNotification.show_message("¡Puzzle resuelto! Vuelve por tu recompensa.")
  changed.emit()

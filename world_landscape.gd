@@ -23,6 +23,7 @@ func _ready() -> void:
  tiles = get_parent().get_node("TileMap")
  _extend_ground()
  _paths()
+ _farm()
  _lake()
  _boundaries()
  _gate()
@@ -45,7 +46,7 @@ func _path_rect(rect: Rect2) -> void:
    new_paths[Vector2i(x, y)] = true
 
 func _paths() -> void:
- for rect in [Rect2(344, 1180, 80, 1140), Rect2(1300, 1040, 460, 64), Rect2(1424, 688, 48, 1576), Rect2(1424, 704, 248, 40), Rect2(1424, 1184, 248, 40), Rect2(1424, 1664, 248, 40), Rect2(0, 1984, 1456, 40), Rect2(144, 1450, 596, 48), Rect2(144, 1770, 970, 48), Rect2(1054, 1710, 52, 108), Rect2(920, 300, 64, 1504), Rect2(848, 1040, 528, 64), Rect2(-124, 360, 196, 40), Rect2(-124, 360, 40, 1120), Rect2(-104, 1450, 264, 48)]:
+ for rect in [Rect2(1088, 1984, 40, 160), Rect2(344, 1180, 80, 1140), Rect2(1300, 1040, 460, 64), Rect2(1424, 688, 48, 1576), Rect2(1424, 704, 248, 40), Rect2(1424, 1184, 248, 40), Rect2(1424, 1664, 248, 40), Rect2(0, 1984, 1456, 40), Rect2(144, 1450, 596, 48), Rect2(144, 1770, 970, 48), Rect2(1054, 1710, 52, 108), Rect2(920, 300, 64, 1504), Rect2(848, 1040, 528, 64), Rect2(-124, 360, 196, 40), Rect2(-124, 360, 40, 1120), Rect2(-104, 1450, 264, 48)]:
   _path_rect(rect)
  for id in get_parent().get_node("VillageServices").doors:
   if id != "mine":
@@ -188,6 +189,8 @@ func _tree(base: Vector2, solid: bool = true) -> void:
  tree_count += 1
 
 func _safe_decor(pos: Vector2, clearance: float) -> bool:
+ if Rect2(1024,2080,288,256).has_point(pos):
+  return false
  if not Catalog.BOUNDS.grow(-48).has_point(pos) or lake_cells.has(Vector2i(floori(pos.x / 16), floori(pos.y / 16))):
   return false
  if pos.y > 24 and pos.y < 152:
@@ -257,3 +260,26 @@ func _recover_old_position() -> void:
   player.velocity = Vector2.ZERO
   services._update_room(player)
   GameSession.save_game()
+
+func _farm() -> void:
+ # Leave corridors between beds; collectible maize retains its saved node paths.
+ for row in range(3):
+  for col in range(3):
+   var origin := Vector2(1064+col*72,2144+row*56)
+   var bed := Polygon2D.new()
+   bed.z_index = -1
+   bed.polygon = PackedVector2Array([origin,origin+Vector2(56,0),origin+Vector2(56,40),origin+Vector2(0,40)])
+   bed.color = Color("826843")
+   add_child(bed)
+   for line in range(3):
+    var furrow := Line2D.new()
+    furrow.z_index = -1
+    furrow.width = 2
+    furrow.default_color = Color("624f38")
+    furrow.points = PackedVector2Array([origin+Vector2(3,8+line*12),origin+Vector2(53,8+line*12)])
+    add_child(furrow)
+   for x in range(3):
+    for y in range(2):
+     var pos := origin+Vector2(10+x*16,10+y*20)
+     if not ((row == 0 or row == 2) and (col == 0 or col == 2) and x == 1):
+      _sprite(Plants,Rect2(16 if (col+row)%2==0 else 32,16,16,16),pos,0)

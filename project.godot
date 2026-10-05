@@ -34,7 +34,11 @@ AdventureState="*res://adventure_state.gd"
 Journey="*res://journey.gd"
 Fishing="*res://fishing.gd"
 ExplorationUI="*res://exploration_ui.gd"
-CurrencyDisplay="*res://currency_display.gd"
+DailyRewards="*res://daily_rewards.gd"
+MapRoute="*res://map_route.gd"
+GameHelp="*res://game_help.gd"
+Tutorial="*res://tutorial.gd"
+LanternHelp="*res://lantern_help.gd"
 
 [display]
 

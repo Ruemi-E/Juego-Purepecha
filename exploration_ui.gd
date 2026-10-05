@@ -57,7 +57,7 @@ func open_map() -> void:
  big_map.has_target = QuestHud.map_view.has_target
  big_map.navigation_position = QuestHud.navigation_position
  ui.column.add_child(big_map)
- UI.label(ui.column,"B Biblioteca · C Comida · R Remedios · H Herrería · M Mina · S Salida · P Pesca\nN Nuevos vecinos / puzzles · ● Tú · ◆ Objetivo",10)
+ UI.label(ui.column,"B Biblioteca · C Comida · R Remedios · H Herrería · M Mina · S Salida · P Pesca\nN Vecinos / puzzles · ● Tú · ◆ Objetivo\nClic: fijar ruta · Clic derecho: quitar · Pasa el cursor para ver nombres",10)
 func close() -> void:
  if not opened:
   return

@@ -29,7 +29,7 @@ func _ready() -> void:
  map_view = MapView.new()
  map_view.custom_minimum_size = Vector2(144,104)
  map_view.clip_contents = true
- map_view.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ map_view.mouse_filter = Control.MOUSE_FILTER_STOP
  card.add_child(map_view)
  floating = VBoxContainer.new()
  floating.position = Vector2(8, 128)
@@ -46,7 +46,7 @@ func _ready() -> void:
  objective.add_theme_constant_override("shadow_outline_size", 2)
  floating.add_child(objective)
  var legend := Label.new()
- legend.text = "● Tú   ◆ Destino\nQ · Cambiar misión"
+ legend.text = "● Tú   ◆ Destino\nQ · Cambiar misión\nCeleste: tu ruta fijada\nClic: ruta · Tab: mapa completo"
  legend.add_theme_font_size_override("font_size",8)
  legend.add_theme_color_override("font_color",Color("ccbfa0"))
  legend.add_theme_color_override("font_shadow_color", Color.BLACK)
@@ -79,6 +79,8 @@ func bind_world() -> bool:
  if not is_instance_valid(found):
   player = null
   world = null
+  return false
+ if not found.get_parent().is_node_ready():
   return false
  if not is_instance_valid(player) or not is_instance_valid(world) or found != player or world != found.get_parent():
   player = found
