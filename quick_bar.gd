@@ -1,5 +1,8 @@
 extends CanvasLayer
 
+const Images = preload("res://item_images.gd")
+var pictures: Array[TextureRect] = []
+var captions: Array[Label] = []
 var bar: HBoxContainer
 var buttons: Array[Button] = []
 
@@ -21,6 +24,28 @@ func _ready() -> void:
   button.pressed.connect(choose.bind(i))
   bar.add_child(button)
   buttons.append(button)
+  var picture := TextureRect.new()
+  picture.position = Vector2(23,3)
+  picture.size = Vector2(24,24)
+  picture.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+  picture.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+  picture.mouse_filter = Control.MOUSE_FILTER_IGNORE
+  button.add_child(picture)
+  pictures.append(picture)
+  var caption := Label.new()
+  caption.position = Vector2(0,28)
+  caption.size = Vector2(68,12)
+  caption.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+  caption.add_theme_font_size_override("font_size",8)
+  caption.mouse_filter = Control.MOUSE_FILTER_IGNORE
+  button.add_child(caption)
+  captions.append(caption)
+  var number := Label.new()
+  number.text = str(i+1)
+  number.position = Vector2(5,3)
+  number.add_theme_font_size_override("font_size",9)
+  number.mouse_filter = Control.MOUSE_FILTER_IGNORE
+  button.add_child(number)
  bar.hide()
 
 func _process(_delta: float) -> void:
@@ -37,7 +62,9 @@ func _process(_delta: float) -> void:
     if tool["item_id"] == id:
      durability = maxi(durability, int(tool["durability"]))
    state = "%d/%d · x%d" % [durability, data["max_durability"], count]
-  buttons[i].text = "%d · %s\n%s" % [i + 1, title, state]
+  buttons[i].text = ""
+  pictures[i].texture = Images.icon(id) if not id.is_empty() else null
+  captions[i].text = state
   buttons[i].tooltip_text = title + "\n1–5: seleccionar. En el inventario: asignar el objeto elegido."
   buttons[i].disabled = get_tree().paused and not InventoryUi.is_open
   var style := StyleBoxFlat.new()

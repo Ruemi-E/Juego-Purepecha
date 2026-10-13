@@ -4,7 +4,7 @@ const FIRST := "pueblo_ribera"
 # Add a scene and enable a destination only when its map is implemented.
 const TOWNS: Dictionary = {
  "pueblo_ribera": {"name": "Pueblo de la ribera", "scene": "res://World.tscn", "enabled": true, "spawn": Vector2(168, 344), "next": "pueblo_siguiente", "quests": ["hierbas", "lena", "maiz"]},
- "pueblo_siguiente": {"name": "Siguiente pueblo", "scene": "", "enabled": false, "spawn": Vector2.ZERO, "next": "", "quests": []}
+ "pueblo_siguiente": {"name": "Pueblo de las huertas", "scene": "res://OrchardWorld.tscn", "enabled": true, "spawn": Vector2(380, 1510), "next": "", "quests": []}
 }
 const BOUNDS := Rect2(-704, -288, 2544, 2752)
 

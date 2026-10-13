@@ -15,6 +15,8 @@ var exit_gate: Node2D
 var landscape_ready := false
 var tree_count := 0
 var plant_count := 0
+var building_rects: Array[Rect2] = []
+var cleared_trees := 0
 var shore_points: Array[Vector2] = []
 
 func _ready() -> void:
@@ -136,15 +138,9 @@ func _boundaries() -> void:
  _wall(Rect2(bounds.position.x - 24, bounds.end.y, bounds.size.x + 48, 24), "LimiteSur")
  _wall(Rect2(bounds.position.x - 24, bounds.position.y, 24, bounds.size.y), "LimiteOeste")
  _wall(Rect2(bounds.end.x, bounds.position.y, 24, bounds.size.y), "LimiteEste")
- # Dense trees make the physical limits visible. The lake forms the west edge.
- for x in range(-680, 1840, 32):
-  _tree(Vector2(x, -260), false)
-  _tree(Vector2(x, 2444), false)
- for y in range(-224, 2448, 32):
-  if y < 48 or y > 152:
-   _tree(Vector2(1820, y), false)
- for x in range(-656, 1800, 56):
-  _tree(Vector2(x, 2396), false)
+ var forest := preload("res://meseta_forest.gd").new()
+ forest.name = "BosqueMeseta"
+ add_child(forest)
 
 func _gate() -> void:
  exit_gate = Interaction.new()
@@ -189,6 +185,8 @@ func _tree(base: Vector2, solid: bool = true) -> void:
  tree_count += 1
 
 func _safe_decor(pos: Vector2, clearance: float) -> bool:
+ if not canopy_clear(Rect2(pos-Vector2(16,44),Vector2(32,48))):
+  return false
  if Rect2(1024,2080,288,256).has_point(pos):
   return false
  for house_name in ["CasaInicialTatita", "CasaInicialPatio"]:
@@ -221,6 +219,8 @@ func _safe_decor(pos: Vector2, clearance: float) -> bool:
 func _decorate_when_physics_ready() -> void:
  await get_tree().physics_frame
  await get_tree().physics_frame
+ _collect_buildings(get_parent())
+ _clear_existing_trees(get_parent().get_node_or_null("PuebloEntorno"))
  _recover_old_position()
  for i in range(850):
   var pos := Vector2(rng.randi_range(-180, 1750), rng.randi_range(-190, 2350)).snapped(Vector2(8, 8))
@@ -287,3 +287,61 @@ func _farm() -> void:
      var pos := origin+Vector2(10+x*16,10+y*20)
      if not ((row == 0 or row == 2) and (col == 0 or col == 2) and x == 1):
       _sprite(Plants,Rect2(16 if (col+row)%2==0 else 32,16,16,16),pos,0)
+
+# Include visual roofs, not only ground-level collision shapes.
+func _collect_buildings(node: Node) -> void:
+ if node is Node2D and (node.scene_file_path.get_file().begins_with("Casa") or node.scene_file_path.get_file().begins_with("Troje") or node.name == "KioskoPlaza"):
+  var pieces: Array[Rect2] = []
+  _visual_rects(node,pieces)
+  if not pieces.is_empty():
+   var bounds := pieces[0]
+   for piece in pieces:
+    bounds = bounds.merge(piece)
+   building_rects.append(bounds.grow(8))
+  return
+ for child in node.get_children():
+  _collect_buildings(child)
+func _visual_rects(node: Node, output: Array[Rect2]) -> void:
+ if node is Sprite2D and node.texture != null:
+  var local: Rect2 = node.get_rect()
+  var rect := Rect2(node.to_global(local.position),Vector2.ZERO)
+  for point in [Vector2(local.end.x,local.position.y),local.end,Vector2(local.position.x,local.end.y)]:
+   rect = rect.expand(node.to_global(point))
+  output.append(rect)
+ elif node is Polygon2D and not node.polygon.is_empty():
+  var rect := Rect2(node.to_global(node.polygon[0]),Vector2.ZERO)
+  for point in node.polygon:
+   rect = rect.expand(node.to_global(point))
+  output.append(rect)
+ for child in node.get_children():
+  _visual_rects(child,output)
+func canopy_clear(rect: Rect2) -> bool:
+ for house in building_rects:
+  if house.intersects(rect):
+   return false
+ var start := tiles.local_to_map(tiles.to_local(rect.position))
+ var end := tiles.local_to_map(tiles.to_local(rect.end))
+ for y in range(start.y,end.y+1):
+  for x in range(start.x,end.x+1):
+   var cell := Vector2i(x,y)
+   if tiles.get_cell_source_id(4,cell) in [0,2,4]:
+    return false
+   for layer in [2,3,5]:
+    if tiles.get_cell_source_id(layer,cell) >= 0:
+     return false
+ return true
+func _clear_existing_trees(node: Node) -> void:
+ if node == null:
+  return
+ for child in node.get_children():
+  if child is Sprite2D and str(child.name).begins_with("Arbol"):
+   var rects: Array[Rect2] = []
+   _visual_rects(child,rects)
+   if not rects.is_empty() and not canopy_clear(rects[0]):
+    var trunk := node.get_node_or_null(str(child.name).replace("Arbol","Tronco"))
+    if trunk != null:
+     trunk.queue_free()
+    child.queue_free()
+    cleared_trees += 1
+  else:
+   _clear_existing_trees(child)

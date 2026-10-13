@@ -18,6 +18,7 @@ func _ready() -> void:
  add_child(hint)
  hint.hide()
  panel = PanelContainer.new()
+ panel.theme = preload("res://village_theme.gd").make_theme()
  panel.position = Vector2(50, 24)
  panel.size = Vector2(540, 260)
  add_child(panel)
@@ -56,6 +57,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func refresh() -> void:
  if not is_instance_valid(content):
+  return
+ if GameSession.current_world_id == "pueblo_siguiente":
+  content.text = OrchardState.journal()
   return
  var text := "[b]MISIONES DEL PUEBLO[/b]    [M / Esc] Cerrar\n\n"
  for id in QuestManager.QUESTS:

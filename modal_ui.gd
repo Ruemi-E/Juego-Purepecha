@@ -1,10 +1,11 @@
 extends RefCounted
 static func build(layer: CanvasLayer, title: String, width: float = 550) -> Dictionary:
  var overlay := Control.new()
+ overlay.theme = preload("res://village_theme.gd").make_theme()
  overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  layer.add_child(overlay)
  var shade := ColorRect.new()
- shade.color = Color(0.02,0.05,0.04,0.94)
+ shade.color = Color(0.025,0.05,0.04,0.78)
  shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  overlay.add_child(shade)
  var center := CenterContainer.new()
@@ -19,10 +20,16 @@ static func build(layer: CanvasLayer, title: String, width: float = 550) -> Dict
   margin.add_theme_constant_override("margin_"+edge,12)
  panel.add_child(margin)
  var column := VBoxContainer.new()
- column.add_theme_constant_override("separation",8)
+ column.add_theme_constant_override("separation",6)
  margin.add_child(column)
- label(column,title,18)
- return {"overlay":overlay,"column":column,"panel":panel}
+ var header := HBoxContainer.new()
+ column.add_child(header)
+ var heading := label(header,title,17)
+ heading.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+ heading.add_theme_color_override("font_color",Color("f3d9a2"))
+ var line := HSeparator.new()
+ column.add_child(line)
+ return {"overlay":overlay,"column":column,"panel":panel,"header":header}
 static func label(parent: Node, text: String, font_size: int = 12) -> Label:
  var label := Label.new()
  label.text = text
@@ -33,7 +40,7 @@ static func label(parent: Node, text: String, font_size: int = 12) -> Label:
 static func button(parent: Node, text: String, callback: Callable) -> Button:
  var button := Button.new()
  button.text = text
- button.custom_minimum_size.y = 30
+ button.custom_minimum_size.y = 28
  button.add_theme_font_size_override("font_size",12)
  button.pressed.connect(callback)
  parent.add_child(button)

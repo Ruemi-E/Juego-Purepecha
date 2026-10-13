@@ -31,6 +31,7 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	layer = 18
 	overlay = Control.new()
+	overlay.theme = preload("res://village_theme.gd").make_theme()
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	add_child(overlay)
 	var shade := ColorRect.new()
@@ -297,6 +298,7 @@ func _build_products() -> void:
 		var data: Dictionary = Inventory.item_database[id]
 		var price: int = int(data.get("price", 0))
 		var button := _button(list, "%s · %d bronce · Tienes: %d" % [data.get("purepecha", data["name"]), price, Inventory.items.count(id)], buy.bind(id))
+		_item_image(button, id)
 		button.disabled = price <= 0 or Economia.total_bronce() < price
 	if service_id == "remedies":
 		_empty("Los remedios se guardan en el inventario. Su uso estará disponible al añadir el sistema de salud.")
@@ -315,6 +317,7 @@ func _build_repairs() -> void:
 		count += 1
 		var cost: int = Transactions.repair_cost(equipment)
 		var button := _button(list, "%s · Estado %d/%d · %s" % [data.get("name", equipment["item_id"]), equipment["durability"], data.get("max_durability", 0), "%d bronce" % cost if cost > 0 else "Sin daños"], repair.bind(int(equipment["uid"])))
+		_item_image(button, str(equipment["item_id"]))
 		button.disabled = cost <= 0 or Economia.total_bronce() < cost
 	if count == 0:
 		_empty("Tomás: no llevas objetos reparables.\nAquí podrás reparar las herramientas que consigas más adelante.")
@@ -331,8 +334,21 @@ func _build_recipes() -> void:
 		for material in recipe["materials"]:
 			cost_text.append("%s %d/%d" % [Inventory.item_database[material]["name"], Inventory.items.count(material), recipe["materials"][material]])
 		var button := _button(list, "%s · %d bronce" % [Inventory.item_database[id]["name"], recipe["price"]], craft.bind(id))
+		_item_image(button, id)
 		button.disabled = not Transactions.can_craft(id)
-		_empty(", ".join(cost_text))
+		var materials := HBoxContainer.new()
+		list.add_child(materials)
+		for material in recipe["materials"]:
+			var icon := TextureRect.new()
+			icon.texture = preload("res://item_images.gd").icon(material)
+			icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			icon.custom_minimum_size = Vector2(20,20)
+			materials.add_child(icon)
+			var count_label := Label.new()
+			count_label.text = "%d/%d" % [Inventory.items.count(material),recipe["materials"][material]]
+			count_label.tooltip_text = Inventory.item_database[material]["name"]
+			materials.add_child(count_label)
 
 func craft(id: String) -> void:
 	var result: String = Transactions.craft(id)
@@ -343,8 +359,15 @@ func _build_fish_sales() -> void:
 	for id in ["charal","mojarra","carpa"]:
 		var data: Dictionary = Inventory.item_database[id]
 		var button := _button(list,"Vender %s · %d bronce · Tienes %d" % [data.name,data.sell_price,Inventory.items.count(id)],sell.bind(id))
+		_item_image(button, id)
 		button.disabled = not Inventory.has_item(id)
 func sell(id: String) -> void:
 	var result: String = Transactions.sell_fish(id)
 	show_shop()
 	message.text = result
+
+func _item_image(button: Button, id: String) -> void:
+	button.icon = preload("res://item_images.gd").icon(id)
+	button.expand_icon = true
+	button.add_theme_constant_override("icon_max_width", 26)
+	button.alignment = HORIZONTAL_ALIGNMENT_LEFT

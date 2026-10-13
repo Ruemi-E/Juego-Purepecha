@@ -116,6 +116,15 @@ func refresh() -> void:
  if not is_instance_valid(map_view) or not bind_world():
   return
  map_view.player_position = player.global_position
+ if world.has_method("lesson_target"):
+  target = world.lesson_target()
+  objective.text = OrchardState.objective()
+  map_view.has_target = is_instance_valid(target)
+  if is_instance_valid(target):
+   navigation_position = target.global_position
+   map_view.navigation_position = navigation_position
+  map_view.queue_redraw()
+  return
  var id: String = QuestManager.tracked_id()
  target = null
  map_view.has_target = false

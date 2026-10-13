@@ -9,6 +9,8 @@ var transitioning: bool = false
 var pickup_paths: Array[String] = []
 var initial_words: Dictionary
 var mine_state: Dictionary = {}
+var world_states: Dictionary = {}
+var visited: Array = []
 var tutorial_step: int = 0
 const WorldCatalog = preload("res://world_catalog.gd")
 var current_world_id: String = WorldCatalog.FIRST
@@ -60,6 +62,11 @@ func _open_world(data: Dictionary) -> void:
 	MapRoute.clear_route()
 	tutorial_step = clampi(int(data.get("tutorial_step", 0 if data.is_empty() else 6)), 0, 6)
 	current_world_id = str(data.get("world_id", WorldCatalog.FIRST))
+	world_states = data.get("world_states", {}).duplicate(true)
+	visited = data.get("visited", []).duplicate()
+	if not current_world_id in visited:
+		visited.append(current_world_id)
+	OrchardState.restore(data.get("orchard", {}))
 	if get_tree().change_scene_to_file(WorldCatalog.TOWNS[current_world_id]["scene"]) != OK:
 		transitioning = false
 		return
@@ -137,7 +144,9 @@ func save_game() -> void:
 		var node := world.get_node_or_null(NodePath(path))
 		if node == null or node.is_queued_for_deletion():
 			removed.append(path)
+	world_states[current_world_id] = {"removed": removed, "position": [player.global_position.x, player.global_position.y]}
 	var data := {
+		"world_states": world_states, "visited": visited, "orchard": OrchardState.snapshot(),
 		"version": 1, "tutorial_step": tutorial_step, "world_id": current_world_id, "position": [player.global_position.x, player.global_position.y],
 		"hotbar": Inventory.hotbar, "selected_slot": Inventory.selected_slot, "mine_state": mine_state, "adventures": AdventureState.progress,
 		"items": Inventory.items, "equipment": Inventory.equipment, "quests": QuestManager.states,
@@ -189,7 +198,8 @@ func travel_to(id: String) -> bool:
 		return false
 	data["world_id"] = id
 	var spawn: Vector2 = WorldCatalog.TOWNS[id]["spawn"]
-	data["position"] = [spawn.x, spawn.y]
-	data["removed"] = []
+	var destination: Dictionary = world_states.get(id, {})
+	data["position"] = destination.get("position", [spawn.x, spawn.y])
+	data["removed"] = destination.get("removed", [])
 	_open_world(data)
 	return true

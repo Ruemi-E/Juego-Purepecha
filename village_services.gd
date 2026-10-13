@@ -187,7 +187,7 @@ func _update_room(player: CharacterBody2D) -> void:
 		return
 	if active_room.is_empty():
 		camera.position = original_camera_position
-		var bounds: Rect2 = preload("res://world_catalog.gd").BOUNDS
+		var bounds: Rect2 = preload("res://world_catalog.gd").BOUNDS.grow(176)
 		camera.limit_left = int(bounds.position.x)
 		camera.limit_top = int(bounds.position.y)
 		camera.limit_right = int(bounds.end.x)

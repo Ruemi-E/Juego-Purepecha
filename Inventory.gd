@@ -5,6 +5,11 @@ signal item_removed(item_id: String)
 
 # Base de datos global de objetos del juego
 var item_database: Dictionary = {
+ "aguacate": {"name":"Aguacate","purepecha":"Kupanda","desc":"Producto de la huerta. Consulta su palabra con J.","shop":"food","price":6,"sell_price":3},
+ "durazno": {"name":"Durazno","purepecha":"Turasu","desc":"Producto de la huerta. Consulta su palabra con J.","shop":"food","price":4,"sell_price":2},
+ "calabaza": {"name":"Calabaza","purepecha":"Purhú","desc":"Producto de la huerta. Consulta su palabra con J.","shop":"food","price":5,"sell_price":2},
+ "cebolla": {"name":"Cebolla","purepecha":"Tsurupsi","desc":"Producto de la huerta. Consulta su palabra con J.","shop":"food","price":3,"sell_price":1},
+
  "cana_pesca": {"name":"Caña de pesca","purepecha":"Caña de pesca","desc":"Equípala con 1–5 y usa E en los puestos del lago. Necesita un anzuelo por intento.","shop":"smith","price":8,"max_durability":35,"repairable":true,"fishing_rod":true},
  "anzuelo": {"name":"Anzuelo","purepecha":"Anzuelo","desc":"Se consume al lanzar la caña.","shop":"food","price":1},
  "charal": {"name":"Charal","purepecha":"Charal","desc":"Lucía compra este pescado.","sell_price":3},

@@ -32,7 +32,7 @@ func _ready() -> void:
 	volume_slider.value_changed.connect(func(value: float): GameSession.set_volume(value / 100.0))
 	column.add_child(volume_slider)
 	fullscreen_toggle = CheckButton.new()
-	fullscreen_toggle.text = "Pantalla completa"
+	fullscreen_toggle.text = "Pantalla completa · F11"
 	fullscreen_toggle.toggled.connect(GameSession.set_fullscreen)
 	column.add_child(fullscreen_toggle)
 	back_button = Button.new()
@@ -52,3 +52,7 @@ func open() -> void:
 func close() -> void:
 	hide()
 	closed.emit()
+
+func _process(_delta: float) -> void:
+	if visible and is_instance_valid(fullscreen_toggle):
+		fullscreen_toggle.set_pressed_no_signal(GameSession.fullscreen)

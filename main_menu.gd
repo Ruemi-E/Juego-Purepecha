@@ -8,6 +8,7 @@ var settings: Control
 var buttons: VBoxContainer
 
 func _ready() -> void:
+	theme = preload("res://village_theme.gd").make_theme()
 	var background := ColorRect.new()
 	background.color = Color("182c2a")
 	background.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -31,16 +32,22 @@ func _ready() -> void:
 	add_child(center)
 	buttons = VBoxContainer.new()
 	buttons.custom_minimum_size.x = 240
-	buttons.add_theme_constant_override("separation", 6)
+	buttons.add_theme_constant_override("separation", 4)
 	center.add_child(buttons)
 	var title := Label.new()
-	title.text = "JUEGO PURÉPECHA"
+	title.text = "Caminos de la meseta"
 	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	title.add_theme_font_size_override("font_size", 25)
+	var display_font := SystemFont.new()
+	display_font.font_names = PackedStringArray(["Gabriola", "Palatino Linotype", "Georgia"])
+	title.add_theme_font_override("font", display_font)
+	title.add_theme_font_size_override("font_size", 62)
+	title.add_theme_color_override("font_shadow_color", Color("071c19"))
+	title.add_theme_constant_override("shadow_offset_y", 3)
+	title.add_theme_constant_override("outline_size", 1)
 	title.add_theme_color_override("font_color", Color("f1dfb1"))
 	buttons.add_child(title)
 	var subtitle := Label.new()
-	subtitle.text = "Un pueblo, sus palabras y sus historias"
+	subtitle.text = "Pueblos, palabras e historias por descubrir"
 	subtitle.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	subtitle.add_theme_font_size_override("font_size", 11)
 	buttons.add_child(subtitle)
@@ -51,7 +58,7 @@ func _ready() -> void:
 	add_button("Ajustes", _show_settings)
 	add_button("Ayuda", GameHelp.open_help)
 	status_label = Label.new()
-	status_label.text = "Guardado automático durante el juego"
+	status_label.text = "F11 · Pantalla completa   |   Guardado automático"
 	status_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	status_label.add_theme_font_size_override("font_size", 10)
 	buttons.add_child(status_label)
@@ -61,8 +68,9 @@ func _ready() -> void:
 func add_button(text: String, callback: Callable) -> Button:
 	var button := Button.new()
 	button.text = text
-	button.custom_minimum_size.y = 32
-	button.add_theme_font_size_override("font_size", 15)
+	button.custom_minimum_size = Vector2(190, 25)
+	button.size_flags_horizontal = Control.SIZE_SHRINK_CENTER
+	button.add_theme_font_size_override("font_size", 12)
 	var style := StyleBoxFlat.new()
 	style.bg_color = Color("30463a")
 	style.border_color = Color("bca570")

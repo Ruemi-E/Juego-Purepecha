@@ -16,8 +16,13 @@ func open_worlds() -> void:
  overlay = ui.overlay
  UI.label(ui.column,"Recorre los pueblos, aprende sus palabras y llega a casa de tu tía.")
  var in_game := is_instance_valid(get_tree().get_first_node_in_group("player"))
- UI.button(ui.column,"Pueblo de la ribera · Continuar" if in_game or GameSession.has_save() else "Pueblo de la ribera · Comenzar",select_first)
- for title in ["Pueblo 2 · Próximamente","Pueblo 3 · Próximamente","Pueblo de la tía · Próximamente"]:
+ UI.button(ui.column,("Pueblo de la ribera · Regresar" if GameSession.current_world_id != "pueblo_ribera" else "Pueblo de la ribera · Continuar") if in_game else ("Continuar partida guardada" if GameSession.has_save() else "Pueblo de la ribera · Comenzar"),select_first)
+ var second := UI.button(ui.column, "Pueblo de las huertas · Nivel 2", func():
+  close()
+  PauseMenu.resume_game()
+  GameSession.travel_to("pueblo_siguiente"))
+ second.disabled = not in_game or not Journey.can_travel("pueblo_siguiente")
+ for title in ["Pueblo 3 · Próximamente","Pueblo de la tía · Próximamente"]:
   UI.button(ui.column,title,func():pass).disabled = true
  UI.button(ui.column,"Volver · Esc",close).grab_focus()
 func select_first() -> void:
@@ -25,6 +30,8 @@ func select_first() -> void:
  close()
  if in_game:
   PauseMenu.resume_game()
+  if GameSession.current_world_id != "pueblo_ribera":
+   GameSession.travel_to("pueblo_ribera")
  elif GameSession.has_save():
   if not GameSession.load_game():
    open_worlds()
@@ -40,24 +47,24 @@ func open_map() -> void:
  if opened or get_tree().paused:
   return
  _begin(true)
- var ui := UI.build(self,"MAPA DEL PUEBLO · Tab / Esc para cerrar",600)
+ var ui := UI.build(self,"MAPA · " + str(preload("res://world_catalog.gd").TOWNS[GameSession.current_world_id].name).to_upper(),600)
  overlay = ui.overlay
  big_map = preload("res://minimap_view.gd").new()
- big_map.custom_minimum_size = Vector2(572,205)
+ big_map.custom_minimum_size = Vector2(572,180)
  big_map.clip_contents = true
  big_map.overview = true
- big_map.map_scale = minf(572.0/preload("res://world_catalog.gd").BOUNDS.size.x,205.0/preload("res://world_catalog.gd").BOUNDS.size.y)*0.94
+ big_map.map_scale = minf(572.0/preload("res://world_catalog.gd").BOUNDS.size.x,180.0/preload("res://world_catalog.gd").BOUNDS.size.y)*0.94
  big_map.configure(get_tree().current_scene)
  var player := get_tree().get_first_node_in_group("player") as Node2D
  big_map.player_position = player.global_position
- var services := get_tree().current_scene.get_node("VillageServices")
- var room: String = services.room_at(player.global_position)
+ var services := get_tree().current_scene.get_node_or_null("VillageServices")
+ var room: String = services.room_at(player.global_position) if services != null else ""
  if not room.is_empty():
   big_map.player_position = services.doors[room].global_position
  big_map.has_target = QuestHud.map_view.has_target
  big_map.navigation_position = QuestHud.navigation_position
  ui.column.add_child(big_map)
- UI.label(ui.column,"B Biblioteca · C Comida · R Remedios · H Herrería · M Mina · S Salida · P Pesca\nN Vecinos / puzzles · ● Tú · ◆ Objetivo\nClic: fijar ruta · Clic derecho: quitar · Pasa el cursor para ver nombres",10)
+ UI.label(ui.column,"Tab / Esc: cerrar · B Biblioteca · C Comida · R Remedios · H Herrería · M Mina · S Salida · P Pesca\nN Vecinos / puzzles · F Frutales · A Aula de la huerta · ● Tú · ◆ Objetivo\nClic: fijar ruta · Clic derecho: quitar · Pasa el cursor para ver nombres",10)
 func close() -> void:
  if not opened:
   return

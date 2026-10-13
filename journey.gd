@@ -21,10 +21,16 @@ func requirements_met() -> bool:
  return DictionaryManager.has_dictionary and Inventory.has_item("morral_recado")
 
 func next_id() -> String:
+ if GameSession.current_world_id == "pueblo_siguiente":
+  return Catalog.FIRST
  return str(Catalog.TOWNS[GameSession.current_world_id]["next"])
 
 func can_travel(id: String) -> bool:
- return id == next_id() and requirements_met() and Catalog.available(id)
+ if id == GameSession.current_world_id or not Catalog.available(id):
+  return false
+ if id in GameSession.visited:
+  return true
+ return id == next_id() and requirements_met()
 
 func open_route(_player: CharacterBody2D = null) -> void:
  if opened or get_tree().paused:
@@ -32,6 +38,7 @@ func open_route(_player: CharacterBody2D = null) -> void:
  opened = true
  get_tree().paused = true
  overlay = Control.new()
+ overlay.theme = preload("res://village_theme.gd").make_theme()
  overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
  add_child(overlay)
  var shade := ColorRect.new()
@@ -81,15 +88,20 @@ func open_route(_player: CharacterBody2D = null) -> void:
 func _refresh() -> void:
  if not opened or not is_instance_valid(status_label):
   return
+ if GameSession.current_world_id == "pueblo_siguiente":
+  status_label.text = "2 · Pueblo de las huertas — estás aquí\n\n" + OrchardState.objective() + "\n\nPuedes regresar a la ribera. Tus objetos y avances se conservan.\nEl viaje a casa de tu tía continuará en futuros pueblos."
+  travel_button.disabled = false
+  travel_button.text = "Regresar al pueblo de la ribera"
+  return
  var lines: Array[String] = ["1 · Pueblo de la ribera — estás aquí"]
  for id in Catalog.TOWNS[GameSession.current_world_id]["quests"]:
   lines.append("   %s %s" % ["✓" if QuestManager.status(id) == "completed" else "○", QuestManager.QUESTS[id]["title"]])
  for id in AdventureState.PUZZLES:
   lines.append("   %s %s" % ["✓" if AdventureState.entry(id).paid else "○", AdventureState.PUZZLES[id].title])
  lines.append("   %s Llevar el sutupu de Tátita" % ["✓" if Inventory.has_item("morral_recado") else "○"])
- lines.append("2 · Siguiente pueblo — disponible en una futura actualización")
+ lines.append("2 · Pueblo de las huertas — frutos, cantidades y mercado")
  lines.append("Destino final · Entregar el encargo a tu tía al terminar el viaje")
- lines.append("\n¡Primer pueblo completado! Conserva el encargo; puedes seguir explorando." if requirements_met() else "\nCompleta los encargos y puzzles del pueblo y lleva el encargo de Tátita.")
+ lines.append("\n¡Primer pueblo completado! La ruta hacia las huertas está abierta." if requirements_met() else "\nCompleta los encargos y puzzles del pueblo y lleva el encargo de Tátita.")
  status_label.text = "\n".join(lines)
  travel_button.disabled = not can_travel(next_id())
  travel_button.text = "Viajar al siguiente pueblo" if can_travel(next_id()) else ("Ruta preparada · Próximo pueblo en desarrollo" if requirements_met() else "Ruta bloqueada · Completa los encargos")

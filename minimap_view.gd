@@ -14,6 +14,11 @@ var has_target: bool = false
 func configure(world: Node) -> void:
  features.clear()
  service_markers.clear()
+ if world.has_method("map_data"):
+  var data: Dictionary = world.map_data()
+  features.assign(data.features)
+  service_markers.assign(data.markers)
+  return
  var services = world.get_node_or_null("VillageServices")
  if services != null:
   add_box(Vector2(344, 1180), Vector2(80, 680), ROAD)
@@ -73,7 +78,9 @@ func map_point(world_position: Vector2) -> Vector2:
  return size * 0.5 + (world_position - (preload("res://world_catalog.gd").BOUNDS.get_center() if overview else player_position)) * map_scale
 
 func _draw() -> void:
- draw_rect(Rect2(Vector2.ZERO, size), Color("63774b"))
+ draw_rect(Rect2(Vector2.ZERO, size), Color("294a3b"))
+ var bounds: Rect2 = preload("res://world_catalog.gd").BOUNDS
+ draw_rect(Rect2(map_point(bounds.position),bounds.size*map_scale),Color("718054"))
  var view := Rect2(Vector2.ZERO, size)
  for feature in features:
   var source: Rect2 = feature["rect"]
