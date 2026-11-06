@@ -11,16 +11,15 @@ config_version=5
 [application]
 
 config/name="Caminos de la meseta"
+run/main_scene="res://MainMenu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Godot/app_userdata/Juego Purépecha"
-run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Presentation="*res://presentation.gd"
-
 OrchardState="*res://orchard_state.gd"
 Inventory="*res://Inventory.gd"
 DialogueManager="*res://DialogueBox.tscn"
@@ -44,7 +43,6 @@ MapRoute="*res://map_route.gd"
 GameHelp="*res://game_help.gd"
 Tutorial="*res://tutorial.gd"
 LanternHelp="*res://lantern_help.gd"
-
 AdminTools="*res://admin_tools.gd"
 
 [display]
